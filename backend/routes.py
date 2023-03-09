@@ -1,5 +1,4 @@
-from application import app, mongo
-from flask import Flask, request
+
 
 home = "/centro-capital"
 @app.route(home)
