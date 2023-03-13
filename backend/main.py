@@ -12,17 +12,23 @@ def index():
     return 'Welcome to Centro Capital'
 
 
-@app.route(home + "/gdp", methods=['POST','GET'])
+@app.route(home + "/gdp", methods=['POST','GET', 'DELETE', 'PUT'])
 def gdp_page():
-    print('Enter gdp Page')
+    """
+    It's a function that handles the GDP data
+    :return: The GDP_Handler is being returned.
+    """
     if request.method == "POST":
         return GDP_Handler().insertNewGDP(request.json)
     elif request.method == "GET":
-        if request.args:
-            print(request.args)
-            return GDP_Handler().getYearlyGPD(request.args)
-        else:
+        if not request.json:
             return GDP_Handler().getAllGPD()
+        else:
+            return GDP_Handler().getYearlyGPD(request.json)
+    elif request.method == 'DELETE':
+        return GDP_Handler().deleteYearlyGDP(request.json)
+    elif request.method == 'PUT':
+        return GDP_Handler().updateGDPbyYear(request.json)
     else:
         return {'Message': 'Failed to Load'}
 
