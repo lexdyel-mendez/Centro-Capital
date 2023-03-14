@@ -84,13 +84,14 @@ class GDP_Handler:
         year = json['year']
         nGDP = json['gdp']
         dao = GDP_DAO()
+        # Verify if we have given the correct values and if the year exist in DB
         if year and isinstance(dao.getYearlyGDP(year), dict):
+            # Get the ID of the doc to be edited
             doc_id = dao.getYearlyGDP(year)['_id']
             dao.updateGDPbyYear(year,nGDP)
+            # Build the new GDP to show
             updt_gdp = self.build_gdp_args(str(doc_id),nGDP,year)
             return jsonify(updt_gdp), 200
+        # If GDP not found in DB
         elif not isinstance(dao.getYearlyGDP(year), dict):
             return jsonify(Error="GDP Year not found"), 404
-
-
-
