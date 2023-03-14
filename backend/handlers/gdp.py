@@ -75,18 +75,21 @@ class GDP_Handler:
             return jsonify(Error="GDP Year not found"), 404
 
     def updateGDPbyYear(self, json):
+        """
+        This function updates the GDP of a given year
+
+        :param json: The JSON object that contains the data to be inserted into the database
+        :return: The GDP for the year specified in the URL.
+        """
         year = json['year']
         nGDP = json['gdp']
         dao = GDP_DAO()
-        print(isinstance(dao.getYearlyGDP(year), None))
-        doc_id = dao.getYearlyGDP(year)['_id']
-
-        if year and self.getYearlyGPD(json):
-
+        if year and isinstance(dao.getYearlyGDP(year), dict):
+            doc_id = dao.getYearlyGDP(year)['_id']
             dao.updateGDPbyYear(year,nGDP)
             updt_gdp = self.build_gdp_args(str(doc_id),nGDP,year)
             return jsonify(updt_gdp), 200
-        else:
+        elif not isinstance(dao.getYearlyGDP(year), dict):
             return jsonify(Error="GDP Year not found"), 404
 
 

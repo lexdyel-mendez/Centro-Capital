@@ -59,6 +59,14 @@ class GDP_DAO:
         return del_id
 
     def updateGDPbyYear(self, year, nGDP):
+        """
+        The function takes in a year and a new GDP value, and updates the GDP value for that year in the database
+
+        :param year: The year of the GDP data you want to update
+        :param nGDP: the new GDP value
+        :return: The number of documents updated.
+        """
+        # Filters the value that we want to update
         filter = {'year': year}
         # Values to be updated.
         newvalues = {"$set": {'gdp': nGDP}}
