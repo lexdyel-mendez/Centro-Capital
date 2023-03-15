@@ -22,7 +22,7 @@ class GDP_DAO:
         :return: The id of the new entry in the database.
         """
         new_id = self.gdp_db.insert({
-            'gdp_value': gdp,
+            'gdp': gdp,
             'year': year
         })
         return new_id
