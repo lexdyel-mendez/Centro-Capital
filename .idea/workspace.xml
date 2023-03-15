@@ -1,11 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="c4c7ee6a-9130-4ff6-bf71-ed96049c0b69" name="Changes" comment="Added Heroku Required Docs&#10;&#10;Since Heroku requires the Procfile generated and the requirements.txt, these were generated and added. Procfile was generated using gunicorn and the requirements.txt with pip freeze.">
-      <change beforePath="$PROJECT_DIR$/.idea/Centro-Capital.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/Centro-Capital.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/requirements.txt" beforeDir="false" />
+    <list default="true" id="c4c7ee6a-9130-4ff6-bf71-ed96049c0b69" name="Changes" comment="Fixed Requirements for Heroku&#10;&#10;The requirments.txt has some issues, it was giving paths instead of versions. Used the command `conda list -e &gt; requirements.txt` to generate another txt.">
+      <change beforePath="$PROJECT_DIR$/requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -267,7 +264,21 @@
       <option name="project" value="LOCAL" />
       <updated>1678915131245</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Fixed Requirements for Heroku&#10;&#10;The requirments.txt has some issues, it was giving paths instead of versions. Used the command `conda list -e &gt; requirements.txt` to generate another txt.">
+      <created>1678916386732</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1678916386732</updated>
+    </task>
+    <task id="LOCAL-00004" summary="Fixed Requirements for Heroku&#10;&#10;The requirments.txt has some issues, it was giving paths instead of versions. Used the command `conda list -e &gt; requirements.txt` to generate another txt.">
+      <created>1678916400853</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1678916400853</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -298,6 +309,7 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Dummy Flask &#10;&#10;Flask is now running, however its still not connected to mongodb." />
     <MESSAGE value="Added Heroku Required Docs&#10;&#10;Since Heroku requires the Procfile generated and the requirements.txt, these were generated and added. Procfile was generated using gunicorn and the requirements.txt with pip freeze." />
-    <option name="LAST_COMMIT_MESSAGE" value="Added Heroku Required Docs&#10;&#10;Since Heroku requires the Procfile generated and the requirements.txt, these were generated and added. Procfile was generated using gunicorn and the requirements.txt with pip freeze." />
+    <MESSAGE value="Fixed Requirements for Heroku&#10;&#10;The requirments.txt has some issues, it was giving paths instead of versions. Used the command `conda list -e &gt; requirements.txt` to generate another txt." />
+    <option name="LAST_COMMIT_MESSAGE" value="Fixed Requirements for Heroku&#10;&#10;The requirments.txt has some issues, it was giving paths instead of versions. Used the command `conda list -e &gt; requirements.txt` to generate another txt." />
   </component>
 </project>
