@@ -1,0 +1,191 @@
+{
+	"info": {
+		"_postman_id": "190bc557-37eb-4737-8de4-71751b865d33",
+		"name": "Centro Capital",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "24513339"
+	},
+	"item": [
+		{
+			"name": "Add new GDP",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"gdp\":423189.65,\r\n    \"year\":\"2019\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:5000/centro-capital/gdp",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "5000",
+					"path": [
+						"centro-capital",
+						"gdp"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get All GDPs",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:5000/centro-capital/gdp",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "5000",
+					"path": [
+						"centro-capital",
+						"gdp"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get GDP by Year",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"year\":\"2022\"\r\n}"
+				},
+				"url": {
+					"raw": "http://127.0.0.1:5000/centro-capital/gdp",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "5000",
+					"path": [
+						"centro-capital",
+						"gdp"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete GDP by Year",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"year\":\"2019\"\r\n}"
+				},
+				"url": {
+					"raw": "http://127.0.0.1:5000/centro-capital/gdp",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "5000",
+					"path": [
+						"centro-capital",
+						"gdp"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update GDP by Year",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"year\":\"2024\",\r\n    \"gdp\":12.2\r\n}"
+				},
+				"url": {
+					"raw": "http://127.0.0.1:5000/centro-capital/gdp",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "5000",
+					"path": [
+						"centro-capital",
+						"gdp"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
