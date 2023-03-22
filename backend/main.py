@@ -1,3 +1,4 @@
+import flask
 from flask import request, Flask
 from handlers.gdp import GDP_Handler
 from mongoflask import MongoJSONEncoder, ObjectIdConverter
@@ -9,7 +10,7 @@ app.url_map.converters['objectid'] = ObjectIdConverter
 home = "/centro-capital"
 @app.route(home)
 def index():
-    return 'Welcome to Centro Capital'
+    return flask.jsonify({"Welcome":["Welcome to Centro Capital!!!"]})
 
 
 @app.route(home + "/gdp", methods=['POST','GET', 'DELETE', 'PUT'])
