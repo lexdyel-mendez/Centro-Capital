@@ -3,13 +3,12 @@
   <component name="ChangeListManager">
     <list default="true" id="c4c7ee6a-9130-4ff6-bf71-ed96049c0b69" name="Changes" comment="Minor Fix to Procfile">
       <changelist_data name="Lexdyel Mendez Rios" email="lexdyel.mendez@upr.edu" />
-      <change afterPath="$PROJECT_DIR$/frontend/centro-capital-frontend/src/Welcome.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/Centro-Capital.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/Centro-Capital.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/main.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Procfile" beforeDir="false" afterPath="$PROJECT_DIR$/Procfile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/centro-capital-frontend/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/centro-capital-frontend/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/centro-capital-frontend/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/centro-capital-frontend/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/centro-capital-frontend/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/centro-capital-frontend/src/App.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/centro-capital-frontend/src/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/centro-capital-frontend/src/index.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -127,7 +126,7 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/backend/main.py" />
+      <option name="SCRIPT_NAME" value="C:\Users\User\PycharmProjects\Centro-Capital\main.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -284,6 +283,7 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Dummy Flask &#10;&#10;Flask is now running, however its still not connected to mongodb." />
@@ -294,8 +294,5 @@
     <MESSAGE value="Merged with Front-End&#10;&#10;Now the branch has files of both backend and front-end." />
     <MESSAGE value="Minor Fix to Procfile" />
     <option name="LAST_COMMIT_MESSAGE" value="Minor Fix to Procfile" />
-  </component>
-  <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/Centro_Capital$main.coverage" NAME="main Coverage Results" MODIFIED="1679426441595" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/backend" />
   </component>
 </project>

@@ -1,7 +1,7 @@
 import flask
 from flask import request, Flask
-from handlers.gdp import GDP_Handler
-from mongoflask import MongoJSONEncoder, ObjectIdConverter
+from backend.handlers.gdp import GDP_Handler
+from backend.mongoflask import MongoJSONEncoder, ObjectIdConverter
 
 app = Flask(__name__)
 app.json_encoder = MongoJSONEncoder
