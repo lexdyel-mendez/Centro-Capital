@@ -1,14 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="c4c7ee6a-9130-4ff6-bf71-ed96049c0b69" name="Changes" comment="Minor Fix to Procfile">
-      <changelist_data name="Lexdyel Mendez Rios" email="lexdyel.mendez@upr.edu" />
-      <change beforePath="$PROJECT_DIR$/.idea/Centro-Capital.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/Centro-Capital.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+    <list default="true" id="c4c7ee6a-9130-4ff6-bf71-ed96049c0b69" name="Changes" comment="Re added Procfile">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Procfile" beforeDir="false" afterPath="$PROJECT_DIR$/Procfile" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/centro-capital-frontend/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/centro-capital-frontend/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/main.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -85,6 +80,7 @@
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\User\PycharmProjects\Centro-Capital\backend" />
       <recent name="C:\Users\User\PycharmProjects\Centro-Capital" />
       <recent name="C:\Users\User\PycharmProjects\Centro-Capital\application" />
       <recent name="C:\Users\User\PycharmProjects\Centro-Capital\env" />
@@ -126,7 +122,7 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="C:\Users\User\PycharmProjects\Centro-Capital\main.py" />
+      <option name="SCRIPT_NAME" value="C:\Users\User\PycharmProjects\Centro-Capital\backend\main.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -254,11 +250,21 @@
       <option name="project" value="LOCAL" />
       <updated>1679348564562</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="Re added Procfile">
+      <created>1679599121346</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1679599121346</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="UnknownFeatures">
+    <option featureType="com.intellij.fileTypeFactory" implementationName="*.js" />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
     <option name="TAB_STATES">
@@ -293,6 +299,7 @@
     <MESSAGE value="Merge remote-tracking branch 'origin/ljmr_main' into ljmr_main&#10;&#10;# Conflicts:&#10;#&#9;requirements.txt" />
     <MESSAGE value="Merged with Front-End&#10;&#10;Now the branch has files of both backend and front-end." />
     <MESSAGE value="Minor Fix to Procfile" />
-    <option name="LAST_COMMIT_MESSAGE" value="Minor Fix to Procfile" />
+    <MESSAGE value="Re added Procfile" />
+    <option name="LAST_COMMIT_MESSAGE" value="Re added Procfile" />
   </component>
 </project>
