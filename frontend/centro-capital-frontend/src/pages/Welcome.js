@@ -1,9 +1,10 @@
 import React, { useEffect, useState } from "react";
+
 function Welcome() {
 
     // usestate for setting a javascript
     // object for storing and using data
-    const [data,setData] = useState([{}])
+    const [data, setData] = useState([{}])
 
     // Using useEffect for single rendering
     useEffect(() => {
@@ -17,14 +18,14 @@ function Welcome() {
                 console.log(data)
             }
         )
-    },[])
+    }, [])
 
-    return(
+    return (
         <div>
             {(typeof data.Welcome === 'undefined') ? (
                 <p>Loading...</p>
-            ): (
-                data.Welcome.map((msg, i) =>(
+            ) : (
+                data.Welcome.map((msg, i) => (
                     <p key={i}>{msg}</p>
                 )))}
         </div>
