@@ -19,7 +19,14 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c4c7ee6a-9130-4ff6-bf71-ed96049c0b69" name="Changes" comment="Fixed Profcile&#10;&#10;Now it points to main inside of the backend folder." />
+    <list default="true" id="c4c7ee6a-9130-4ff6-bf71-ed96049c0b69" name="Changes" comment="Fixed Profcile&#10;&#10;Now it points to main inside of the backend folder.">
+      <change beforePath="$PROJECT_DIR$/.idea/Centro-Capital.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/Centro-Capital.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/centro-capital-frontend/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/centro-capital-frontend/src/App.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/centro-capital-frontend/src/Welcome.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/centro-capital-frontend/src/pages/Welcome.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/centro-capital-frontend/src/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/centro-capital-frontend/src/index.js" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -92,10 +99,12 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="nodejs_package_manager_path" value="npm" />
     <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/frontend/centro-capital-frontend/src/pages" />
       <recent name="C:\Users\User\PycharmProjects\Centro-Capital\backend" />
       <recent name="C:\Users\User\PycharmProjects\Centro-Capital" />
       <recent name="C:\Users\User\PycharmProjects\Centro-Capital\application" />
@@ -209,6 +218,7 @@
       <option name="presentableId" value="Default" />
       <updated>1676939301207</updated>
       <workItem from="1679425687582" duration="6396000" />
+      <workItem from="1680111805530" duration="1510000" />
     </task>
     <task id="LOCAL-00001" summary="Dummy Flask &#10;&#10;Flask is now running, however its still not connected to mongodb.">
       <created>1677606094403</created>
@@ -294,7 +304,14 @@
       <option name="project" value="LOCAL" />
       <updated>1679600397473</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="Merge branches">
+      <created>1679954228958</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1679954228958</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -339,7 +356,8 @@
     <MESSAGE value="Re added Procfile" />
     <MESSAGE value="Fixed File Locations" />
     <MESSAGE value="Fixed Profcile&#10;&#10;Now it points to main inside of the backend folder." />
-    <option name="LAST_COMMIT_MESSAGE" value="Fixed Profcile&#10;&#10;Now it points to main inside of the backend folder." />
+    <MESSAGE value="Merge branches" />
+    <option name="LAST_COMMIT_MESSAGE" value="Merge branches" />
   </component>
   <component name="WindowStateProjectService">
     <state x="180" y="118" key="MergeDialog" timestamp="1679954127176">
@@ -350,5 +368,9 @@
       <screen x="0" y="25" width="1792" height="1035" />
     </state>
     <state x="530" y="304" key="MultipleFileMergeDialog/0.25.1792.1035@0.25.1792.1035" timestamp="1679954152117" />
+    <state x="496" y="265" key="Vcs.Push.Dialog.v2" timestamp="1679954237161">
+      <screen x="0" y="25" width="1792" height="1035" />
+    </state>
+    <state x="496" y="265" key="Vcs.Push.Dialog.v2/0.25.1792.1035@0.25.1792.1035" timestamp="1679954237161" />
   </component>
 </project>
