@@ -4,13 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c4c7ee6a-9130-4ff6-bf71-ed96049c0b69" name="Changes" comment="Fixed Profcile&#10;&#10;Now it points to main inside of the backend folder.">
-      <change afterPath="$PROJECT_DIR$/backend/dataSources/bde/I_LABOR.XLS" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/dataSources/bde/bde.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/Centro-Capital.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/Centro-Capital.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_3_14_2023_3_27_PM__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_3_14_2023_3_27_PM__Changes_.xml" afterDir="false" />
+    <list default="true" id="c4c7ee6a-9130-4ff6-bf71-ed96049c0b69" name="Changes" comment="Added BDE excel and json extraction">
+      <change afterPath="$PROJECT_DIR$/backend/dataSources/bde/bde_main.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/dataSources/bde/functions/exc2JSON.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/dataSources/bde/functions/xlsReq.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/dataSources/bde/I_LABOR.XLS" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/dataSources/bde/bde.py" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/environment.yml" beforeDir="false" afterPath="$PROJECT_DIR$/environment.yml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -82,7 +82,7 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
-    "last_opened_file_path": "C:/Users/juand/Documents/University/2022 S2/CCPR/backend/dataSources/bde",
+    "last_opened_file_path": "C:/Users/juand/Documents/University/2022 S2/CCPR/backend/dataSources/bde/functions",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -91,9 +91,11 @@
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\juand\Documents\University\2022 S2\CCPR\backend\dataSources\bde\functions" />
       <recent name="C:\Users\juand\Documents\University\2022 S2\CCPR\backend\dataSources\bde" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\juand\Documents\University\2022 S2\CCPR\backend\dataSources\bde\functions" />
       <recent name="C:\Users\User\PycharmProjects\Centro-Capital\backend" />
       <recent name="C:\Users\User\PycharmProjects\Centro-Capital" />
       <recent name="C:\Users\User\PycharmProjects\Centro-Capital\application" />
@@ -292,7 +294,14 @@
       <option name="project" value="LOCAL" />
       <updated>1679600397473</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="Added BDE excel and json extraction">
+      <created>1680376180684</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1680376180684</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -336,7 +345,8 @@
     <MESSAGE value="Re added Procfile" />
     <MESSAGE value="Fixed File Locations" />
     <MESSAGE value="Fixed Profcile&#10;&#10;Now it points to main inside of the backend folder." />
-    <option name="LAST_COMMIT_MESSAGE" value="Fixed Profcile&#10;&#10;Now it points to main inside of the backend folder." />
+    <MESSAGE value="Added BDE excel and json extraction" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added BDE excel and json extraction" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/CCPR$main__1_.coverage" NAME="main (1) Coverage Results" MODIFIED="1679951056063" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/backend" />
