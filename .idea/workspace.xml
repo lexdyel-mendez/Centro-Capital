@@ -1,9 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
   <component name="ChangeListManager">
     <list default="true" id="c4c7ee6a-9130-4ff6-bf71-ed96049c0b69" name="Changes" comment="Fixed Profcile&#10;&#10;Now it points to main inside of the backend folder.">
-      <change beforePath="$PROJECT_DIR$/frontend/centro-capital-frontend/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/centro-capital-frontend/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/centro-capital-frontend/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/centro-capital-frontend/package.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/dataSources/bde/I_LABOR.XLS" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/dataSources/bde/bde.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/Centro-Capital.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/Centro-Capital.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_3_14_2023_3_27_PM__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_3_14_2023_3_27_PM__Changes_.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/environment.yml" beforeDir="false" afterPath="$PROJECT_DIR$/environment.yml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -14,6 +22,7 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="JavaScript File" />
+        <option value="Python Script" />
       </list>
     </option>
   </component>
@@ -71,14 +80,19 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">
-    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
-    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
-    <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
-    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
-  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "last_opened_file_path": "C:/Users/juand/Documents/University/2022 S2/CCPR/backend/dataSources/bde",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)"
+  }
+}]]></component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\juand\Documents\University\2022 S2\CCPR\backend\dataSources\bde" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\User\PycharmProjects\Centro-Capital\backend" />
       <recent name="C:\Users\User\PycharmProjects\Centro-Capital" />
@@ -310,7 +324,6 @@
         </entry>
       </map>
     </option>
-    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Dummy Flask &#10;&#10;Flask is now running, however its still not connected to mongodb." />
@@ -324,5 +337,8 @@
     <MESSAGE value="Fixed File Locations" />
     <MESSAGE value="Fixed Profcile&#10;&#10;Now it points to main inside of the backend folder." />
     <option name="LAST_COMMIT_MESSAGE" value="Fixed Profcile&#10;&#10;Now it points to main inside of the backend folder." />
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/CCPR$main__1_.coverage" NAME="main (1) Coverage Results" MODIFIED="1679951056063" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/backend" />
   </component>
 </project>
