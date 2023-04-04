@@ -6,7 +6,7 @@ from handlers.gdp import GDP_Handler
 from handlers.Unemployment import Unemployment_Handler
 from mongoflask import MongoJSONEncoder, ObjectIdConverter
 
-app = Flask(__name__, static_folder="frontend/centro-capital-frontend/build", static_url_path="")
+app = Flask(__name__, static_folder="../../frontend/centro-capital-frontend/build", static_url_path="")
 app.json_encoder = MongoJSONEncoder
 app.url_map.converters['objectid'] = ObjectIdConverter
 CORS(app)
@@ -16,6 +16,11 @@ home = "/centro-capital"
 @cross_origin()
 def index():
     return {"Welcome": "Welcome to Centro Capital!!!"}
+
+@app.route("/")
+@cross_origin()
+def serve():
+    return send_from_directory(app.static_folder, 'index.html')
 
 
 @app.route(home + "/gdp", methods=['POST','GET', 'DELETE', 'PUT'])
@@ -69,9 +74,6 @@ def updateUnemployment():
         return Unemployment_Handler().updateUnemployment(request.json)
     else:
         return {"Message Error":"Failed to Load"}
-@app.route("/")
-@cross_origin()
-def serve():
-    return send_from_directory(app.static_folder, 'index.html')
+
 if __name__ == '__main__':
     app.run()
