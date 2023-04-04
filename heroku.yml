@@ -1,0 +1,11 @@
+build:
+  languages:
+    - nodejs
+    - python
+  packages:
+    - node_modules
+  script:
+    - npm install --prefix frontend
+    - npm run build --prefix frontend
+run:
+  web: gunicorn backend.main:app
