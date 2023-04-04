@@ -4,11 +4,11 @@ from flask_cors import CORS, cross_origin
 from flask.helpers import send_from_directory
 # from handlers.gdp import GDP_Handler
 # from handlers.Unemployment import Unemployment_Handler
-from mongoflask import MongoJSONEncoder, ObjectIdConverter
+# from mongoflask import MongoJSONEncoder, ObjectIdConverter
 
 app = Flask(__name__, static_folder="../../frontend/centro-capital-frontend/build", static_url_path="")
-app.json_encoder = MongoJSONEncoder
-app.url_map.converters['objectid'] = ObjectIdConverter
+# app.json_encoder = MongoJSONEncoder
+# app.url_map.converters['objectid'] = ObjectIdConverter
 CORS(app)
 
 home = "/centro-capital"
