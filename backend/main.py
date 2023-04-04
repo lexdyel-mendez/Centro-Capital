@@ -20,7 +20,7 @@ def index():
 @app.route("/")
 @cross_origin()
 def serve():
-    return send_from_directory(app.static_folder, 'index.html')
+    return app.send_static_file("index.html")
 
 
 # @app.route(home + "/gdp", methods=['POST','GET', 'DELETE', 'PUT'])
