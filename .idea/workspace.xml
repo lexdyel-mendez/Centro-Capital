@@ -19,8 +19,14 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c4c7ee6a-9130-4ff6-bf71-ed96049c0b69" name="Changes" comment="Heroku Deployment &#10;&#10;Set up everything to try another heroku deployment. Also removed some necessary folders from gitignore.">
+    <list default="true" id="c4c7ee6a-9130-4ff6-bf71-ed96049c0b69" name="Changes" comment="Added API for Unemployment&#10;&#10;Added the links for getting and updating the unemployment collection.">
+      <changelist_data name="Lexdyel Mendez Rios" email="lexdyel.mendez@upr.edu" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/main.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/centro-capital-frontend/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/centro-capital-frontend/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/centro-capital-frontend/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/centro-capital-frontend/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/centro-capital-frontend/src/pages/Welcome.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/centro-capital-frontend/src/pages/Welcome.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -340,14 +346,7 @@
       <option name="project" value="LOCAL" />
       <updated>1680625559971</updated>
     </task>
-    <task id="LOCAL-00015" summary="Heroku Deployment &#10;&#10;Set up everything to try another heroku deployment. Also removed some necessary folders from gitignore.">
-      <created>1680630774145</created>
-      <option name="number" value="00015" />
-      <option name="presentableId" value="LOCAL-00015" />
-      <option name="project" value="LOCAL" />
-      <updated>1680630774145</updated>
-    </task>
-    <option name="localTasksCounter" value="16" />
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -394,7 +393,6 @@
     <MESSAGE value="Fixed Profcile&#10;&#10;Now it points to main inside of the backend folder." />
     <MESSAGE value="Merge branches" />
     <MESSAGE value="Added API for Unemployment&#10;&#10;Added the links for getting and updating the unemployment collection." />
-    <MESSAGE value="Heroku Deployment &#10;&#10;Set up everything to try another heroku deployment. Also removed some necessary folders from gitignore." />
-    <option name="LAST_COMMIT_MESSAGE" value="Heroku Deployment &#10;&#10;Set up everything to try another heroku deployment. Also removed some necessary folders from gitignore." />
+    <option name="LAST_COMMIT_MESSAGE" value="Added API for Unemployment&#10;&#10;Added the links for getting and updating the unemployment collection." />
   </component>
 </project>
