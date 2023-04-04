@@ -4,30 +4,27 @@ function Welcome() {
 
     // usestate for setting a javascript
     // object for storing and using data
-    const [data, setData] = useState([{}])
+    const [data, setdata] = useState({
+        welcome: ""
+    });
 
     // Using useEffect for single rendering
     useEffect(() => {
-        // Using fetch to fetch the api from
+        // Using fetch to fetch the api from 
         // flask server it will be redirected to proxy
-        fetch("/centro-capital").then(
-            res => res.json()
-        ).then(
-            data => {
-                setData(data)
-                console.log(data)
-            }
-        )
-    }, [])
+        fetch("/centro-capital").then((res) =>
+            res.json().then((data) => {
+                // Setting a data from api
+                setdata({
+                    welcome: data.Welcome
+                });
+            })
+        );
+    }, []);
 
     return (
         <div>
-            {(typeof data.Welcome === 'undefined') ? (
-                <p>Loading...</p>
-            ) : (
-                data.Welcome.map((msg, i) => (
-                    <p key={i}>{msg}</p>
-                )))}
+            <p>{data.welcome}</p>
         </div>
     )
 }

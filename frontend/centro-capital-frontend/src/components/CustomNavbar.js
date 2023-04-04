@@ -8,7 +8,7 @@ import { Outlet, Link } from "react-router-dom";
 class CustomNavbar extends Component {
     render() {
         return (
-            <div>
+            <div className='sticky-bottom'>
                 <Navbar bg="light" expand="lg">
                     <Container>
                         <Navbar.Brand href="#home">Centro Capital</Navbar.Brand>
