@@ -14,8 +14,6 @@ isodate==0.6.0
 itsdangerous==2.0.1
 Jinja2==3.1.2
 MarkupSafe==2.1.1
-mkl-random==1.2.2
-mkl-service==2.4.0
 numexpr==2.8.4
 numpy==1.23.5
 packaging==23.0
