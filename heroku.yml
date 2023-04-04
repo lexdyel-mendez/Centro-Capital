@@ -3,4 +3,4 @@ build:
     - python
     - nodejs
 run:
-  backend: python backend/app.py
+  web: gunicorn backend.main:app

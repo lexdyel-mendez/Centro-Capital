@@ -1,0 +1,7 @@
+{
+  "name": "Centro-Capital",
+  "version": "1.0.0",
+  "scripts": {
+    "heroku-postbuild": "npm install --prefix frontend/centro-capital-frontend && npm run build --prefix frontend/centro-capital-frontend"
+  }
+}
