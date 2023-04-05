@@ -95,3 +95,8 @@ class GDP_Handler:
         # If GDP not found in DB
         elif not isinstance(dao.getYearlyGDP(year), dict):
             return jsonify(Error="GDP Year not found"), 404
+
+    def insertManyGDP(self, json):
+        dao = GDP_DAO()
+        new_id, timestamp = dao.updateGDP(json)
+        return jsonify(new_id=new_id, insertion_time=timestamp, docs_added=len(json))
