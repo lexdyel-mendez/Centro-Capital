@@ -1,5 +1,7 @@
 import pymongo
 from backend.config.mongo_config import mongo_config
+from datetime import datetime
+
 
 
 class GDP_DAO:
@@ -72,4 +74,10 @@ class GDP_DAO:
         newvalues = {"$set": {'gdp': nGDP}}
         doc = self.gdp_db.update_one(filter, newvalues,upsert=False)
         return doc
+
+    def updateGDP(self, json):
+        insert_time = datetime.now()
+        data = {'gdp_per_year': json, 'last_updated': insert_time}
+        new_id = self.gdp_db.insert(data)
+        return new_id, insert_time
 
