@@ -19,11 +19,9 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c4c7ee6a-9130-4ff6-bf71-ed96049c0b69" name="Changes" comment="Merge branches">
-      <change beforePath="$PROJECT_DIR$/.idea/Centro-Capital.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/Centro-Capital.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+    <list default="true" id="c4c7ee6a-9130-4ff6-bf71-ed96049c0b69" name="Changes" comment="Cleaned Backend Main &#10;&#10;Removed unnecessary code from the back-end main.py">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/main.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/config/mongo_config.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/config/mongo_config.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -311,7 +309,14 @@
       <option name="project" value="LOCAL" />
       <updated>1679954228958</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="Cleaned Backend Main &#10;&#10;Removed unnecessary code from the back-end main.py">
+      <created>1681317510053</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1681317510053</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -332,7 +337,7 @@
                   <entry key="branch">
                     <value>
                       <list>
-                        <option value="ljmr_main" />
+                        <option value="backend_dev" />
                       </list>
                     </value>
                   </entry>
@@ -357,20 +362,7 @@
     <MESSAGE value="Fixed File Locations" />
     <MESSAGE value="Fixed Profcile&#10;&#10;Now it points to main inside of the backend folder." />
     <MESSAGE value="Merge branches" />
-    <option name="LAST_COMMIT_MESSAGE" value="Merge branches" />
-  </component>
-  <component name="WindowStateProjectService">
-    <state x="180" y="118" key="MergeDialog" timestamp="1679954127176">
-      <screen x="0" y="25" width="1792" height="1035" />
-    </state>
-    <state x="180" y="118" key="MergeDialog/0.25.1792.1035@0.25.1792.1035" timestamp="1679954127176" />
-    <state x="530" y="304" key="MultipleFileMergeDialog" timestamp="1679954152117">
-      <screen x="0" y="25" width="1792" height="1035" />
-    </state>
-    <state x="530" y="304" key="MultipleFileMergeDialog/0.25.1792.1035@0.25.1792.1035" timestamp="1679954152117" />
-    <state x="496" y="265" key="Vcs.Push.Dialog.v2" timestamp="1679954237161">
-      <screen x="0" y="25" width="1792" height="1035" />
-    </state>
-    <state x="496" y="265" key="Vcs.Push.Dialog.v2/0.25.1792.1035@0.25.1792.1035" timestamp="1679954237161" />
+    <MESSAGE value="Cleaned Backend Main &#10;&#10;Removed unnecessary code from the back-end main.py" />
+    <option name="LAST_COMMIT_MESSAGE" value="Cleaned Backend Main &#10;&#10;Removed unnecessary code from the back-end main.py" />
   </component>
 </project>
