@@ -29,17 +29,12 @@ def gdp_page():
     It's a function that handles the GDP data
     :return: The GDP_Handler is being returned.
     """
-    # if request.method == "POST":
-    #     return GDP_Handler().insertNewGDP(request.json)
+
     if request.method == "GET":
         if not request.json:
             return GDP_Handler().getAllGPD()
         else:
             return GDP_Handler().getYearlyGPD(request.json)
-    # elif request.method == 'DELETE':
-    #     return GDP_Handler().deleteYearlyGDP(request.json)
-    # elif request.method == 'PUT':
-    #     return GDP_Handler().updateGDPbyYear(request.json)
     else:
         return {'Message': 'Failed to Load'}
 
