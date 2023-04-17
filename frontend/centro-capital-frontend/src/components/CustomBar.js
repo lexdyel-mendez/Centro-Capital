@@ -32,11 +32,9 @@ const data = [
 // }
 //const [data, setData] = useState(filterData('daily'));
 
-class CustomBar extends Component {
-    
-    render() {
-        return(
-            <div>
+function CustomBar({data}){
+  return(
+     <div>
       <div>
       </div>
       <BarChart
@@ -56,8 +54,6 @@ class CustomBar extends Component {
         <Line dataKey="uv" fill="#82ca9d" /> */}
       </BarChart>
     </div>
-        );
-    }
-   
-};
+  )
+}
 export default CustomBar
