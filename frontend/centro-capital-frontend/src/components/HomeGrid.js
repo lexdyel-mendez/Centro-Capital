@@ -20,7 +20,11 @@ export default function HomeGrid () {
       gdp: 7,
     },
   ];
-
+  const dailydata = [
+    // Daily data
+    { name: '01', uv: 4000, pv: 2400, amt: 2400, period: 'daily' },
+    { name: '02', uv: 3000, pv: 1398, amt: 2210, period: 'daily' },
+  ]
   return (
 
     <div className="container">
@@ -28,14 +32,14 @@ export default function HomeGrid () {
         <div class="row">
             <div class="col">
               <h1> Bar Chart in container grid</h1>
-                 <CustomBar></CustomBar>
+                 <CustomBar data={dailydata}></CustomBar>
             </div>
             <div class="col">
               <h1>  Line Chart in container grid</h1>
               <CustomLine data={input}></CustomLine>
             </div>
             <div class="col">
-              <CustomBar></CustomBar>
+              <CustomBar data={dailydata}></CustomBar>
             </div>
     </div>
 
