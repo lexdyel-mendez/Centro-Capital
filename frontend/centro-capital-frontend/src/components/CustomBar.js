@@ -8,6 +8,7 @@ import {
   Tooltip,
   Legend,
   Bar,
+  ResponsiveContainer,
 } from 'recharts';
 
 // Dummy data
@@ -37,6 +38,7 @@ function CustomBar({data}){
      <div>
       <div>
       </div>
+      <ResponsiveContainer height={300}>
       <BarChart
         width={500}
         height={300}
@@ -53,6 +55,7 @@ function CustomBar({data}){
         {/* <Line dataKey="pv" fill="#8884d8" />
         <Line dataKey="uv" fill="#82ca9d" /> */}
       </BarChart>
+      </ResponsiveContainer>
     </div>
   )
 }
