@@ -3,6 +3,8 @@ import pandas
 import re
 import os
 
+from flask import jsonify
+
 def exc2JSON(filename):
     sheetIter(filename)
 
@@ -88,16 +90,18 @@ def fileConversion(filename_param, sheet_name_param):
     D.update({"metric": openedJSON['PUERTO RICO ECONOMIC INDICATORS']['1']})
     D.update({"source": openedJSON['PUERTO RICO ECONOMIC INDICATORS']['73']})
 
-    #creating json referent to the sheetname
-    finalSheetName = openedJSON['PUERTO RICO ECONOMIC INDICATORS']['1']
-    #To ensure the filename doesn't cause issues we are adding a regex cleaner removing non-alphanumeric characterrs
-    finalSheetName = "results/" + re.sub("[^0-9a-zA-Z\s]+","",finalSheetName) + ".json"
-    # converting existing dictionary into json a a final step of the script for future manipulation
-    with open(finalSheetName, "w") as write_file:
-        json.dump(D, write_file)
+    # #creating json referent to the sheetname
+    # finalSheetName = openedJSON['PUERTO RICO ECONOMIC INDICATORS']['1']
+    # #To ensure the filename doesn't cause issues we are adding a regex cleaner removing non-alphanumeric characterrs
+    # finalSheetName = "results/" + re.sub("[^0-9a-zA-Z\s]+","",finalSheetName) + ".json"
+    # # converting existing dictionary into json a a final step of the script for future manipulation
+    # with open(finalSheetName, "w") as write_file:
+    #     json.dump(D, write_file)
 
     #deleting the raw data json as it is no longer needed
     os.remove(str(rawSheet))
+
+    return D
 
 
 
