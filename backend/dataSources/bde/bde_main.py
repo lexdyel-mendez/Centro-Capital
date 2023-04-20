@@ -1,4 +1,4 @@
-from functions.exc2JSON import exc2JSON
+from functions.exc2JSON import exc2JSON, sheetIter
 from functions.xlsReq import xlsReq
 from backend.handlers.Unemployment import Unemployment_Handler
 import flask
@@ -18,6 +18,10 @@ currFilename = xlsReq()
 
 #We have the file, now we need to see how many sheets exist and inside there manage the creation
 json_files = exc2JSON(currFilename)
+
+if __name__ == '__main__':
+    print(json_files)
+
 
 
 
