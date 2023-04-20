@@ -10,6 +10,7 @@ class CustomNavbar extends Component {
         return (
             <div className='sticky-bottom'>
                 <Navbar bg="light" expand="lg">
+                <img src="favicon.ico" class="img-responsive rounded float-left" width="5%" alt="Logo"></img>
                     <Container>
                         <Navbar.Brand href="#home">Centro Capital</Navbar.Brand>
                         <Navbar.Toggle aria-controls="basic-navbar-nav" />

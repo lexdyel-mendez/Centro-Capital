@@ -19,11 +19,13 @@ dependencies:
   - libffi=3.4.2=hd77b12b_6
   - markupsafe=2.1.1=py310h2bbff1b_0
   - openssl=1.1.1t=h2bbff1b_0
+  - pandas
   - pip=22.3.1=py310haa95532_0
   - pycparser=2.21=pyhd8ed1ab_0
   - pymongo=3.12.0=py310hd77b12b_0
   - python=3.10.9=h966fe2a_0
   - python_abi=3.10=2_cp310
+  - requests
   - setuptools=65.6.3=py310haa95532_0
   - sqlite=3.40.1=h2bbff1b_0
   - tk=8.6.12=h2bbff1b_0
@@ -33,6 +35,7 @@ dependencies:
   - werkzeug=2.2.2=py310haa95532_0
   - wheel=0.38.4=py310haa95532_0
   - wincertstore=0.2=py310haa95532_2
+  - xlrd
   - xz=5.2.10=h8cc25b3_1
   - zlib=1.2.13=h8cc25b3_0
 prefix: C:\Users\lexdy\anaconda3\envs\Centro-Capital
