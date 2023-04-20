@@ -65,7 +65,7 @@ def getUnemploymentYearly():
         return {"Message": 'Wrong request method. Only GET acceptable'}
 
 @app.route(home +'/updateUnemployment', methods=['POST'])
-def updateUnemployment(data = bdeData(xlsReq(),'Unemployment Rat')):
+def updateUnemployment(data = bdeData(xlsReq(),'Unemployment Rate')):
     """
     This function updates the unemployment data in the database
     :return: The unemployment rate for a given year.

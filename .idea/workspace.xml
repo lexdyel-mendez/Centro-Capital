@@ -19,10 +19,7 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c4c7ee6a-9130-4ff6-bf71-ed96049c0b69" name="Changes" comment="Scrapper now returns the JSON instead of jsut saving it locally.">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/dataSources/bde/bde_main.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/dataSources/bde/bde_main.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/dataSources/bde/functions/exc2JSON.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/dataSources/bde/functions/exc2JSON.py" afterDir="false" />
+    <list default="true" id="c4c7ee6a-9130-4ff6-bf71-ed96049c0b69" name="Changes" comment="Can update MongoDB with Scrapper&#10;&#10;Now the API uses the  scrapper whenever updating the dataset.">
       <change beforePath="$PROJECT_DIR$/backend/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/main.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -296,7 +293,14 @@
       <option name="project" value="LOCAL" />
       <updated>1681956291839</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="Can update MongoDB with Scrapper&#10;&#10;Now the API uses the  scrapper whenever updating the dataset.">
+      <created>1681959065178</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1681959065178</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -343,6 +347,7 @@
     <MESSAGE value="Fixed Profcile&#10;&#10;Now it points to main inside of the backend folder." />
     <MESSAGE value="Merge branches" />
     <MESSAGE value="Scrapper now returns the JSON instead of jsut saving it locally." />
-    <option name="LAST_COMMIT_MESSAGE" value="Scrapper now returns the JSON instead of jsut saving it locally." />
+    <MESSAGE value="Can update MongoDB with Scrapper&#10;&#10;Now the API uses the  scrapper whenever updating the dataset." />
+    <option name="LAST_COMMIT_MESSAGE" value="Can update MongoDB with Scrapper&#10;&#10;Now the API uses the  scrapper whenever updating the dataset." />
   </component>
 </project>
