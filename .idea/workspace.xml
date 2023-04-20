@@ -19,10 +19,11 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c4c7ee6a-9130-4ff6-bf71-ed96049c0b69" name="Changes" comment="Cleaned Main&#10;&#10;Now main no longer has unnecessary in the GDP function. Also fixed the get DAO of GDP so that it only retrieves the latest document in the database.&#10;&#10;Signed-off-by: Lexdyel Mendez Rios &lt;lexdyel.mendez@upr.edu&gt;">
+    <list default="true" id="c4c7ee6a-9130-4ff6-bf71-ed96049c0b69" name="Changes" comment="Scrapper now returns the JSON instead of jsut saving it locally.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/backend/dataSources/bde/bde_main.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/dataSources/bde/bde_main.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/backend/dataSources/bde/functions/exc2JSON.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/dataSources/bde/functions/exc2JSON.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/main.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -108,7 +109,7 @@
       <recent name="C:\Users\User\PycharmProjects\Centro-Capital\env" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.bde_main">
+  <component name="RunManager" selected="Python.main">
     <configuration name="__init__" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="Centro-Capital" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -180,8 +181,8 @@
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Python.bde_main" />
         <item itemvalue="Python.main" />
+        <item itemvalue="Python.bde_main" />
         <item itemvalue="Python.__init__" />
       </list>
     </recent_temporary>
@@ -288,7 +289,14 @@
       <option name="project" value="LOCAL" />
       <updated>1679954228958</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="Scrapper now returns the JSON instead of jsut saving it locally.">
+      <created>1681956291839</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1681956291839</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -334,6 +342,7 @@
     <MESSAGE value="Fixed File Locations" />
     <MESSAGE value="Fixed Profcile&#10;&#10;Now it points to main inside of the backend folder." />
     <MESSAGE value="Merge branches" />
-    <option name="LAST_COMMIT_MESSAGE" value="Merge branches" />
+    <MESSAGE value="Scrapper now returns the JSON instead of jsut saving it locally." />
+    <option name="LAST_COMMIT_MESSAGE" value="Scrapper now returns the JSON instead of jsut saving it locally." />
   </component>
 </project>

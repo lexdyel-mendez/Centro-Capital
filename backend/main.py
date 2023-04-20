@@ -6,7 +6,8 @@ from backend.handlers.gdp import GDP_Handler
 from backend.handlers.Unemployment import Unemployment_Handler
 from backend.mongoflask import MongoJSONEncoder, ObjectIdConverter
 
-
+from backend.dataSources.bde.functions.exc2JSON import exc2JSON as bdeData
+from backend.dataSources.bde.functions.xlsReq import xlsReq
 
 app = Flask(__name__, static_folder="../frontend/centro-capital-frontend/build", static_url_path="/")
 app.json_encoder = MongoJSONEncoder
@@ -64,13 +65,18 @@ def getUnemploymentYearly():
         return {"Message": 'Wrong request method. Only GET acceptable'}
 
 @app.route(home +'/updateUnemployment', methods=['POST'])
-def updateUnemployment():
+def updateUnemployment(data = bdeData(xlsReq(),'Unemployment Rat')):
     """
     This function updates the unemployment data in the database
     :return: The unemployment rate for a given year.
     """
-    if request.method == 'POST' and len(request.json) != 0:
-        return Unemployment_Handler().updateUnemployment(request.json)
+    if request.method == 'POST' and len(data) != 0:
+        if 'Error' not in data.keys():
+            # print(data.keys())
+            # exit()
+            return Unemployment_Handler().updateUnemployment(data)
+        else:
+            return (data)
     else:
         return {"Message Error":"Wrong request method. Only POST acceptable"}
 

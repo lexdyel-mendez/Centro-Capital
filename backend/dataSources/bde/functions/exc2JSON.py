@@ -5,13 +5,16 @@ import os
 
 from flask import jsonify
 
-def exc2JSON(filename,metric = 'Unemployment Rate'):
+def exc2JSON(filename,metric):
 
+    metricsInDoc = []
     for e in sheetIter(filename):
-        print(e['metric'])
+        # print(e['metric'])
+        metricsInDoc.append(e['metric'])
         if e['metric'] == metric:
             return e
-    return {'Message': f'Failed to find metric : {metric}'}
+    return {'Error': f'Failed to find metric : {metric}',
+             'Possible Metrics': metricsInDoc}
     # return sheetIter(filename)
 
 def sheetIter(filename):
@@ -19,7 +22,7 @@ def sheetIter(filename):
     #first sheet is usually informative. Can be helpful but we want the data right now which is why we pop
     sheet_df.pop(next(iter(sheet_df)))
     vals = []
-    print(len(sheet_df.keys()))
+    # print(len(sheet_df.keys()))
     for sheet_name in sheet_df.keys():
         vals.append(fileConversion(filename, sheet_name))
     # for i,e in enumerate(vals):print(f'{i}={e}')
