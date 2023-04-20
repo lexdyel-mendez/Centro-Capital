@@ -15,30 +15,18 @@ class GDP_DAO:
             mongo_config['dbname']]
         self.gdp_db = mongo.gross_domestic_product
 
-    def add_year_GDP(self, gdp, year):
-        """
-        It takes in a GDP value and a year, and inserts a new document into the gdp_db collection
 
-        :param gdp: the GDP value for the year
-        :param year: The year of the GDP data
-        :return: The id of the new entry in the database.
-        """
-        new_id = self.gdp_db.insert({
-            'gdp': gdp,
-            'year': year
-        })
-        return new_id
 
     def getAllGDP(self):
         """
         This function returns all the documents in the GDP collection
         :return: A list of dictionaries.
         """
-        docs = []
-        cursor = self.gdp_db.find({})
-        for doc in cursor:
-            docs.append(doc)
-        return docs
+        lates_doc = list(self.gdp_db.find().sort("_id", -1))[0]
+        # print(lates_doc)
+        doc = lates_doc['gdp_per_year']
+        # print(doc)
+        return doc
 
     def getYearlyGDP(self, year):
         """
@@ -47,8 +35,14 @@ class GDP_DAO:
         :param year: the year you want to get the GDP for
         :return: A dictionary of the GDP data for the given year.
         """
-        doc = self.gdp_db.find_one({'year':year})
-        return doc
+        lates_doc = list(self.gdp_db.find().sort("_id", -1))[0]
+        # Trying to get the unemployment rate for a given year. If the year is not present in the latest dataset, it
+        # returns an error.
+        try:
+            year_vals = lates_doc['gdp_per_year'][str(year)]
+        except:
+            return {"Error": "Year not present in latest Dataset"}
+        return {str(year): year_vals}
 
     def deleteYearlyGDP(self, year):
         """
