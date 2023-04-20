@@ -23,25 +23,21 @@ def serve():
     return app.send_static_file("index.html")
 
 
-@app.route(home + "/gdp", methods=['POST','GET', 'DELETE', 'PUT'])
+@app.route(home + "/gdp", methods=['GET'])
 def gdp_page():
     """
     It's a function that handles the GDP data
     :return: The GDP_Handler is being returned.
     """
-    # if request.method == "POST":
-    #     return GDP_Handler().insertNewGDP(request.json)
+
     if request.method == "GET":
         if not request.json:
             return GDP_Handler().getAllGPD()
         else:
             return GDP_Handler().getYearlyGPD(request.json)
-    # elif request.method == 'DELETE':
-    #     return GDP_Handler().deleteYearlyGDP(request.json)
-    # elif request.method == 'PUT':
-    #     return GDP_Handler().updateGDPbyYear(request.json)
+
     else:
-        return {'Message': 'Failed to Load'}
+        return {'Message': 'Wrong request method. Only GET acceptable'}
 
 
 @app.route(home +'/updateGDP', methods=['POST'])
@@ -49,7 +45,7 @@ def updateGDP():
     if request.method == 'POST' and len(request.json) != 0:
         return GDP_Handler().insertManyGDP(request.json)
     else:
-        return {'Message': 'Failed to load'}
+        return {'Message': 'Wrong request method. Only POST acceptable'}
 
 @app.route(home + '/unemploymentYearly', methods = ['GET'])
 def getUnemploymentYearly():
@@ -63,7 +59,7 @@ def getUnemploymentYearly():
         else:
             return Unemployment_Handler().getUnemploymentYear(request.json)
     else:
-        return {"Message": 'Failed to Load'}
+        return {"Message": 'Wrong request method. Only GET acceptable'}
 
 @app.route(home +'/updateUnemployment', methods=['POST'])
 def updateUnemployment():
@@ -74,7 +70,7 @@ def updateUnemployment():
     if request.method == 'POST' and len(request.json) != 0:
         return Unemployment_Handler().updateUnemployment(request.json)
     else:
-        return {"Message Error":"Failed to Load"}
+        return {"Message Error":"Wrong request method. Only POST acceptable"}
 
 if __name__ == '__main__':
-    app.run()
+    app.run(debug=True)
