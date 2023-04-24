@@ -1,4 +1,5 @@
 import flask
+import os
 from flask import request, Flask
 from flask_cors import CORS, cross_origin
 from flask.helpers import send_from_directory
@@ -6,6 +7,7 @@ from backend.handlers.gdp import GDP_Handler
 from backend.handlers.Unemployment import Unemployment_Handler
 from backend.mongoflask import MongoJSONEncoder, ObjectIdConverter
 
+port = int(os.environ.get("PORT", 5000))
 app = Flask(__name__, static_folder="../frontend/centro-capital-frontend/build", static_url_path="/")
 app.json_encoder = MongoJSONEncoder
 app.url_map.converters['objectid'] = ObjectIdConverter
@@ -77,4 +79,4 @@ def updateUnemployment():
         return {"Message Error":"Failed to Load"}
 
 if __name__ == '__main__':
-    app.run()
+    app.run(host='127.0.0.1', port=port, debug=True,)
