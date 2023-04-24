@@ -19,7 +19,15 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c4c7ee6a-9130-4ff6-bf71-ed96049c0b69" name="Changes" comment="Can update MongoDB with Scrapper&#10;&#10;Now the API uses the  scrapper whenever updating the dataset.">
+    <list default="true" id="c4c7ee6a-9130-4ff6-bf71-ed96049c0b69" name="Changes" comment="Unemployment Update &#10;&#10;The updateUnemployment flask call now uses the scrapper correctly extracting from the BDE dataset. &#10;&#10;Signed-off-by: Lexdyel Mendez Rios &lt;lexdyel.mendez@upr.edu&gt;">
+      <changelist_data name="Lexdyel Mendez Rios" email="lexdyel.mendez@upr.edu" />
+      <change afterPath="$PROJECT_DIR$/backend/dao/employment.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/handlers/comparator.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/handlers/employment.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/dao/unemployment.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/dao/unemployment.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/dataSources/bde/functions/xlsReq.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/dataSources/bde/functions/xlsReq.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/handlers/Unemployment.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/handlers/Unemployment.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/backend/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/main.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -31,6 +39,7 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="JavaScript File" />
+        <option value="Python Script" />
       </list>
     </option>
   </component>
@@ -300,7 +309,21 @@
       <option name="project" value="LOCAL" />
       <updated>1681959065178</updated>
     </task>
-    <option name="localTasksCounter" value="16" />
+    <task id="LOCAL-00016" summary="Can update MongoDB with Scrapper&#10;&#10;Now the API uses the  scrapper whenever updating the dataset.&#10;&#10;Signed-off-by: Lexdyel Mendez Rios &lt;lexdyel.mendez@upr.edu&gt;">
+      <created>1681959083957</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1681959083957</updated>
+    </task>
+    <task id="LOCAL-00017" summary="Unemployment Update &#10;&#10;The updateUnemployment flask call now uses the scrapper correctly extracting from the BDE dataset. &#10;&#10;Signed-off-by: Lexdyel Mendez Rios &lt;lexdyel.mendez@upr.edu&gt;">
+      <created>1681959281715</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1681959281715</updated>
+    </task>
+    <option name="localTasksCounter" value="18" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -348,6 +371,8 @@
     <MESSAGE value="Merge branches" />
     <MESSAGE value="Scrapper now returns the JSON instead of jsut saving it locally." />
     <MESSAGE value="Can update MongoDB with Scrapper&#10;&#10;Now the API uses the  scrapper whenever updating the dataset." />
-    <option name="LAST_COMMIT_MESSAGE" value="Can update MongoDB with Scrapper&#10;&#10;Now the API uses the  scrapper whenever updating the dataset." />
+    <MESSAGE value="Can update MongoDB with Scrapper&#10;&#10;Now the API uses the  scrapper whenever updating the dataset.&#10;&#10;Signed-off-by: Lexdyel Mendez Rios &lt;lexdyel.mendez@upr.edu&gt;" />
+    <MESSAGE value="Unemployment Update &#10;&#10;The updateUnemployment flask call now uses the scrapper correctly extracting from the BDE dataset. &#10;&#10;Signed-off-by: Lexdyel Mendez Rios &lt;lexdyel.mendez@upr.edu&gt;" />
+    <option name="LAST_COMMIT_MESSAGE" value="Unemployment Update &#10;&#10;The updateUnemployment flask call now uses the scrapper correctly extracting from the BDE dataset. &#10;&#10;Signed-off-by: Lexdyel Mendez Rios &lt;lexdyel.mendez@upr.edu&gt;" />
   </component>
 </project>

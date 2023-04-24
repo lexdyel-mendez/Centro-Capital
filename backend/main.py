@@ -4,6 +4,8 @@ from flask_cors import CORS, cross_origin
 from flask.helpers import send_from_directory
 from backend.handlers.gdp import GDP_Handler
 from backend.handlers.Unemployment import Unemployment_Handler
+from backend.handlers.employment import Employment_Handler
+from backend.handlers.comparator import Comparator as CompareHandler
 from backend.mongoflask import MongoJSONEncoder, ObjectIdConverter
 
 from backend.dataSources.bde.functions.exc2JSON import exc2JSON as bdeData
@@ -26,6 +28,8 @@ def serve():
     return app.send_static_file("index.html")
 
 
+
+## GDP
 @app.route(home + "/gdp", methods=['GET'])
 def gdp_page():
     """
@@ -39,16 +43,15 @@ def gdp_page():
         else:
             return GDP_Handler().getYearlyGPD(request.json)
 
-    else:
-        return {'Message': 'Wrong request method. Only GET acceptable'}
-
 
 @app.route(home +'/updateGDP', methods=['POST'])
 def updateGDP():
     if request.method == 'POST' and len(request.json) != 0:
         return GDP_Handler().insertManyGDP(request.json)
     else:
-        return {'Message': 'Wrong request method. Only POST acceptable'}
+        return {'Message': "Can't insert empty data"}
+
+## UNEMPLOYMENT
 
 @app.route(home + '/unemploymentYearly', methods = ['GET'])
 def getUnemploymentYearly():
@@ -61,8 +64,7 @@ def getUnemploymentYearly():
             return Unemployment_Handler().getAllUnemploymentYearly()
         else:
             return Unemployment_Handler().getUnemploymentYear(request.json)
-    else:
-        return {"Message": 'Wrong request method. Only GET acceptable'}
+
 
 @app.route(home +'/updateUnemployment', methods=['POST'])
 def updateUnemployment(data = bdeData(xlsReq(),'Unemployment Rate')):
@@ -72,13 +74,86 @@ def updateUnemployment(data = bdeData(xlsReq(),'Unemployment Rate')):
     """
     if request.method == 'POST' and len(data) != 0:
         if 'Error' not in data.keys():
-            # print(data.keys())
-            # exit()
             return Unemployment_Handler().updateUnemployment(data)
         else:
             return (data)
     else:
-        return {"Message Error":"Wrong request method. Only POST acceptable"}
+        return {"Message Error":"Can't insert empty data"}
+
+@app.route(home + "/unemployment_year_mean", methods = ['GET'])
+def getUnemploymentYearMean():
+    if request.method == "GET" and len(request.json) != 0:
+        return Unemployment_Handler().getUnemploymentYearMean(request.json)
+    else:
+        print(request.json)
+        return {"Error": "Failed to load"}
+
+
+@app.route(home +'/unemployment/stats/',defaults={'stat':None}, methods=['GET'])
+@app.route(home +'/unemployment/stats/<stat>', methods=['GET'])
+def getUnemploymentStats(stat):
+    if request.method =='GET':
+        if len(request.json) == 0:
+            if stat is None:
+                return Unemployment_Handler().getUnemploymentStats()
+            else:
+                return Unemployment_Handler().getUnemploymentSpecStats(stat)
+        # else:
+        #     return Unemployment_Handler().getYearUnemploymentStats(request.json)
+
+# EMPLOYMENT
+
+@app.route(home + '/employmentYearly', methods = ['GET'])
+def getEmploymentYearly():
+    """
+    This function returns a list of all the unemployment rates for each year in the database
+    :return: A list of all the unemployment data for the year.
+    """
+    if request.method == 'GET':
+        if len(request.json) == 0:
+            return Employment_Handler().getAllEmploymentYearly()
+        else:
+            return Employment_Handler().getEmploymentYear(request.json)
+
+@app.route(home + '/employmentmean', methods=['GET'])
+def getEmploymentMeanYearly():
+    if request.method == "GET":
+        if len(request.json) == 0:
+            return Employment_Handler().getAllEmploymentMeanYearly()
+        else:
+            return Employment_Handler().getEmploymentMeanByYear(request.json)
+
+@app.route(home +'/updateEmployment', methods=['POST'])
+def updateEmployment(data = bdeData(xlsReq(),'Employment Rate ')):
+    if request.method == 'POST' and len(data) != 0:
+        if 'Error' not in data.keys():
+            return Employment_Handler().updateEmployment(data)
+        else:
+            return {"Error scrapping data":data}
+
+@app.route(home +'/employment/stats/',defaults={'stat':None}, methods=['GET'])
+@app.route(home +'/employment/stats/<stat>', methods=['GET'])
+def getEmploymentStats(stat):
+    if request.method =='GET':
+        if len(request.json) == 0:
+            if stat is None:
+                return Employment_Handler().getEmploymentStats()
+            else:
+                return Employment_Handler().getEmploymentSpecStats(stat)
+        # else:
+        #     return Unemployment_Handler().getYearUnemploymentStats(request.json)
+
+
+#Comparetor
+@app.route(home +'/compare/stats/<metric1>/<metric2>',defaults={'stat':None}, methods=['GET'])
+@app.route(home +'/compare/stats/<metric1>/<metric2>/<stat>', methods=['GET'])
+def compareMetricStats(metric1, metric2, stat):
+    if request.method == "GET":
+        if len(request.json) == 0:
+            if stat is None:
+                return CompareHandler().compareAllStats(metric1,metric2)
+            else:
+                return {"Error": 'Comparator not implemented for individual Stats'}
 
 if __name__ == '__main__':
     app.run(debug=True)
