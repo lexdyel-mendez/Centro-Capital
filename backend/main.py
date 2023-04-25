@@ -153,7 +153,7 @@ def compareMetricStats(metric1, metric2, stat):
             if stat is None:
                 return CompareHandler().compareAllStats(metric1,metric2)
             else:
-                return {"Error": 'Comparator not implemented for individual Stats'}
+                return CompareHandler().compareSpecStat(metric1,metric2,stat)
 
 if __name__ == '__main__':
     app.run(debug=True)

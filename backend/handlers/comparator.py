@@ -9,9 +9,8 @@ class Comparator:
     def compareAllStats(self, metric1, metric2):
 
         metric_map = {
-            'unmplmnt':Unemployment_DAO().getUnemploymentStats(),
-            'emplmnt':Employment_DAO().getEmploymentStats()
-
+            'unmplmnt':list(Unemployment_DAO().getUnemploymentStats())[0],
+            'emplmnt':list(Employment_DAO().getEmploymentStats())[0]
         }
 
         metric1_stats = metric_map[metric1]
@@ -20,4 +19,26 @@ class Comparator:
         print(f'{metric1_stats=}')
         print(f'{metric2_stats=}')
 
-        return {"Error":"Method in implementation"}
+        return jsonify(Metric_1={str(metric1):metric1_stats},Metric2={str(metric2):metric2_stats})
+
+    def compareSpecStat(self, metric1, metric2, stat):
+
+        metric_map = {
+            'unmplmnt': list(Unemployment_DAO().getUnemploymentSpecStats(stat).values()),
+            'emplmnt': list(Employment_DAO().getEmploymentSpecStats(stat).values())
+        }
+
+        print(f'{len(metric_map[metric1])=}')
+
+        return jsonify(Compare_Specific={'metric':stat,metric1:metric_map[metric1],metric2:metric_map[metric2] })
+
+        #
+        # metric1_stats = metric_map[metric1]
+        # metric2_stats = metric_map[metric2]
+        #
+        # print(f'{list(metric1_stats)=}')
+        # print(f'{list(metric2_stats)=}')
+        #
+        # return jsonify(Metric_1={str(metric1): metric1_stats}, Metric2={str(metric2): metric2_stats})
+        #
+        #

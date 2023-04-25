@@ -71,10 +71,10 @@ class Employment_DAO:
                 yearly_std[year] = std
             # print((yearly_min))
 
-        doc = {'yearly_employment_mean':yearly_mean,
-               'yearly_employment_std':yearly_std,
-               'yearly_employment_min': yearly_min,
-               'yearly_employment_max': yearly_max,
+        doc = {'yearly_mean':yearly_mean,
+               'yearly_std':yearly_std,
+               'yearly_min': yearly_min,
+               'yearly_max': yearly_max,
                '_id':latest_id}
 
 
@@ -83,7 +83,7 @@ class Employment_DAO:
 
     def getEmploymentMeanYearly(self):
         lates_doc = list(self.employment_meta.find().sort("_id", -1))[0]
-        yearly = lates_doc['yearly_employment_mean']
+        yearly = lates_doc['yearly_mean']
         # print (yearly)
         return yearly
 
@@ -94,18 +94,18 @@ class Employment_DAO:
         return {str(year):yearly}
 
     def getEmploymentStats(self):
-        lates_doc = list(self.employment_meta.find().sort("_id", -1))[0]
-        stats = {k: v for k, v in lates_doc.items()}
-        stats.pop("_id")
+        # lates_doc = list(self.employment_meta.find().sort("_id", -1))[0]
+        # stats = {k: v for k, v in lates_doc.items()}
+        # stats.pop("_id")
         # print(stats)
-        return stats
+        return self.employment_meta.find().sort("_id", -1)
 
     def getEmploymentSpecStats(self, stat):
         stat_map = {
-            'mean': 'yearly_employment_mean',
-            'std': 'yearly_employment_std',
-            'min': 'yearly_employment_min',
-            'max': 'yearly_employment_max'
+            'mean': 'yearly_mean',
+            'std': 'yearly_std',
+            'min': 'yearly_min',
+            'max': 'yearly_max'
         }
 
         lates_doc = list(self.employment_meta.find().sort("_id", -1))[0]

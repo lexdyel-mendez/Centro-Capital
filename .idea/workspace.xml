@@ -19,15 +19,11 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c4c7ee6a-9130-4ff6-bf71-ed96049c0b69" name="Changes" comment="Unemployment Update &#10;&#10;The updateUnemployment flask call now uses the scrapper correctly extracting from the BDE dataset. &#10;&#10;Signed-off-by: Lexdyel Mendez Rios &lt;lexdyel.mendez@upr.edu&gt;">
-      <changelist_data name="Lexdyel Mendez Rios" email="lexdyel.mendez@upr.edu" />
-      <change afterPath="$PROJECT_DIR$/backend/dao/employment.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/handlers/comparator.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/handlers/employment.py" afterDir="false" />
+    <list default="true" id="c4c7ee6a-9130-4ff6-bf71-ed96049c0b69" name="Changes" comment="Metadata contains Statistic and Started Statistical Comparator&#10;&#10;The update functions for Employment and Unemployment now also add the following statistical values:&#10;* mean&#10;* standard deviation&#10;* Max&#10;* Mean&#10;&#10;Started to implement an API in the backend to start comparing the statistical values for each metric.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/dao/employment.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/dao/employment.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/backend/dao/unemployment.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/dao/unemployment.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/dataSources/bde/functions/xlsReq.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/dataSources/bde/functions/xlsReq.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/handlers/Unemployment.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/handlers/Unemployment.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/handlers/comparator.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/handlers/comparator.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/backend/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/main.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -323,7 +319,14 @@
       <option name="project" value="LOCAL" />
       <updated>1681959281715</updated>
     </task>
-    <option name="localTasksCounter" value="18" />
+    <task id="LOCAL-00018" summary="Metadata contains Statistic and Started Statistical Comparator&#10;&#10;The update functions for Employment and Unemployment now also add the following statistical values:&#10;* mean&#10;* standard deviation&#10;* Max&#10;* Mean&#10;&#10;Started to implement an API in the backend to start comparing the statistical values for each metric.">
+      <created>1682377529113</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1682377529113</updated>
+    </task>
+    <option name="localTasksCounter" value="19" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -373,6 +376,28 @@
     <MESSAGE value="Can update MongoDB with Scrapper&#10;&#10;Now the API uses the  scrapper whenever updating the dataset." />
     <MESSAGE value="Can update MongoDB with Scrapper&#10;&#10;Now the API uses the  scrapper whenever updating the dataset.&#10;&#10;Signed-off-by: Lexdyel Mendez Rios &lt;lexdyel.mendez@upr.edu&gt;" />
     <MESSAGE value="Unemployment Update &#10;&#10;The updateUnemployment flask call now uses the scrapper correctly extracting from the BDE dataset. &#10;&#10;Signed-off-by: Lexdyel Mendez Rios &lt;lexdyel.mendez@upr.edu&gt;" />
-    <option name="LAST_COMMIT_MESSAGE" value="Unemployment Update &#10;&#10;The updateUnemployment flask call now uses the scrapper correctly extracting from the BDE dataset. &#10;&#10;Signed-off-by: Lexdyel Mendez Rios &lt;lexdyel.mendez@upr.edu&gt;" />
+    <MESSAGE value="Metadata contains Statistic and Started Statistical Comparator&#10;&#10;The update functions for Employment and Unemployment now also add the following statistical values:&#10;* mean&#10;* standard deviation&#10;* Max&#10;* Mean&#10;&#10;Started to implement an API in the backend to start comparing the statistical values for each metric." />
+    <option name="LAST_COMMIT_MESSAGE" value="Metadata contains Statistic and Started Statistical Comparator&#10;&#10;The update functions for Employment and Unemployment now also add the following statistical values:&#10;* mean&#10;* standard deviation&#10;* Max&#10;* Mean&#10;&#10;Started to implement an API in the backend to start comparing the statistical values for each metric." />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/backend/dao/unemployment.py</url>
+          <line>128</line>
+          <option name="timeStamp" value="7" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/backend/dao/employment.py</url>
+          <line>102</line>
+          <option name="timeStamp" value="8" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/backend/handlers/comparator.py</url>
+          <line>25</line>
+          <option name="timeStamp" value="9" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

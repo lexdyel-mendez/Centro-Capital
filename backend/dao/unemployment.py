@@ -107,20 +107,20 @@ class Unemployment_DAO:
                 yearly_std[year] = std
         # print((yearly_min))
 
-        doc = {'yearly_unemployment_mean': yearly_mean,
-               'yearly_unemployment_std': yearly_std,
-               'yearly_unemployment_min':yearly_min,
-               'yearly_unemployment_max':yearly_max,
+        doc = {'yearly_mean': yearly_mean,
+               'yearly_std': yearly_std,
+               'yearly_min':yearly_min,
+               'yearly_max':yearly_max,
                '_id': new_id}
 
         self.unemployment_meta.insert(doc)
 
     def getUnemploymentStats(self):
-        lates_doc = list(self.unemployment_meta.find().sort("_id", -1))[0]
-        stats = {k:v for k,v in lates_doc.items()}
-        stats.pop("_id")
+        # lates_doc = list(self.unemployment_meta.find().sort("_id", -1))[0]
+        # stats = {k:v for k,v in lates_doc.items()}
+        # stats.pop("_id")
         # print(stats)
-        return stats
+        return self.unemployment_meta.find().sort("_id", -1)
 
     def getYearUnemploymentStats(self):
 
@@ -128,10 +128,10 @@ class Unemployment_DAO:
 
     def getUnemploymentSpecStats(self, stat):
         stat_map = {
-            'mean':'yearly_unemployment_mean',
-            'std': 'yearly_unemployment_std',
-            'min': 'yearly_unemployment_min',
-            'max': 'yearly_unemployment_max'
+            'mean':'yearly_mean',
+            'std': 'yearly_std',
+            'min': 'yearly_min',
+            'max': 'yearly_max'
         }
 
         lates_doc = list(self.unemployment_meta.find().sort("_id", -1))[0]
