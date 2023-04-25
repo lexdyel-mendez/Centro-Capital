@@ -131,7 +131,7 @@ const dailydata = [
 
 const Home = () => {
   return (
-    <Container>
+    <Container id="containerID">
        <Row className="m-4">
         <Col className="bg-primary m-4 rounded"> Bar Chart<CustomBar data={dailydata}></CustomBar></Col>
         <Col className="bg-secondary m-4 rounded"><CustomLine data={input}></CustomLine></Col>
@@ -169,42 +169,3 @@ const Home = () => {
 };
 
 export default Home;
-
-
-// function filterData(period) {
-//   return allData.filter((data) => data.period === period);
-// }
-
-// const Home = () => {
-
-//   const [data, setData] = useState(filterData('daily'));
-
-//   return (
-//     <div>
-//       <h1>Time Period Bar Chart using Recharts</h1>
-//       <div>
-//         <button onClick={() => setData(filterData('daily'))}>Daily</button>
-//         <button onClick={() => setData(filterData('weekly'))}>Weekly</button>
-//         <button onClick={() => setData(filterData('monthly'))}>Monthly</button>
-//         <button onClick={() => setData(filterData('quarterly'))}>Quarterly</button>
-//         <button onClick={() => setData(filterData('yearly'))}>Yearly</button>
-//       </div>
-//       <BarChart
-//         width={500}
-//         height={300}
-//         data={data}
-//         margin={{ top: 5, right: 30, left: 20, bottom: 5 }}
-//       >
-//         <CartesianGrid strokeDasharray="3 3" />
-//         <XAxis dataKey="name" />
-//         <YAxis />
-//         <Tooltip />
-//         <Legend />
-//         <Bar dataKey="pv" fill="#8884d8" />
-//         <Bar dataKey="uv" fill="#82ca9d" />
-//         {/* <Line dataKey="pv" fill="#8884d8" />
-//         <Line dataKey="uv" fill="#82ca9d" /> */}
-//       </BarChart>
-//     </div>
-//   );
-// };
