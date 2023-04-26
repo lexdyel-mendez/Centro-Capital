@@ -8,6 +8,9 @@ from backend.handlers.employment import Employment_Handler
 from backend.handlers.comparator import Comparator as CompareHandler
 from backend.mongoflask import MongoJSONEncoder, ObjectIdConverter
 
+from backend.handlers.civpop import CivPop_Handler
+
+
 from backend.dataSources.bde.functions.exc2JSON import exc2JSON as bdeData
 from backend.dataSources.bde.functions.xlsReq import xlsReq
 
@@ -80,13 +83,13 @@ def updateUnemployment(data = bdeData(xlsReq(),'Unemployment Rate')):
     else:
         return {"Message Error":"Can't insert empty data"}
 
-@app.route(home + "/unemployment_year_mean", methods = ['GET'])
-def getUnemploymentYearMean():
-    if request.method == "GET" and len(request.json) != 0:
-        return Unemployment_Handler().getUnemploymentYearMean(request.json)
-    else:
-        print(request.json)
-        return {"Error": "Failed to load"}
+# @app.route(home + "/unemployment_year_mean", methods = ['GET'])
+# def getUnemploymentYearMean():
+#     if request.method == "GET" and len(request.json) != 0:
+#         return Unemployment_Handler().getUnemploymentYearMean(request.json)
+#     else:
+#         print(request.json)
+#         return {"Error": "Failed to load"}
 
 
 @app.route(home +'/unemployment/stats/',defaults={'stat':None}, methods=['GET'])
@@ -115,13 +118,13 @@ def getEmploymentYearly():
         else:
             return Employment_Handler().getEmploymentYear(request.json)
 
-@app.route(home + '/employmentmean', methods=['GET'])
-def getEmploymentMeanYearly():
-    if request.method == "GET":
-        if len(request.json) == 0:
-            return Employment_Handler().getAllEmploymentMeanYearly()
-        else:
-            return Employment_Handler().getEmploymentMeanByYear(request.json)
+# @app.route(home + '/employmentmean', methods=['GET'])
+# def getEmploymentMeanYearly():
+#     if request.method == "GET":
+#         if len(request.json) == 0:
+#             return Employment_Handler().getAllEmploymentMeanYearly()
+#         else:
+#             return Employment_Handler().getEmploymentMeanByYear(request.json)
 
 @app.route(home +'/updateEmployment', methods=['POST'])
 def updateEmployment(data = bdeData(xlsReq(),'Employment Rate ')):
@@ -142,6 +145,39 @@ def getEmploymentStats(stat):
                 return Employment_Handler().getEmploymentSpecStats(stat)
         # else:
         #     return Unemployment_Handler().getYearUnemploymentStats(request.json)
+
+
+## Civilian Pppulation
+@app.route(home +'/updateCivPop', methods=['POST'])
+def updateCivPopulation(data = bdeData(xlsReq(),'Civilian Population')):
+    if request.method == 'POST' and len(data) != 0:
+        if 'Error' not in data.keys():
+            return CivPop_Handler().updateCivPop(data)
+        else:
+            return (data)
+    else:
+        return {"Message Error":"Can't insert empty data"}
+
+
+@app.route(home + '/populationYearly', methods = ['GET'])
+def getPopulationYearly():
+    if request.method == 'GET':
+        if len(request.json) == 0:
+            return CivPop_Handler().getAllPopulationYearly()
+        else:
+            # return {"Error":"Population by year not implemented"}
+            return CivPop_Handler().getPopulationYear(request.json)
+
+
+@app.route(home + '/population/stats/', defaults={'stat': None}, methods=['GET'])
+@app.route(home + '/population/stats/<stat>', methods=['GET'])
+def getPopulationStats(stat):
+    if request.method == 'GET':
+        if len(request.json) == 0:
+            if stat is None:
+                return CivPop_Handler().getCivPopStats()
+            else:
+                return CivPop_Handler().getCivPopSpecStats(stat)
 
 
 #Comparetor

@@ -19,11 +19,15 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c4c7ee6a-9130-4ff6-bf71-ed96049c0b69" name="Changes" comment="Metadata contains Statistic and Started Statistical Comparator&#10;&#10;The update functions for Employment and Unemployment now also add the following statistical values:&#10;* mean&#10;* standard deviation&#10;* Max&#10;* Mean&#10;&#10;Started to implement an API in the backend to start comparing the statistical values for each metric.">
+    <list default="true" id="c4c7ee6a-9130-4ff6-bf71-ed96049c0b69" name="Changes" comment="Comparator for Two values&#10;&#10;The comparator API call has been implemented for obtaining statistics of two metrics side-by-side. Currently, the ones that are fully implemented are the Employment and Unemployment. This is done by retrieving the information from the meta-data collection of each metric.">
+      <change afterPath="$PROJECT_DIR$/backend/dao/civilianpopulation.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/handlers/civpop.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/Centro-Capital.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/Centro-Capital.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/dao/employment.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/dao/employment.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/dao/unemployment.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/dao/unemployment.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/handlers/Unemployment.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/handlers/Unemployment.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/backend/handlers/comparator.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/handlers/comparator.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/handlers/employment.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/handlers/employment.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/backend/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/main.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -98,11 +102,14 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/backend/handlers" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\User\Desktop\Centro-Capital\backend\handlers" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/frontend/centro-capital-frontend/src/pages" />
       <recent name="C:\Users\User\PycharmProjects\Centro-Capital\backend" />
@@ -326,7 +333,14 @@
       <option name="project" value="LOCAL" />
       <updated>1682377529113</updated>
     </task>
-    <option name="localTasksCounter" value="19" />
+    <task id="LOCAL-00019" summary="Comparator for Two values&#10;&#10;The comparator API call has been implemented for obtaining statistics of two metrics side-by-side. Currently, the ones that are fully implemented are the Employment and Unemployment. This is done by retrieving the information from the meta-data collection of each metric.">
+      <created>1682438361731</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1682438361731</updated>
+    </task>
+    <option name="localTasksCounter" value="20" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -377,25 +391,16 @@
     <MESSAGE value="Can update MongoDB with Scrapper&#10;&#10;Now the API uses the  scrapper whenever updating the dataset.&#10;&#10;Signed-off-by: Lexdyel Mendez Rios &lt;lexdyel.mendez@upr.edu&gt;" />
     <MESSAGE value="Unemployment Update &#10;&#10;The updateUnemployment flask call now uses the scrapper correctly extracting from the BDE dataset. &#10;&#10;Signed-off-by: Lexdyel Mendez Rios &lt;lexdyel.mendez@upr.edu&gt;" />
     <MESSAGE value="Metadata contains Statistic and Started Statistical Comparator&#10;&#10;The update functions for Employment and Unemployment now also add the following statistical values:&#10;* mean&#10;* standard deviation&#10;* Max&#10;* Mean&#10;&#10;Started to implement an API in the backend to start comparing the statistical values for each metric." />
-    <option name="LAST_COMMIT_MESSAGE" value="Metadata contains Statistic and Started Statistical Comparator&#10;&#10;The update functions for Employment and Unemployment now also add the following statistical values:&#10;* mean&#10;* standard deviation&#10;* Max&#10;* Mean&#10;&#10;Started to implement an API in the backend to start comparing the statistical values for each metric." />
+    <MESSAGE value="Comparator for Two values&#10;&#10;The comparator API call has been implemented for obtaining statistics of two metrics side-by-side. Currently, the ones that are fully implemented are the Employment and Unemployment. This is done by retrieving the information from the meta-data collection of each metric." />
+    <option name="LAST_COMMIT_MESSAGE" value="Comparator for Two values&#10;&#10;The comparator API call has been implemented for obtaining statistics of two metrics side-by-side. Currently, the ones that are fully implemented are the Employment and Unemployment. This is done by retrieving the information from the meta-data collection of each metric." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/backend/dao/unemployment.py</url>
-          <line>128</line>
-          <option name="timeStamp" value="7" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/backend/dao/employment.py</url>
-          <line>102</line>
-          <option name="timeStamp" value="8" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/backend/handlers/comparator.py</url>
-          <line>25</line>
-          <option name="timeStamp" value="9" />
+          <url>file://$PROJECT_DIR$/backend/dao/civilianpopulation.py</url>
+          <line>17</line>
+          <option name="timeStamp" value="12" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

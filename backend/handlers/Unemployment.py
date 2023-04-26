@@ -44,7 +44,7 @@ class Unemployment_Handler:
 
     def getUnemploymentStats(self):
         dao = Unemployment_DAO()
-        stats = dao.getUnemploymentStats()
+        stats = list(dao.getUnemploymentStats())[0]
         return jsonify(Unemployment_Stadistics=stats)
 
     def getYearUnemploymentStats(self, json):

@@ -49,7 +49,7 @@ class Employment_Handler:
 
     def getEmploymentStats(self):
         dao = Employment_DAO()
-        stats = dao.getEmploymentStats()
+        stats = list(dao.getEmploymentStats())[0]
         return jsonify(Employment_Stadistics=stats)
 
     def getEmploymentSpecStats(self, stat):
