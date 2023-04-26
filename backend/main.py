@@ -60,10 +60,15 @@ def getUnemploymentYearly():
     :return: A list of all the unemployment data for the year.
     """
     if request.method == 'GET':
-        if len(request.json) == 0:
-            return Unemployment_Handler().getAllUnemploymentYearly()
-        else:
+        if len(request.json) != 0:
             return Unemployment_Handler().getUnemploymentYear(request.json)
+    else:
+        return {"Message": 'Failed to Load'}
+
+@app.route(home + '/allUnemploymentYearly', methods = ['GET'])
+def getAllUnemploymentYearly():
+    if request.method == 'GET':
+        return Unemployment_Handler().getAllUnemploymentYearly()
     else:
         return {"Message": 'Failed to Load'}
 
@@ -79,4 +84,4 @@ def updateUnemployment():
         return {"Message Error":"Failed to Load"}
 
 if __name__ == '__main__':
-    app.run(host='127.0.0.1', port=port, debug=True,)
+    app.run(host='127.0.0.1', port=port, debug=True)
