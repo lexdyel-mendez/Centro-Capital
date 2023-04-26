@@ -4,7 +4,7 @@ import { CFooter, CLink } from '@coreui/react'
 class CustomFooter extends Component {
     render() {
         return (
-            <div class="fixed-bottom">
+            <div className="fixed-bottom">
             <div>
                 <CFooter>
                     
