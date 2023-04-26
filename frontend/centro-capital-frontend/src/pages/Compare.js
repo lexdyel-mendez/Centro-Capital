@@ -6,7 +6,7 @@ const Compare = () => {
   const [data, setdata] = useState();
 
   useEffect(() => {
-    fetch("/centro-capital/unemploymentYearly",
+    fetch("/centro-capital/allUnemploymentYearly",
     {method: 'GET'}).then(response => {
       if (response.status == 200) {
         return response.json()
@@ -16,6 +16,7 @@ const Compare = () => {
   })
 
   console.log(data)
+  console.log(typeof data)
 
 
   return (
