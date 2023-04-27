@@ -23,6 +23,7 @@ function organizeData(inputData){
     for(const [innerKey, innerValue] of Object.entries(inputData[key])){
       currYears[innerKey] = innerValue
     }
+    finalValArr.push(currYears)
   }
   //data filter after extraction END
   return  finalValArr
@@ -42,6 +43,7 @@ const Compare = () => {
     .then(error => console.log(error))
   })
 
+  console.log(organizeData(localdata))
 
   return (
     <div>
