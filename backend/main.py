@@ -66,6 +66,7 @@ def getUnemploymentYearly():
     """
     if request.method == 'GET':
         if len(request.json) != 0:
+            print("Entering unemployment yearly")
             return Unemployment_Handler().getUnemploymentYear(request.json)
     else:
         return {"Message": 'Failed to Load'}

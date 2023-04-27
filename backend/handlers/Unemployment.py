@@ -22,7 +22,7 @@ class Unemployment_Handler:
         year = json['year']
         dao = Unemployment_DAO()
         docs = dao.getUnemploymentByYear(year)
-        return docs
+        return jsonify(Unemplyment=docs)
 
     def updateUnemployment(self, json):
         """
