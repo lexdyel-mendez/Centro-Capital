@@ -1,4 +1,5 @@
 import flask
+import os
 from flask import request, Flask
 from flask_cors import CORS, cross_origin
 from flask.helpers import send_from_directory
@@ -14,6 +15,7 @@ from backend.handlers.civpop import CivPop_Handler
 from backend.dataSources.bde.functions.exc2JSON import exc2JSON as bdeData
 from backend.dataSources.bde.functions.xlsReq import xlsReq
 
+port = int(os.environ.get("PORT", 5000))
 app = Flask(__name__, static_folder="../frontend/centro-capital-frontend/build", static_url_path="/")
 app.json_encoder = MongoJSONEncoder
 app.url_map.converters['objectid'] = ObjectIdConverter
@@ -63,11 +65,17 @@ def getUnemploymentYearly():
     :return: A list of all the unemployment data for the year.
     """
     if request.method == 'GET':
-        if len(request.json) == 0:
-            return Unemployment_Handler().getAllUnemploymentYearly()
-        else:
+        if len(request.json) != 0:
             return Unemployment_Handler().getUnemploymentYear(request.json)
+    else:
+        return {"Message": 'Failed to Load'}
 
+@app.route(home + '/allUnemploymentYearly', methods = ['GET'])
+def getAllUnemploymentYearly():
+    if request.method == 'GET':
+        return Unemployment_Handler().getAllUnemploymentYearly()
+    else:
+        return {"Message": 'Failed to Load'}
 
 @app.route(home +'/updateUnemployment', methods=['POST'])
 def updateUnemployment(data = bdeData(xlsReq(),'Unemployment Rate')):
@@ -192,4 +200,4 @@ def compareMetricStats(metric1, metric2, stat):
                 return CompareHandler().compareSpecStat(metric1,metric2,stat)
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run(host='127.0.0.1', port=port, debug=True)

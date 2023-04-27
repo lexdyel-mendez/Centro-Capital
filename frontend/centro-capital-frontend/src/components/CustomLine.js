@@ -19,7 +19,8 @@ function CustomLine({data}){
   metricKeys.shift()
   const metricValues = Object.values(Object.keys(data[0]))
   return (
-<div id="whatever">
+
+<ResponsiveContainer height={300}>
   <LineChart
     width={500}
     height={300}
@@ -38,7 +39,7 @@ function CustomLine({data}){
   <Legend />
   <Line type="monotone" dataKey={metricKeys[0]} stroke="#8884d8" activeDot={{ r: 8 }} />
 </LineChart>
-</div>
+</ResponsiveContainer>
   );
 }
 export default CustomLine
