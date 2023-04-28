@@ -16,12 +16,17 @@ let localdata= {"2014":{"JULY":"14.7","AUGUST":"14.9","SEPTEMBER":"15.1","OCTOBE
 
 function organizeData(inputData){
   //data filter after extraction START
-  const finalValArr=[]
-  for(const key of Object.keys(inputData).slice(0,9)){
-    const currYears = new Object()
-    currYears['year'] = key
-    for(const [innerKey, innerValue] of Object.entries(inputData[key])){
-      currYears[innerKey] = innerValue
+  if (inputData) {
+    const finalValArr = []
+    const monthArr =["JULY", "AUGUST", "SEPTEMBER", "OCTOBER", "NOVEMBER", "DECEMBER", "JANUARY", "FEBRUARY", "MARCH", "APRIL", "MAY", "JUNE"]
+    for (const key of Object.keys(inputData).slice(0, 9)) {
+      for (const month of monthArr){
+        const runningVals = new Object()
+        runningVals['year'] = key
+        runningVals['month'] = month
+        runningVals[inputData['metric']] = inputData[key][month]
+        finalValArr.push(runningVals)
+      }
     }
     finalValArr.push(currYears)
   }
@@ -34,16 +39,18 @@ const Compare = () => {
   const [data, setdata] = useState();
 
   useEffect(() => {
-    fetch("/centro-capital/unemploymentYearly",
-    {method: 'GET'}).then(response => {
-      if (response.status == 200) {
-        return response.json()
-      }
-    }).then(data => setdata(data))
-    .then(error => console.log(error))
-  })
+    fetch("/centro-capital/allUnemploymentYearly",
+      { method: 'GET' }).then(response => {
+        if (response.status == 200) {
+          return response.json()
+        }
+      }).then(data => setdata(organizeData(data)))
+      .then(error => console.log(error))
+  },[])
 
-  console.log(organizeData(localdata))
+  const arr = organizeData(data)
+  console.log(arr)
+  
 
   return (
     <div>
