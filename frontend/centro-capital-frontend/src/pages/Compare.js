@@ -14,7 +14,7 @@ let localdata= {"2014":{"JULY":"14.7","AUGUST":"14.9","SEPTEMBER":"15.1","OCTOBE
 }
 
 
-function organizeData(inputData){
+function organizeData(inputData) {
   //data filter after extraction START
   if (inputData) {
     const finalValArr = []
@@ -25,13 +25,15 @@ function organizeData(inputData){
         runningVals['year'] = key
         runningVals['month'] = month
         runningVals[inputData['metric']] = inputData[key][month]
+        runningVals['metric'] = inputData['metric']
         finalValArr.push(runningVals)
       }
     }
-    finalValArr.push(currYears)
+    //data filter after extraction END
+    return finalValArr
+  } else {
+    return
   }
-  //data filter after extraction END
-  return  finalValArr
 }
 
 const Compare = () => {
