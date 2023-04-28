@@ -53,7 +53,7 @@ const Home = () => {
         const response = await fetch("/centro-capital/allUnemploymentYearly", { method: "GET" });
         if (response.status === 200) {
           const doc = await response.json();
-          setData(organizeData(localdata));
+          setData(organizeData(doc));
           console.log(data)
         }
       } catch (error) {
