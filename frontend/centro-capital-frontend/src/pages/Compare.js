@@ -26,7 +26,7 @@ function organizeData(inputData) {
 
 const Compare = () => {
 
-  const [data, setdata] = useState();
+  const [compareData, setdata] = useState();
 
   useEffect(() => {
     fetch("/centro-capital/allUnemploymentYearly",
@@ -34,19 +34,27 @@ const Compare = () => {
         if (response.status == 200) {
           return response.json()
         }
-      }).then(data => setdata(organizeData(data)))
+      }).then(compareData => console.log(compareData))
       .then(error => console.log(error))
   },[])
 
-  const arr = organizeData(data)
-  console.log(arr)
-  
+  if(!compareData){
 
-  return (
-    <div>
-      <p>hi</p>
-    </div>
-  )
+    return (
+      <div>
+        <p>no data so far</p>
+      </div>
+    )
+
+  }else{
+    return (
+      <div>
+        <p>data loaded</p>
+      </div>
+    )
+  }
+
+
 
 };
 
