@@ -13,7 +13,10 @@ import ReactGA from 'react-ga4'
 import React from 'react';
 
 ReactGA.initialize('G-L6KNQ31WLF')
-ReactGA.send({hitType: "pageview"})
+ReactGA.send('timing',{  
+name: 'Form Engagement Time',
+value: 20,
+})
 ReactGA._gaCommandSendTiming();
 
 function App() {
