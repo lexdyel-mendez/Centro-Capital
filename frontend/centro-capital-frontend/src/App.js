@@ -13,12 +13,8 @@ import ReactGA from 'react-ga4'
 import React from 'react';
 
 ReactGA.initialize('G-L6KNQ31WLF')
-ReactGA._gaCommandSendTiming({
-  category: 'JS Libraries',
-  variable: 'load',
-  value: 20, // in milliseconds
-  label: 'CDN libs'
-})
+ReactGA.send({hitType: "pageview"})
+ReactGA._gaCommandSendTiming();
 
 function App() {
   return (
