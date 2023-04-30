@@ -9,6 +9,16 @@ import NoPage from "./pages/NoPage";
 import Insights from './pages/Insights';
 import Compare from './pages/Compare';
 import Welcome from "./pages/Welcome";
+import ReactGA from 'react-ga4'
+import React from 'react';
+
+ReactGA.initialize('G-L6KNQ31WLF')
+ReactGA._gaCommandSendTiming({
+  category: 'JS Libraries',
+  variable: 'load',
+  value: 20, // in milliseconds
+  label: 'CDN libs'
+})
 
 function App() {
   return (
