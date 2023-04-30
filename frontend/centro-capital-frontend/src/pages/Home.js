@@ -144,6 +144,8 @@ const dailydata = [
 //   return allData.filter((data) => data.period === period);
 // }
 
+
+
 const Home = () => {
   return (
     <Container>

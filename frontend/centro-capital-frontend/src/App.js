@@ -9,6 +9,11 @@ import NoPage from "./pages/NoPage";
 import Insights from './pages/Insights';
 import Compare from './pages/Compare';
 import Welcome from "./pages/Welcome";
+import ReactGA from 'react-ga4'
+
+
+ReactGA.initialize('G-L6KNQ31WLF')
+
 
 function App() {
   return (
