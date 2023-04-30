@@ -8,4 +8,7 @@
     <orderEntry type="jdk" jdkName="Centro-Capital_v1" jdkType="Python SDK" />
     <orderEntry type="sourceFolder" forTests="false" />
   </component>
+  <component name="PackageRequirementsSettings">
+    <option name="versionSpecifier" value="Strong equality (==x.y.z)" />
+  </component>
 </module>

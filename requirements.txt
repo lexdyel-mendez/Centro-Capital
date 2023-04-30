@@ -29,3 +29,4 @@ Werkzeug==2.2.2
 wheel==0.38.4
 wincertstore==0.2
 xlrd==2.0.1
+locust==2.15.1
