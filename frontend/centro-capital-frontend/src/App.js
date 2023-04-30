@@ -12,12 +12,19 @@ import Welcome from "./pages/Welcome";
 import ReactGA from 'react-ga4'
 import React from 'react';
 
-ReactGA.initialize('G-L6KNQ31WLF')
-ReactGA.send('timing',{  
-name: 'Form Engagement Time',
-value: 20,
-})
-ReactGA._gaCommandSendTiming();
+ReactGA.initialize('G-L6KNQ31WLF');
+ReactGA.send({
+  hitType: 'timing',
+  timingCategory: 'Engagement',
+  timingVar: 'Form Submission',
+  timingValue: 20000
+});
+
+console.log('Timing event sent:', {
+  timingCategory: 'Engagement',
+  timingVar: 'Form Submission',
+  timingValue: 20000
+});
 
 function App() {
   return (
