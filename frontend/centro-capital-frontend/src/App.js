@@ -36,7 +36,7 @@ function App() {
             <Route path="about" element={<About />} />
             <Route path="insights" element={<Insights />} />
             <Route path="compare" element={<Compare />} />
-            <Route path="centro-capital" element={<Welcome />} />
+            <Route path="feedback" element={<Welcome />} />
             <Route path="*" element={<NoPage />} />
           </Route>
         </Routes>
