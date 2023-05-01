@@ -6,6 +6,7 @@ from flask.helpers import send_from_directory
 from backend.handlers.gdp import GDP_Handler
 from backend.handlers.Unemployment import Unemployment_Handler
 from backend.mongoflask import MongoJSONEncoder, ObjectIdConverter
+from whitenoise import WhiteNoise
 
 port = int(os.environ.get("PORT", 5000))
 app = Flask(__name__, static_folder="../frontend/centro-capital-frontend/build", static_url_path="/")
@@ -22,7 +23,8 @@ def index():
 @app.route("/")
 @cross_origin()
 def serve():
-    return app.send_static_file("index.html")
+    # return app.send_static_file("index.html")
+    return send_from_directory(app.static_folder, 'index.html')
 
 
 @app.route(home + "/gdp", methods=['POST','GET', 'DELETE', 'PUT'])
@@ -82,6 +84,16 @@ def updateUnemployment():
         return Unemployment_Handler().updateUnemployment(request.json)
     else:
         return {"Message Error":"Failed to Load"}
+
+
+@app.errorhandler(404)
+def catch_all(e):
+    return serve()
+
+
+# Serve static files with WhiteNoise
+app.wsgi_app = WhiteNoise(app.wsgi_app, root=app.static_folder, index_file='index.html')
+
 
 if __name__ == '__main__':
     app.run(host='127.0.0.1', port=port, debug=True)
