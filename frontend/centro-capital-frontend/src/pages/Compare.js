@@ -26,19 +26,26 @@ function organizeData(inputData) {
 
 const Compare = () => {
 
-  const [compareData, setdata] = useState();
+  const [data, setData] = useState();
 
   useEffect(() => {
-    fetch("/centro-capital/allUnemploymentYearly",
-      { method: 'GET' }).then(response => {
-        if (response.status == 200) {
-          return response.json()
+    async function fetchData() {
+      try {
+        const metric1= "unmplmnt"
+        const metric2= "emplmnt"
+        const response = await fetch("/centro-capital/compare/stats/emplmnt/unmplmnt", { method: "GET" });
+        if (response.status === 200) {
+          const doc = await response.json();
+          setData(organizeData(doc));
         }
-      }).then(compareData => console.log(compareData))
-      .then(error => console.log(error))
-  },[])
+      } catch (error) {
+        console.error("Error fetching data:", error);
+      }
+    }
+    fetchData()
+  }, []);
 
-  if(!compareData){
+  if(!data){
 
     return (
       <div>
@@ -47,6 +54,7 @@ const Compare = () => {
     )
 
   }else{
+    console.log(data)
     return (
       <div>
         <p>data loaded</p>
