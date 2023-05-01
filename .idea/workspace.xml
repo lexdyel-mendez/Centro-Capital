@@ -21,9 +21,6 @@
   <component name="ChangeListManager">
     <list default="true" id="c4c7ee6a-9130-4ff6-bf71-ed96049c0b69" name="Changes" comment="Comparator for Two values&#10;&#10;The comparator API call has been implemented for obtaining statistics of two metrics side-by-side. Currently, the ones that are fully implemented are the Employment and Unemployment. This is done by retrieving the information from the meta-data collection of each metric.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/dao/unemployment.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/dao/unemployment.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/handlers/comparator.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/handlers/comparator.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/main.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -335,7 +332,14 @@
       <option name="project" value="LOCAL" />
       <updated>1682438361731</updated>
     </task>
-    <option name="localTasksCounter" value="20" />
+    <task id="LOCAL-00020" summary="Fixed Comparator for All Years&#10;&#10;Now instead of returning the statistics of both metrics, it returns the yearly values for both metrics.">
+      <created>1682972105185</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1682972105185</updated>
+    </task>
+    <option name="localTasksCounter" value="21" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -387,7 +391,8 @@
     <MESSAGE value="Unemployment Update &#10;&#10;The updateUnemployment flask call now uses the scrapper correctly extracting from the BDE dataset. &#10;&#10;Signed-off-by: Lexdyel Mendez Rios &lt;lexdyel.mendez@upr.edu&gt;" />
     <MESSAGE value="Metadata contains Statistic and Started Statistical Comparator&#10;&#10;The update functions for Employment and Unemployment now also add the following statistical values:&#10;* mean&#10;* standard deviation&#10;* Max&#10;* Mean&#10;&#10;Started to implement an API in the backend to start comparing the statistical values for each metric." />
     <MESSAGE value="Comparator for Two values&#10;&#10;The comparator API call has been implemented for obtaining statistics of two metrics side-by-side. Currently, the ones that are fully implemented are the Employment and Unemployment. This is done by retrieving the information from the meta-data collection of each metric." />
-    <option name="LAST_COMMIT_MESSAGE" value="Comparator for Two values&#10;&#10;The comparator API call has been implemented for obtaining statistics of two metrics side-by-side. Currently, the ones that are fully implemented are the Employment and Unemployment. This is done by retrieving the information from the meta-data collection of each metric." />
+    <MESSAGE value="Fixed Comparator for All Years&#10;&#10;Now instead of returning the statistics of both metrics, it returns the yearly values for both metrics." />
+    <option name="LAST_COMMIT_MESSAGE" value="Fixed Comparator for All Years&#10;&#10;Now instead of returning the statistics of both metrics, it returns the yearly values for both metrics." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

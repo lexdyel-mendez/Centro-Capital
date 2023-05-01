@@ -10,17 +10,17 @@ class CustomNavbar extends Component {
         return (
             <div className='sticky-bottom'>
                 <Navbar bg="light" expand="lg">
-                <img src="favicon.ico" class="img-responsive rounded float-left" width="5%" alt="Logo"></img>
+                <img src="favicon.ico" className="img-responsive rounded float-left" width="5%" alt="Logo"></img>
                     <Container>
                         <Navbar.Brand href="#home">Centro Capital</Navbar.Brand>
                         <Navbar.Toggle aria-controls="basic-navbar-nav" />
                         <Navbar.Collapse id="basic-navbar-nav">
                             <Nav className="me-auto">
                                 <Nav.Link as={ Link } to="/">Home</Nav.Link>
-                                <Nav.Link as={ Link } to="/about">About</Nav.Link>
                                 <Nav.Link as={ Link } to="/insights">Insights</Nav.Link>
                                 <Nav.Link as={ Link } to="/compare">Compare</Nav.Link>
-                                <Nav.Link as={ Link } to="/centro-capital">Welcome</Nav.Link>
+                                <Nav.Link as={ Link } to="/about">About</Nav.Link>
+                                <Nav.Link as={ Link } to="/feedback">Feedback</Nav.Link>
                                 {/* <NavDropdown title="Dropdown" id="basic-nav-dropdown">
                                     <NavDropdown.Item href="#action/3.1">Action</NavDropdown.Item>
                                     <NavDropdown.Item href="#action/3.2">
