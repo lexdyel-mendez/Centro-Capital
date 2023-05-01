@@ -54,11 +54,6 @@ const Compare = () => {
     )
   }
 
-  const arr = organizeData(data)
-  console.log(arr)
-
-
-
 };
 
 export default Compare;
