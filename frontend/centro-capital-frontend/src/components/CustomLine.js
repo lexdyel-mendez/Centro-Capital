@@ -13,18 +13,22 @@ import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, Legend, Responsi
 //   });
 // }
 
-function CustomLine({data}){
+function CustomLine({data, year, metric}){
   //Function is defined for a single data input
-  const metricKeys = Object.keys(data[0])
-  metricKeys.shift()
-  const metricValues = Object.values(Object.keys(data[0]))
+  let workingData=data
+  let lineData=[]
+  for(const pos of workingData){
+    if(pos['year']== year){
+      lineData.push(pos)
+    }
+  }
+  
   return (
-
 <ResponsiveContainer height={300}>
   <LineChart
     width={500}
     height={300}
-    data={data}
+    data={lineData}
     margin={{
       top: 5,
       right: 30,
@@ -33,11 +37,11 @@ function CustomLine({data}){
       }}
 >
   <CartesianGrid strokeDasharray="3 3" />
-  <XAxis dataKey= {metricValues[0]}/>
+  <XAxis dataKey= {"month"}/>
   <YAxis />
   <Tooltip />
   <Legend />
-  <Line type="monotone" dataKey={metricKeys[0]} stroke="#8884d8" activeDot={{ r: 8 }} />
+  <Line type="monotone" dataKey={metric} stroke="#8884d8" activeDot={{ r: 8 }} />
 </LineChart>
 </ResponsiveContainer>
   );
