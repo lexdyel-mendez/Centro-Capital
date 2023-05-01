@@ -40,7 +40,6 @@ const Home = () => {
         if (response.status === 200) {
           const doc = await response.json();
           setData(organizeData(doc));
-          console.log(data)
         }
       } catch (error) {
         console.error("Error fetching data:", error);
@@ -53,11 +52,12 @@ const Home = () => {
     return <div>Loading...</div>
   }else{
     return (
+
       <Container>
          <Row className="m-4">
           {/* <Col className="bg-primary m-4 rounded"> Bar Chart<CustomBar data={dailydata}></CustomBar></Col> */}
           {/* <Col className="bg-secondary m-4 rounded"><CustomLine data={data} year='2014' }></CustomLine></Col> */}
-          <Col><CustomLine data={data} year='2014' metric='Unemployment Rate'></CustomLine></Col>
+          <Col><CustomLine data={data} year={data[data.length-1]['year']} metric={data[0]['metric']}></CustomLine></Col>
         </Row>
       </Container>
     );
