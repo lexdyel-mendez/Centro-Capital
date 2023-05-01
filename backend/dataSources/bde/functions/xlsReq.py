@@ -1,6 +1,6 @@
-def xlsReq():
+def xlsReq(source='I_LABOR'):
     import requests
-    url = "https://www.bde.pr.gov/BDE/PREDDOCS/I_LABOR.XLS"
+    url = f"https://www.bde.pr.gov/BDE/PREDDOCS/{source}.XLS"
     resp = requests.get(url)
 
     slicedArr = url.split("/")

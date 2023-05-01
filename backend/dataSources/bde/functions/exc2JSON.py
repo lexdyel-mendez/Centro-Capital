@@ -3,18 +3,37 @@ import pandas
 import re
 import os
 
-def exc2JSON(filename):
-    sheetIter(filename)
+from flask import jsonify
+
+def exc2JSON(filename,metric):
+
+    metricsInDoc = []
+    for e in sheetIter(filename):
+        # print(e['metric'])
+        metricsInDoc.append(e['metric'])
+        if e['metric'] == metric:
+            return e
+    return {'Error': f'Failed to find metric : {metric}',
+             'Possible Metrics': metricsInDoc}
+    # return sheetIter(filename)
 
 def sheetIter(filename):
     sheet_df = pandas.read_excel(filename, sheet_name=None)
     #first sheet is usually informative. Can be helpful but we want the data right now which is why we pop
     sheet_df.pop(next(iter(sheet_df)))
+    vals = []
+    # print(len(sheet_df.keys()))
     for sheet_name in sheet_df.keys():
-        fileConversion(filename, sheet_name)
+        vals.append(fileConversion(filename, sheet_name))
+    # for i,e in enumerate(vals):print(f'{i}={e}')
+    # print(f'{vals["metric"]=}')
+
+    return vals
 
 
-def fileConversion(filename_param, sheet_name_param):
+
+
+def fileConversion(filename_param, sheet_name_param)->dict:
     # Initializing base necessary values we know we will work with
     years = ["2014", "2015", "2016", "2017", "2018", "2019", "2020", "2021", "2022"]
     monthRef = ["JULY", "AUGUST", "SEPTEMBER", "OCTOBER", "NOVEMBER", "DECEMBER", "JANUARY", "FEBRUARY", "MARCH",
@@ -88,16 +107,18 @@ def fileConversion(filename_param, sheet_name_param):
     D.update({"metric": openedJSON['PUERTO RICO ECONOMIC INDICATORS']['1']})
     D.update({"source": openedJSON['PUERTO RICO ECONOMIC INDICATORS']['73']})
 
-    #creating json referent to the sheetname
-    finalSheetName = openedJSON['PUERTO RICO ECONOMIC INDICATORS']['1']
-    #To ensure the filename doesn't cause issues we are adding a regex cleaner removing non-alphanumeric characterrs
-    finalSheetName = "results/" + re.sub("[^0-9a-zA-Z\s]+","",finalSheetName) + ".json"
-    # converting existing dictionary into json a a final step of the script for future manipulation
-    with open(finalSheetName, "w") as write_file:
-        json.dump(D, write_file)
+    # #creating json referent to the sheetname
+    # finalSheetName = openedJSON['PUERTO RICO ECONOMIC INDICATORS']['1']
+    # #To ensure the filename doesn't cause issues we are adding a regex cleaner removing non-alphanumeric characterrs
+    # finalSheetName = "results/" + re.sub("[^0-9a-zA-Z\s]+","",finalSheetName) + ".json"
+    # # converting existing dictionary into json a a final step of the script for future manipulation
+    # with open(finalSheetName, "w") as write_file:
+    #     json.dump(D, write_file)
 
     #deleting the raw data json as it is no longer needed
     os.remove(str(rawSheet))
+
+    return D
 
 
 

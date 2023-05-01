@@ -35,3 +35,32 @@ class Unemployment_Handler:
         dao = Unemployment_DAO()
         new_id, timestamp = dao.updateUnemployment(json)
         return jsonify(new_id=new_id,insertion_time=timestamp,docs_added=len(json))
+
+    def getUnemploymentYearMean(self,json):
+        year = json['year']
+        dao = Unemployment_DAO()
+        mean = dao.getUnemploymentYearMean(year)
+        return jsonify(unemployment_rate_year_average=mean)
+
+    def getUnemploymentStats(self):
+        dao = Unemployment_DAO()
+        stats = dao.getUnemploymentStats()
+        return jsonify(Unemployment_Stadistics=stats)
+
+    def getYearUnemploymentStats(self, json):
+        try:
+            year = json['year']
+        except:
+            return jsonify(Error = "No year Specified")
+
+        dao = Unemployment_DAO()
+        stats = dao.getYearUnemploymentStats()
+        return jsonify(Unemployment_Year_Stadistics=stats)
+
+    def getUnemploymentSpecStats(self, stat):
+        dao = Unemployment_DAO()
+
+        stat = dao.getUnemploymentSpecStats(stat)
+
+        return jsonify(Unemployment_Specific_Stat=stat)
+
