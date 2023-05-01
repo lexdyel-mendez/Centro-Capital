@@ -183,11 +183,11 @@ def getPopulationYearly():
 @app.route(home + '/population/stats/<stat>', methods=['GET'])
 def getPopulationStats(stat):
     if request.method == 'GET':
-        if len(request.json) == 0:
-            if stat is None:
-                return CivPop_Handler().getCivPopStats()
-            else:
-                return CivPop_Handler().getCivPopSpecStats(stat)
+        # if len(request.json) == 0:
+        if stat is None:
+            return CivPop_Handler().getCivPopStats()
+        else:
+            return CivPop_Handler().getCivPopSpecStats(stat)
 
 
 #Comparetor
@@ -195,12 +195,12 @@ def getPopulationStats(stat):
 @app.route(home +'/compare/stats/<metric1>/<metric2>/<stat>', methods=['GET'])
 def compareMetricStats(metric1, metric2, stat):
     if request.method == "GET":
-        if len(request.json) == 0:
-            if stat is None:
-                return CompareHandler().compareAllStats(metric1,metric2)
-            else:
-                return {"Error":"Individual Years compare not implemented"}
-                # return CompareHandler().compareSpecStat(metric1,metric2,stat)
+        # if len(request.json) == 0 or request.json is None:
+        if stat is None:
+            return CompareHandler().compareAllStats(metric1,metric2)
+        else:
+            return {"Error":"Individual Years compare not implemented"}
+            # return CompareHandler().compareSpecStat(metric1,metric2,stat)
 
 
 @app.errorhandler(404)
