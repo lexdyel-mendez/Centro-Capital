@@ -1,11 +1,14 @@
 import flask
+import os
 from flask import request, Flask
 from flask_cors import CORS, cross_origin
 from flask.helpers import send_from_directory
 from backend.handlers.gdp import GDP_Handler
 from backend.handlers.Unemployment import Unemployment_Handler
 from backend.mongoflask import MongoJSONEncoder, ObjectIdConverter
+from whitenoise import WhiteNoise
 
+port = int(os.environ.get("PORT", 5000))
 app = Flask(__name__, static_folder="../frontend/centro-capital-frontend/build", static_url_path="/")
 app.json_encoder = MongoJSONEncoder
 app.url_map.converters['objectid'] = ObjectIdConverter
@@ -20,7 +23,8 @@ def index():
 @app.route("/")
 @cross_origin()
 def serve():
-    return app.send_static_file("index.html")
+    # return app.send_static_file("index.html")
+    return send_from_directory(app.static_folder, 'index.html')
 
 
 @app.route(home + "/gdp", methods=['POST','GET', 'DELETE', 'PUT'])
@@ -58,10 +62,15 @@ def getUnemploymentYearly():
     :return: A list of all the unemployment data for the year.
     """
     if request.method == 'GET':
-        if len(request.json) == 0:
-            return Unemployment_Handler().getAllUnemploymentYearly()
-        else:
+        if len(request.json) != 0:
             return Unemployment_Handler().getUnemploymentYear(request.json)
+    else:
+        return {"Message": 'Failed to Load'}
+
+@app.route(home + '/allUnemploymentYearly', methods = ['GET'])
+def getAllUnemploymentYearly():
+    if request.method == 'GET':
+        return Unemployment_Handler().getAllUnemploymentYearly()
     else:
         return {"Message": 'Failed to Load'}
 
@@ -76,5 +85,15 @@ def updateUnemployment():
     else:
         return {"Message Error":"Failed to Load"}
 
+
+@app.errorhandler(404)
+def catch_all(e):
+    return serve()
+
+
+# Serve static files with WhiteNoise
+app.wsgi_app = WhiteNoise(app.wsgi_app, root=app.static_folder, index_file='index.html')
+
+
 if __name__ == '__main__':
-    app.run()
+    app.run(host='127.0.0.1', port=port, debug=True)

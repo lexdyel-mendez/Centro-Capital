@@ -6,6 +6,21 @@ import CustomBar from "../components/CustomBar";
 import CustomLine from '../components/CustomLine'
 import CustomPie from '../components/CustomPie';
 import CustomArea from '../components/CustomArea';
+
+function organizeData(inputData){
+  //data filter after extraction START
+  const finalValArr=[]
+  for(const key of Object.keys(inputData).slice(0,9)){
+    const currYears = new Object()
+    currYears['year'] = key
+    for(const [innerKey, innerValue] of Object.entries(inputData[key])){
+      currYears[innerKey] = innerValue
+    }
+  }
+  //data filter after extraction END
+  return  finalValArr
+}
+
 const areadata = [
   {
     "name": "Page A",
@@ -128,6 +143,8 @@ const dailydata = [
 // function filterData(period) {
 //   return allData.filter((data) => data.period === period);
 // }
+
+
 
 const Home = () => {
   return (
