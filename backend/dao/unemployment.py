@@ -22,7 +22,7 @@ class Unemployment_DAO:
         """
         lates_doc = list(self.unemployment_db.find().sort("_id", -1))[0]
         yearly = lates_doc['unemployment_rate_per_year']
-        # print (yearly)
+        # print (f"In unemployment dao{yearly=}")
         return yearly
 
     def getUnemploymentByYear(self, year):

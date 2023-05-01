@@ -20,14 +20,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c4c7ee6a-9130-4ff6-bf71-ed96049c0b69" name="Changes" comment="Comparator for Two values&#10;&#10;The comparator API call has been implemented for obtaining statistics of two metrics side-by-side. Currently, the ones that are fully implemented are the Employment and Unemployment. This is done by retrieving the information from the meta-data collection of each metric.">
-      <change afterPath="$PROJECT_DIR$/backend/dao/civilianpopulation.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/handlers/civpop.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/Centro-Capital.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/Centro-Capital.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/handlers/Unemployment.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/handlers/Unemployment.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/dao/unemployment.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/dao/unemployment.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/backend/handlers/comparator.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/handlers/comparator.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/handlers/employment.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/handlers/employment.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/backend/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/main.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />

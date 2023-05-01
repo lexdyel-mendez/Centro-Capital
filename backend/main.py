@@ -189,7 +189,8 @@ def compareMetricStats(metric1, metric2, stat):
             if stat is None:
                 return CompareHandler().compareAllStats(metric1,metric2)
             else:
-                return CompareHandler().compareSpecStat(metric1,metric2,stat)
+                return {"Error":"Individual Years compare not implemented"}
+                # return CompareHandler().compareSpecStat(metric1,metric2,stat)
 
 if __name__ == '__main__':
     app.run(debug=True)
