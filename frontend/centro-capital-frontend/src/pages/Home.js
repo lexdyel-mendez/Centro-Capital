@@ -3,7 +3,7 @@ import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import CustomBar from "../components/CustomBar";
-import CustomLine from '../components/CustomLine'
+import CustomCompareLine from '../components/CustomCompareLine'
 import CustomPie from '../components/CustomPie';
 import CustomArea from '../components/CustomArea';
 
@@ -58,7 +58,7 @@ const Home = () => {
          <Row className="m-4">
           {/* <Col className="bg-primary m-4 rounded"> Bar Chart<CustomBar data={dailydata}></CustomBar></Col> */}
           {/* <Col className="bg-secondary m-4 rounded"><CustomLine data={data} year='2014' }></CustomLine></Col> */}
-          <Col><CustomLine data={data} year={data[data.length-1]['year']} metric={data[0]['metric']}></CustomLine></Col>
+          <Col><CustomCompareLine data={data} year={data[data.length-1]['year']} firstMetric={data[0]['metric']}></CustomCompareLine></Col>
         </Row>
       </Container>
     );
