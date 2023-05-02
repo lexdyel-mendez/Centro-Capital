@@ -1,23 +1,38 @@
 import React, { useEffect, useState } from "react";
+import Container from 'react-bootstrap/Container';
+import Row from 'react-bootstrap/Row';
+import Col from 'react-bootstrap/Col';
+import CustomCompareLine from '../components/CustomCompareLine'
 
 
-
-function organizeData(inputData) {
-  //data filter after extraction START
+function organizeCompare(inputData) {
+  //FIRST VALUE START
   if (inputData) {
-    const finalValArr = []
-    const monthArr =["JULY", "AUGUST", "SEPTEMBER", "OCTOBER", "NOVEMBER", "DECEMBER", "JANUARY", "FEBRUARY", "MARCH", "APRIL", "MAY", "JUNE"]
-    for (const key of Object.keys(inputData).slice(0, 9)) {
-      for (const month of monthArr){
+
+    const finalValArr=[]
+
+    const firstMetricObj = inputData['Metric_1']
+    const firstMetric = Object.keys(firstMetricObj)[0]
+    const firstMetricYears = firstMetricObj[firstMetric]
+    const secondMetricObj = inputData['Metric2']
+    const secondMetric = Object.keys(secondMetricObj)[0]
+    const secondMetricYears = secondMetricObj[secondMetric]
+
+
+    const monthArr = ["JULY", "AUGUST", "SEPTEMBER", "OCTOBER", "NOVEMBER", "DECEMBER", "JANUARY", "FEBRUARY", "MARCH", "APRIL", "MAY", "JUNE"]
+
+    for (let i = 0; i < firstMetricYears.length; i++) {
+      for (const month of monthArr) {
         const runningVals = new Object()
-        runningVals['year'] = key
+        runningVals['year'] = firstMetricYears[i][0]
         runningVals['month'] = month
-        runningVals[inputData['metric']] = inputData[key][month]
-        runningVals['metric'] = inputData['metric']
+        runningVals['firstMetric'] = firstMetric
+        runningVals['secondMetric'] = secondMetric
+        runningVals[firstMetric] = firstMetricYears[i][1][month]
+        runningVals[secondMetric] = secondMetricYears[i][1][month]
         finalValArr.push(runningVals)
       }
     }
-    //data filter after extraction END
     return finalValArr
   } else {
     return
@@ -31,12 +46,10 @@ const Compare = () => {
   useEffect(() => {
     async function fetchData() {
       try {
-        const metric1= "unmplmnt"
-        const metric2= "emplmnt"
         const response = await fetch("/centro-capital/compare/stats/emplmnt/unmplmnt", { method: "GET" });
         if (response.status === 200) {
           const doc = await response.json();
-          setData(organizeData(doc));
+          setData(organizeCompare(doc));
         }
       } catch (error) {
         console.error("Error fetching data:", error);
@@ -45,7 +58,8 @@ const Compare = () => {
     fetchData()
   }, []);
 
-  if(!data){
+
+  if (!data) {
 
     return (
       <div>
@@ -53,12 +67,15 @@ const Compare = () => {
       </div>
     )
 
-  }else{
-    console.log(data)
+  } else {
     return (
-      <div>
-        <p>data loaded</p>
-      </div>
+        <Container>
+         <Row className="m-4">
+          {/* <Col className="bg-primary m-4 rounded"> Bar Chart<CustomBar data={dailydata}></CustomBar></Col> */}
+          {/* <Col className="bg-secondary m-4 rounded"><CustomLine data={data} year='2014' }></CustomLine></Col> */}
+          <Col><CustomCompareLine data={data} year={data[data.length-1]['year']} firstMetric={data[0]['firstMetric']} secondMetric={data[0]['secondMetric']}></CustomCompareLine></Col>
+        </Row>
+      </Container>
     )
   }
 

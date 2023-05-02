@@ -51,6 +51,7 @@ const Home = () => {
   if(!data){
     return <div>Loading...</div>
   }else{
+    console.log(data)
     return (
 
       <Container>
