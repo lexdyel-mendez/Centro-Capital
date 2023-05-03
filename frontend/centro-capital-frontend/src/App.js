@@ -9,27 +9,27 @@ import NoPage from "./pages/NoPage";
 import Insights from './pages/Insights';
 import Compare from './pages/Compare';
 import Welcome from "./pages/Welcome";
-import ReactGA from 'react-ga4'
+import ReactGA from 'react-ga'
 import React from 'react';
+import {useEffect} from 'react';
+import { initGA, trackPageView } from './analytics';
 
-ReactGA.initialize('G-L6KNQ31WLF');
-ReactGA.send({
-  hitType: 'timing',
-  timingCategory: 'Engagement',
-  timingVar: 'Form Submission',
-  timingValue: 20000
-});
+const trackingID='UA-266511060-2'
 
-console.log('Timing event sent:', {
-  timingCategory: 'Engagement',
-  timingVar: 'Form Submission',
-  timingValue: 20000
-});
+
 
 function App() {
+
+  useEffect(() => {
+    initGA(trackingID);
+  }, []);
+
+
   return (
     <div className="App">
-      <BrowserRouter>
+      <BrowserRouter onUpdate={() => {
+        trackPageView(window.location.pathname);
+      }}>
         <Routes>
           <Route path="/" element={<Layout />}>
             <Route index element={<Home />} />
