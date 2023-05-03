@@ -16,8 +16,6 @@ import { initGA, trackPageView } from './analytics';
 
 const trackingID='UA-266511060-2'
 
-
-
 function App() {
 
   useEffect(() => {
