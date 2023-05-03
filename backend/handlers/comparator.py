@@ -60,9 +60,15 @@ class Comparator:
         except:
             return {"Error": f"Metric {metric2} not in database try {metric_map.keys()}"}
 
-        # print(f'{metric1} stats: {metric1_stats}')
-        # print(f'{metric2} stats: {metric2_stats}')
-
         return jsonify(Compare_Specific={metric1:metric1_stats,metric2:metric2_stats}, Metric=stat)
 
-
+        #
+        # metric1_stats = metric_map[metric1]
+        # metric2_stats = metric_map[metric2]
+        #
+        # print(f'{list(metric1_stats)=}')
+        # print(f'{list(metric2_stats)=}')
+        #
+        # return jsonify(Metric_1={str(metric1): metric1_stats}, Metric2={str(metric2): metric2_stats})
+        #
+        #

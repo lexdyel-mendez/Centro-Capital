@@ -17,6 +17,7 @@ from backend.handlers.civpop import CivPop_Handler
 from backend.dataSources.bde.functions.exc2JSON import exc2JSON as bdeData
 from backend.dataSources.bde.functions.xlsReq import xlsReq
 port = int(os.environ.get("PORT", 5000))
+
 app = Flask(__name__, static_folder="../frontend/centro-capital-frontend/build", static_url_path="/")
 app.json_encoder = MongoJSONEncoder
 app.url_map.converters['objectid'] = ObjectIdConverter
