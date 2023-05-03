@@ -35,8 +35,6 @@ class CivPop_Handler:
     def getCivPopStats(self):
         dao = CivPop_DAO()
         stats = list(dao.getPopulationStats())[0]
-        # print(f"{stats=}")
-        # exit()
         return jsonify(Population_Stadistics=stats)
 
     def getCivPopSpecStats(self, stat):

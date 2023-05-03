@@ -6,6 +6,7 @@ const Insights = () => {
   const [metric, setMetric] = useState("");
 
   useEffect(() => {
+  if (metric) {
     async function fetchData(metric) {
       try {
         const response = await fetch(`/centro-capital/${metric}/stats/`, {
@@ -20,7 +21,8 @@ const Insights = () => {
       }
     }
     fetchData(metric);
-  }, [metric]);
+  }
+}, [metric]);
 
   const handleMetric1Change = (event) => {
     setMetric(event.target.value);
@@ -28,20 +30,23 @@ const Insights = () => {
 
   if (!data) {
     return (
-        <label>
-              Metric 1:
-              <select value={metric} onChange={handleMetric1Change}>
-              <option value="" disabled selected>
-                Select metric 1
-              </option>
-               <option value="unemployment">Unemployment Rate</option>
-               <option value="employment">Employment Rate</option>
-              <option value="unemploymentTotal">Unemployment Total</option>
-
-            </select>
-            </label>
+      <label>
+      Metric 1:
+      <select value={metric} onChange={handleMetric1Change}>
+        <option value="" disabled selected>
+          Select metric 1
+        </option>
+        <option value="unemployment">Unemployment Rate</option>
+        <option value="employment">Employment Rate</option>
+        <option value="unemploymentTotal">Unemployment Total</option>
+        <option value="laborforce">Labor Force</option>
+        <option value="civpop">Civilian Population</option>
+        <option value="employmentTotal">Employment Total</option>
+      </select>
+    </label>
     );
   } else {
+  console.log(Object.keys(data)[0])
     const key = Object.keys(data)[0];
     const stats = data[key];
     const { yearly_mean, yearly_std, yearly_max, yearly_min } = stats;
@@ -84,6 +89,14 @@ const Insights = () => {
 
    return (
   <div>
+        <div name="Description">
+          <h1>Statistical values by Metric</h1>
+          <p>
+            In the following page, you can pick any metric from the dropdown
+            menu. Some statistical value from this metric is then fetched and
+            presented for the researcher to interpret.
+          </p>
+        </div>
     <label>
       Metric 1:
       <select value={metric} onChange={handleMetric1Change}>
@@ -93,6 +106,9 @@ const Insights = () => {
         <option value="unemployment">Unemployment Rate</option>
         <option value="employment">Employment Rate</option>
         <option value="unemploymentTotal">Unemployment Total</option>
+        <option value="laborforce">Labor Force</option>
+        <option value="civpop">Civilian Population</option>
+        <option value="employmentTotal">Employment Total</option>
       </select>
     </label>
 

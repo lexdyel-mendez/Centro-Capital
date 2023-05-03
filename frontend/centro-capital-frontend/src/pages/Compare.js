@@ -4,7 +4,7 @@ import React, { useEffect, useState } from "react";
 //import Col from 'react-bootstrap/Col';
 import CustomCompareLine from '../components/CustomCompareLine'
 import { Container, Row, Col } from "react-bootstrap";
-
+import DoubleDropdown from "../components/DoubleDropdown";
 
 function organizeCompare(inputData) {
   //FIRST VALUE START
@@ -68,6 +68,7 @@ const Compare = () => {
 
     const handleMetric1Change = (event) => {
     setMetric1(event.target.value);
+    console.log(metric1)
   };
 
   const handleMetric2Change = (event) => {
@@ -76,22 +77,28 @@ const Compare = () => {
 
   if (!data) {
     return (
+    <div>
       <div>
         <div style={{ display: 'flex', flexDirection: 'row' }}>
           <div style={{ marginRight: '16px' }}>
+
             <label>
               Metric 1:
               <select value={metric1} onChange={handleMetric1Change}>
-              <option value="" disabled selected>
-                Select metric 1
-              </option>
-              <option value="civpop">Civilian Population</option>
+            <option value="" disabled selected>
+              Select metric 1
+            </option>
+            <optgroup label="Rates">
               <option value="emplmnt">Employment Rate</option>
               <option value="unmplmnt">Unemployment Rate</option>
+            </optgroup>
+            <optgroup label="Totals">
+              <option value="civpop">Civilian Population Total</option>
               <option value="emplmntTot">Employment Total</option>
-              <option value="laborForce">Labor Force</option>
+              <option value="laborForce">Labor Force Total</option>
               <option value="unempldTotal">Unemployment Total</option>
-            </select>
+            </optgroup>
+          </select>
 
             </label>
           </div>
@@ -99,21 +106,26 @@ const Compare = () => {
             <label>
               Metric 2:
               <select value={metric2} onChange={handleMetric2Change}>
-              <option value="" disabled selected>
-                Select metric 2
-              </option>
-              <option value="civpop">Civilian Population</option>
+            <option value="" disabled selected>
+              Select metric 2
+            </option>
+            <optgroup label="Rates">
               <option value="emplmnt">Employment Rate</option>
               <option value="unmplmnt">Unemployment Rate</option>
+            </optgroup>
+            <optgroup label="Totals">
+              <option value="civpop">Civilian Population Total</option>
               <option value="emplmntTot">Employment Total</option>
-              <option value="laborForce">Labor Force</option>
+              <option value="laborForce">Labor Force Total</option>
               <option value="unempldTotal">Unemployment Total</option>
-            </select>
+            </optgroup>
+          </select>
 
             </label>
           </div>
         </div>
         <p>Awaiting for user selection</p>
+      </div>
       </div>
     )
   } else {
@@ -124,26 +136,40 @@ const Compare = () => {
             <label>
               Metric 1:
               <select value={metric1} onChange={handleMetric1Change}>
-                <option value="civpop">Civilian Population</option>
+            <option value="" disabled selected>
+              Select metric 1
+            </option>
+            <optgroup label="Rates">
               <option value="emplmnt">Employment Rate</option>
               <option value="unmplmnt">Unemployment Rate</option>
+            </optgroup>
+            <optgroup label="Totals">
+              <option value="civpop">Civilian Population Total</option>
               <option value="emplmntTot">Employment Total</option>
-              <option value="laborForce">Labor Force</option>
+              <option value="laborForce">Labor Force Total</option>
               <option value="unempldTotal">Unemployment Total</option>
-              </select>
+            </optgroup>
+          </select>
             </label>
           </div>
           <div>
             <label>
               Metric 2:
               <select value={metric2} onChange={handleMetric2Change}>
-                <option value="civpop">Civilian Population</option>
+            <option value="" disabled selected>
+              Select metric 2
+            </option>
+            <optgroup label="Rates">
               <option value="emplmnt">Employment Rate</option>
               <option value="unmplmnt">Unemployment Rate</option>
+            </optgroup>
+            <optgroup label="Totals">
+              <option value="civpop">Civilian Population Total</option>
               <option value="emplmntTot">Employment Total</option>
-              <option value="laborForce">Labor Force</option>
+              <option value="laborForce">Labor Force Total</option>
               <option value="unempldTotal">Unemployment Total</option>
-              </select>
+            </optgroup>
+          </select>
             </label>
           </div>
         </div>

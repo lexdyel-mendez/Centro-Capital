@@ -60,3 +60,8 @@ class LaborForce_DAO:
         yearly = lates_doc['laborforce_total_per_year']
         # print (f"In unemployment dao{yearly=}")
         return yearly
+
+    def getLaborForceStats(self):
+        val = self.laborf_meta.find().sort("_id", -1)
+        # print(val)
+        return val

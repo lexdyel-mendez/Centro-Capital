@@ -132,7 +132,7 @@ def updateEmployment(data = bdeData(xlsReq(),'Employment Rate ')):
 @app.route(home +'/employment/stats/',defaults={'stat':None}, methods=['GET'])
 @app.route(home +'/employment/stats/<stat>', methods=['GET'])
 def getEmploymentStats(stat):
-    print("Enter Employment")
+    # print("Enter Employment")
     if request.method =='GET':
         if stat is None:
             return Employment_Handler().getEmploymentStats()
@@ -163,15 +163,16 @@ def getPopulationYearly():
             return CivPop_Handler().getPopulationYear(request.json)
 
 
-@app.route(home + '/population/stats/', defaults={'stat': None}, methods=['GET'])
-@app.route(home + '/population/stats/<stat>', methods=['GET'])
-def getPopulationStats(stat):
-    if request.method == 'GET':
-        # if len(request.json) == 0:
+@app.route(home +'/civpop/stats/',defaults={'stat':None}, methods=['GET'])
+@app.route(home +'/civpop/stats/<stat>', methods=['GET'])
+def getCivPopStats(stat):
+    if request.method =='GET':
         if stat is None:
+            # return {"Error": "To be implemented"}
             return CivPop_Handler().getCivPopStats()
         else:
-            return CivPop_Handler().getCivPopSpecStats(stat)
+            return {"Error": "Not Implemented"}
+            # return Unemployment_Handler().getUnemploymentSpecStats(stat)
 
 # Employment Total
 @app.route(home +'/updateEmploymentTotal', methods=['POST'])
@@ -191,15 +192,16 @@ def getEmploymentTotalYearly():
     if request.method == 'GET':
         return Employment_Handler().getAllEmploymentTotalYearly()
 
-app.route(home + '/employmentTotal/stats/', defaults={'stat': None}, methods=['GET'])
-# @app.route(home + '/employmentTotal/stats/<stat>', methods=['GET'])
+@app.route(home +'/employmentTotal/stats/',defaults={'stat':None}, methods=['GET'])
+@app.route(home +'/employmentTotal/stats/<stat>', methods=['GET'])
 def getEmploymentTotalStats(stat):
-    print("Enter the function")
-    if request.method == 'GET':
+    if request.method =='GET':
         if stat is None:
+            # return {"Error": "To be implemented"}
             return Employment_Handler().getEmploymentTotalStats()
         else:
-            return {"Error": "Not Implemented Yet"}
+            return {"Error": "Not Implemented"}
+            # return Unemployment_Handler().getUnemploymentSpecStats(stat)
 
 
 
@@ -253,6 +255,17 @@ def getLaborForceYearly():
     if request.method == 'GET':
         # return {"Error": "Under Implementations"}
         return LaborForce_Handler().getLaborForceYearly()
+
+@app.route(home +'/laborforce/stats/',defaults={'stat':None}, methods=['GET'])
+@app.route(home +'/laborforce/stats/<stat>', methods=['GET'])
+def getLaborForceStats(stat):
+    if request.method =='GET':
+        if stat is None:
+            # return {"Error": "To be implemented"}
+            return LaborForce_Handler().getLaborForceStats()
+        else:
+            return {"Error": "Not Implemented"}
+            # return Unemployment_Handler().getUnemploymentSpecStats(stat)
 
 
 #Comparetor

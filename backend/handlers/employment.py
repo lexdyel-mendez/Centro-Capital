@@ -75,6 +75,4 @@ class Employment_Handler:
     def getEmploymentTotalStats(self):
         dao = Employment_DAO()
         stats = list(dao.getEmploymentTotalStats())[0]
-        print(f"{stats=}")
-        # exit()
-        return jsonify(EmploymentTotal_Stadistics=stats)
+        return jsonify(Employment_total_Stadistics=stats)
