@@ -89,6 +89,8 @@ const Compare = () => {
               <option value="emplmnt">Employment Rate</option>
               <option value="unmplmnt">Unemployment Rate</option>
               <option value="emplmntTot">Employment Total</option>
+              <option value="laborForce">Labor Force</option>
+              <option value="unempldTotal">Unemployment Total</option>
             </select>
 
             </label>
@@ -98,12 +100,14 @@ const Compare = () => {
               Metric 2:
               <select value={metric2} onChange={handleMetric2Change}>
               <option value="" disabled selected>
-                Select metric 1
+                Select metric 2
               </option>
               <option value="civpop">Civilian Population</option>
               <option value="emplmnt">Employment Rate</option>
               <option value="unmplmnt">Unemployment Rate</option>
               <option value="emplmntTot">Employment Total</option>
+              <option value="laborForce">Labor Force</option>
+              <option value="unempldTotal">Unemployment Total</option>
             </select>
 
             </label>
@@ -124,6 +128,8 @@ const Compare = () => {
               <option value="emplmnt">Employment Rate</option>
               <option value="unmplmnt">Unemployment Rate</option>
               <option value="emplmntTot">Employment Total</option>
+              <option value="laborForce">Labor Force</option>
+              <option value="unempldTotal">Unemployment Total</option>
               </select>
             </label>
           </div>
@@ -135,6 +141,8 @@ const Compare = () => {
               <option value="emplmnt">Employment Rate</option>
               <option value="unmplmnt">Unemployment Rate</option>
               <option value="emplmntTot">Employment Total</option>
+              <option value="laborForce">Labor Force</option>
+              <option value="unempldTotal">Unemployment Total</option>
               </select>
             </label>
           </div>

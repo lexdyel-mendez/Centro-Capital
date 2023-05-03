@@ -163,3 +163,6 @@ class Employment_DAO:
         yearly = lates_doc['employment_total_per_year']
         # print (yearly)
         return yearly
+
+    def getEmploymentTotalStats(self):
+        return self.employmentTotal_meta.find().sort('_id', -1)

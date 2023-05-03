@@ -100,15 +100,14 @@ def updateUnemployment(data = bdeData(xlsReq(),'Unemployment Rate')):
 @app.route(home +'/unemployment/stats/<stat>', methods=['GET'])
 def getUnemploymentStats(stat):
     if request.method =='GET':
-        if len(request.json) == 0:
-            if stat is None:
-                return Unemployment_Handler().getUnemploymentStats()
-            else:
-                return Unemployment_Handler().getUnemploymentSpecStats(stat)
+        if stat is None:
+            return Unemployment_Handler().getUnemploymentStats()
+        else:
+            return Unemployment_Handler().getUnemploymentSpecStats(stat)
         # else:
         #     return Unemployment_Handler().getYearUnemploymentStats(request.json)
 
-# EMPLOYMENT
+# EMPLOYMENT Rate
 
 @app.route(home + '/employmentYearly', methods = ['GET'])
 def getEmploymentYearly():
@@ -122,14 +121,6 @@ def getEmploymentYearly():
         else:
             return Employment_Handler().getEmploymentYear(request.json)
 
-# @app.route(home + '/employmentmean', methods=['GET'])
-# def getEmploymentMeanYearly():
-#     if request.method == "GET":
-#         if len(request.json) == 0:
-#             return Employment_Handler().getAllEmploymentMeanYearly()
-#         else:
-#             return Employment_Handler().getEmploymentMeanByYear(request.json)
-
 @app.route(home +'/updateEmployment', methods=['POST'])
 def updateEmployment(data = bdeData(xlsReq(),'Employment Rate ')):
     if request.method == 'POST' and len(data) != 0:
@@ -141,14 +132,13 @@ def updateEmployment(data = bdeData(xlsReq(),'Employment Rate ')):
 @app.route(home +'/employment/stats/',defaults={'stat':None}, methods=['GET'])
 @app.route(home +'/employment/stats/<stat>', methods=['GET'])
 def getEmploymentStats(stat):
+    print("Enter Employment")
     if request.method =='GET':
-        if len(request.json) == 0:
-            if stat is None:
-                return Employment_Handler().getEmploymentStats()
-            else:
-                return Employment_Handler().getEmploymentSpecStats(stat)
-        # else:
-        #     return Unemployment_Handler().getYearUnemploymentStats(request.json)
+        if stat is None:
+            return Employment_Handler().getEmploymentStats()
+        else:
+            return Employment_Handler().getEmploymentSpecStats(stat)
+
 
 
 ## Civilian Pppulation
@@ -201,8 +191,19 @@ def getEmploymentTotalYearly():
     if request.method == 'GET':
         return Employment_Handler().getAllEmploymentTotalYearly()
 
+app.route(home + '/employmentTotal/stats/', defaults={'stat': None}, methods=['GET'])
+# @app.route(home + '/employmentTotal/stats/<stat>', methods=['GET'])
+def getEmploymentTotalStats(stat):
+    print("Enter the function")
+    if request.method == 'GET':
+        if stat is None:
+            return Employment_Handler().getEmploymentTotalStats()
+        else:
+            return {"Error": "Not Implemented Yet"}
 
-# Employment Total
+
+
+# Unemployment Total
 @app.route(home +'/updateUnemploymentTotal', methods=['POST'])
 def updateUnmploymentTotal(data = bdeData(xlsReq(),'Unemployed, Total')):
     if request.method == 'POST' and len(data) != 0:
@@ -221,6 +222,16 @@ def getUnemploymentTotalYearly():
     if request.method == 'GET':
         # return {"Error": "Under Implementations"}
         return Unemployment_Handler().getAllUnemploymentTotalYearly()
+
+@app.route(home +'/unemploymentTotal/stats/',defaults={'stat':None}, methods=['GET'])
+@app.route(home +'/unemploymentTotal/stats/<stat>', methods=['GET'])
+def getunemploymentTotalStats(stat):
+    if request.method =='GET':
+        if stat is None:
+            return Unemployment_Handler().getunemploymentTotalStats()
+        else:
+            return {"Error": "Not implemented"}
+            return Unemployment_Handler().getUnemploymentSpecStats(stat)
 
 
 # Labor Force
@@ -250,7 +261,7 @@ def getLaborForceYearly():
 def compareMetricStats(metric1, metric2, stat):
     if request.method == "GET":
         if stat is None:
-            print("Enters the correct main route")
+            # print("Enters the correct main route")
             return CompareHandler().compareAllStats(metric1,metric2)
         else:
             return {"Error":"Individual Years compare not implemented"}

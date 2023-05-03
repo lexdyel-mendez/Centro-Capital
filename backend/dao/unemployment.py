@@ -189,4 +189,7 @@ class Unemployment_DAO:
         # print (f"In unemployment dao{yearly=}")
         return yearly
 
+    def getunemploymentTotalStats(self):
+        return self.unemploymentTotal_meta.find().sort("_id", -1)
+
 

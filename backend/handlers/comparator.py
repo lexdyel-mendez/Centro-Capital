@@ -1,6 +1,7 @@
 from backend.dao.unemployment import Unemployment_DAO
 from backend.dao.employment import Employment_DAO
 from backend.dao.civilianpopulation import CivPop_DAO
+from backend.dao.laborForce import LaborForce_DAO
 from flask import jsonify
 
 
@@ -18,6 +19,10 @@ class Comparator:
                 metric1_stats = list(CivPop_DAO().getAllPopulationYearly().items())[:-3]
             case 'emplmntTot':
                 metric1_stats = list(Employment_DAO().getAllEmploymentTotalYearly().items())[:-3]
+            case 'laborForce':
+                metric1_stats = list(LaborForce_DAO().getLaborForceYearly().items())[:-3]
+            case 'unempldTotal':
+                metric1_stats = list(Unemployment_DAO().getAllUnemploymentTotalYearly().items())[:-3]
             case _:
                 return {"Error": "Metric one not present in database"}
 
@@ -30,6 +35,10 @@ class Comparator:
                 metric2_stats = list(CivPop_DAO().getAllPopulationYearly().items())[:-3]
             case 'emplmntTot':
                 metric2_stats = list(Employment_DAO().getAllEmploymentTotalYearly().items())[:-3]
+            case 'laborForce':
+                metric2_stats = list(LaborForce_DAO().getLaborForceYearly().items())[:-3]
+            case 'unempldTotal':
+                metric2_stats = list(Unemployment_DAO().getAllUnemploymentTotalYearly().items())[:-3]
             case _:
                 return {"Error": "Metric two not present in database"}
 
