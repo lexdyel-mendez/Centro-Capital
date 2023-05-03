@@ -93,14 +93,6 @@ def updateUnemployment(data = bdeData(xlsReq(),'Unemployment Rate')):
     else:
         return {"Message Error":"Can't insert empty data"}
 
-# @app.route(home + "/unemployment_year_mean", methods = ['GET'])
-# def getUnemploymentYearMean():
-#     if request.method == "GET" and len(request.json) != 0:
-#         return Unemployment_Handler().getUnemploymentYearMean(request.json)
-#     else:
-#         print(request.json)
-#         return {"Error": "Failed to load"}
-
 
 @app.route(home +'/unemployment/stats/',defaults={'stat':None}, methods=['GET'])
 @app.route(home +'/unemployment/stats/<stat>', methods=['GET'])
@@ -195,7 +187,6 @@ def getPopulationStats(stat):
 @app.route(home +'/compare/stats/<metric1>/<metric2>/<stat>', methods=['GET'])
 def compareMetricStats(metric1, metric2, stat):
     if request.method == "GET":
-        # if len(request.json) == 0 or request.json is None:
         if stat is None:
             return CompareHandler().compareAllStats(metric1,metric2)
         else:

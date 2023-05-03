@@ -9,16 +9,6 @@ class Comparator:
 
     def compareAllStats(self, metric1, metric2):
 
-        # yearly_monthly = {year: list(daoyearly[year].values())[:-3] for year in daoyearly}
-        # print({year : Unemployment_DAO().getAllUnemploymentYearly()[year] for year in Unemployment_DAO().getAllUnemploymentYearly().keys()})
-        # exit(1)
-
-        # metric_map = {
-        #     'unmplmnt': {year : Unemployment_DAO().getAllUnemploymentYearly()[year] for year in list(Unemployment_DAO().getAllUnemploymentYearly().keys())[:-3]},
-        #     'emplmnt':{year : Employment_DAO().getAllEmploymentYearly()[year] for year in list(Employment_DAO().getAllEmploymentYearly().keys())[:-3]},
-        #     'civpop':{year : CivPop_DAO().getAllPopulationYearly()[year] for year in list(CivPop_DAO().getAllPopulationYearly().keys())[:-3]}
-        # }
-
         match metric1:
             case 'unmplmnt':
                 # metric1_stats = {year : Unemployment_DAO().getAllUnemploymentYearly()[year] for year in list(Unemployment_DAO().getAllUnemploymentYearly().keys())[:-3]}

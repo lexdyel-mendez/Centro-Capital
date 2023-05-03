@@ -19,7 +19,7 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c4c7ee6a-9130-4ff6-bf71-ed96049c0b69" name="Changes" comment="Merge branch 'aecf_main' into backendDev2&#10;&#10;# Conflicts:&#10;#&#9;.idea/Centro-Capital.iml&#10;#&#9;.idea/misc.xml&#10;#&#9;.idea/workspace.xml&#10;#&#9;backend/main.py">
+    <list default="true" id="c4c7ee6a-9130-4ff6-bf71-ed96049c0b69" name="Changes" comment="Cleaned old code in comparator.py handler">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/backend/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/main.py" afterDir="false" />
     </list>
@@ -58,7 +58,7 @@
     </option>
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="main" />
+        <entry key="$PROJECT_DIR$" value="CompareFrontEnd" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -347,7 +347,14 @@
       <option name="project" value="LOCAL" />
       <updated>1682973737360</updated>
     </task>
-    <option name="localTasksCounter" value="22" />
+    <task id="LOCAL-00022" summary="Cleaned old code in comparator.py handler">
+      <created>1683081378191</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1683081378191</updated>
+    </task>
+    <option name="localTasksCounter" value="23" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -401,7 +408,8 @@
     <MESSAGE value="Comparator for Two values&#10;&#10;The comparator API call has been implemented for obtaining statistics of two metrics side-by-side. Currently, the ones that are fully implemented are the Employment and Unemployment. This is done by retrieving the information from the meta-data collection of each metric." />
     <MESSAGE value="Fixed Comparator for All Years&#10;&#10;Now instead of returning the statistics of both metrics, it returns the yearly values for both metrics." />
     <MESSAGE value="Merge branch 'aecf_main' into backendDev2&#10;&#10;# Conflicts:&#10;#&#9;.idea/Centro-Capital.iml&#10;#&#9;.idea/misc.xml&#10;#&#9;.idea/workspace.xml&#10;#&#9;backend/main.py" />
-    <option name="LAST_COMMIT_MESSAGE" value="Merge branch 'aecf_main' into backendDev2&#10;&#10;# Conflicts:&#10;#&#9;.idea/Centro-Capital.iml&#10;#&#9;.idea/misc.xml&#10;#&#9;.idea/workspace.xml&#10;#&#9;backend/main.py" />
+    <MESSAGE value="Cleaned old code in comparator.py handler" />
+    <option name="LAST_COMMIT_MESSAGE" value="Cleaned old code in comparator.py handler" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
