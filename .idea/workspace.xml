@@ -19,9 +19,11 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c4c7ee6a-9130-4ff6-bf71-ed96049c0b69" name="Changes" comment="Presenting Fetched Data&#10;&#10;Testing the organization of the data for presenting it with rechart in the Compare.js">
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_3_14_2023_3_27_PM__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_3_14_2023_3_27_PM__Changes_.xml" afterDir="false" />
+    <list default="true" id="c4c7ee6a-9130-4ff6-bf71-ed96049c0b69" name="Changes" comment="Compare Selection&#10;&#10;Implemented so that the user can decide from two dropdowns the metrics they wish to compare.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/dao/employment.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/dao/employment.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/handlers/employment.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/handlers/employment.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/main.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/centro-capital-frontend/src/pages/Compare.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/centro-capital-frontend/src/pages/Compare.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -226,8 +228,8 @@
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Python.bde_main" />
         <item itemvalue="Python.main" />
+        <item itemvalue="Python.bde_main" />
         <item itemvalue="Python.__init__" />
         <item itemvalue="Python.run (1)" />
         <item itemvalue="Python.run" />
@@ -336,7 +338,14 @@
       <option name="project" value="LOCAL" />
       <updated>1679954228958</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="Compare Selection&#10;&#10;Implemented so that the user can decide from two dropdowns the metrics they wish to compare.">
+      <created>1683087401815</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1683087401815</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -382,7 +391,8 @@
     <MESSAGE value="Fixed File Locations" />
     <MESSAGE value="Fixed Profcile&#10;&#10;Now it points to main inside of the backend folder." />
     <MESSAGE value="Merge branches" />
-    <option name="LAST_COMMIT_MESSAGE" value="Merge branches" />
+    <MESSAGE value="Compare Selection&#10;&#10;Implemented so that the user can decide from two dropdowns the metrics they wish to compare." />
+    <option name="LAST_COMMIT_MESSAGE" value="Compare Selection&#10;&#10;Implemented so that the user can decide from two dropdowns the metrics they wish to compare." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

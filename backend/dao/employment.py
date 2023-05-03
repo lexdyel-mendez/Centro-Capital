@@ -14,6 +14,8 @@ class Employment_DAO:
             mongo_config['dbname']]
         self.employment_db = mongo.employment_rate
         self.employment_meta = mongo.employment_rate_metadata
+        self.employmentTotal_db = mongo.employment_total
+        self.employmentTotal_meta = mongo.employment_total_metadata
 
     def updateEmployment(self, json):
         insert_time = datetime.now()
@@ -115,3 +117,49 @@ class Employment_DAO:
         ret_stat = lates_doc[str(stat_map[stat])]
         # print(f'{stat} = {ret_stat}')
         return {stat: ret_stat}
+
+# Employment Total
+
+    def updateEmploymentTotal(self, json):
+        insert_time = datetime.now()
+        data = {'employment_total_per_year': json, 'last_updated': insert_time}
+        new_id = self.employmentTotal_db.insert(data)
+        self.TotalfillMetadata(data, new_id)
+
+        return new_id, insert_time
+
+    def TotalfillMetadata(self, latest_data, latest_id):
+        yearly_rate = latest_data['employment_total_per_year']
+        yearly_mean = {}
+        yearly_std = {}
+        yearly_min = {}
+        yearly_max = {}
+
+        for year, months in yearly_rate.items():
+            if year.isnumeric():
+                arr = np.array(list(months.values()))
+                # dictList = list({yearly_rate[year]:yearly_rate[year].values()})
+                min_month = min(months, key=lambda k: months[k])
+                max_month = max(months, key=lambda k: months[k])
+                yearly_min[year] = {min_month: yearly_rate[year][min_month]}
+                yearly_max[year] = {max_month: yearly_rate[year][max_month]}
+                mean = np.mean(arr)
+                std = np.std(arr)
+                yearly_mean[year] = mean
+                yearly_std[year] = std
+            # print((yearly_min))
+
+        doc = {'yearly_mean': yearly_mean,
+               'yearly_std': yearly_std,
+               'yearly_min': yearly_min,
+               'yearly_max': yearly_max,
+               '_id': latest_id}
+
+        self.employmentTotal_meta.insert(doc)
+
+    def getAllEmploymentTotalYearly(self):
+        lates_doc = list(self.employmentTotal_db.find().sort("_id", -1))[0]
+        # print(lates_doc)
+        yearly = lates_doc['employment_total_per_year']
+        # print (yearly)
+        return yearly

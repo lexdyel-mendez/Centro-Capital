@@ -182,6 +182,26 @@ def getPopulationStats(stat):
         else:
             return CivPop_Handler().getCivPopSpecStats(stat)
 
+# Employment Total
+
+@app.route(home +'/updateEmploymentTotal', methods=['POST'])
+def updateEmploymentTotal(data = bdeData(xlsReq(),'Employment, Total')):
+    if request.method == 'POST' and len(data) != 0:
+        if 'Error' not in data.keys():
+            return Employment_Handler().updateEmploymentTotal(data)
+        else:
+            return {"Error scrapping data":data}
+
+@app.route(home + '/employmentTotalYearly', methods = ['GET'])
+def getEmploymentTotalYearly():
+    """
+    This function returns a list of all the unemployment rates for each year in the database
+    :return: A list of all the unemployment data for the year.
+    """
+    if request.method == 'GET':
+        return Employment_Handler().getAllEmploymentTotalYearly()
+
+
 
 #Comparetor
 @app.route(home +'/compare/stats/<metric1>/<metric2>',defaults={'stat':None}, methods=['GET'])

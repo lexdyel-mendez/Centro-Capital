@@ -3,7 +3,7 @@ import React, { useEffect, useState } from "react";
 //import Row from 'react-bootstrap/Row';
 //import Col from 'react-bootstrap/Col';
 import CustomCompareLine from '../components/CustomCompareLine'
-import { Container, Row, Col, Dropdown } from "react-bootstrap";
+import { Container, Row, Col } from "react-bootstrap";
 
 
 function organizeCompare(inputData) {
@@ -45,8 +45,8 @@ function organizeCompare(inputData) {
 const Compare = () => {
 
   const [data, setData] = useState();
-  const [metric1, setMetric1] = useState("civpop");
-  const [metric2, setMetric2] = useState("emplmnt");
+  const [metric1, setMetric1] = useState();
+  const [metric2, setMetric2] = useState();
 
   useEffect(() => {
     async function fetchData(metric1, metric2) {
@@ -77,13 +77,43 @@ const Compare = () => {
   if (!data) {
     return (
       <div>
-        <p>Loading data...</p>
+        <div style={{ display: 'flex', flexDirection: 'row' }}>
+          <div style={{ marginRight: '16px' }}>
+            <label>
+              Metric 1:
+              <select value={metric1} onChange={handleMetric1Change}>
+              <option value="" disabled selected>
+                Select metric 1
+              </option>
+              <option value="civpop">Civilian Population</option>
+              <option value="emplmnt">Employment</option>
+              <option value="unmplmnt">Unemployment</option>
+            </select>
+
+            </label>
+          </div>
+          <div>
+            <label>
+              Metric 2:
+              <select value={metric2} onChange={handleMetric2Change}>
+              <option value="" disabled selected>
+                Select metric 1
+              </option>
+              <option value="civpop">Civilian Population</option>
+              <option value="emplmnt">Employment</option>
+              <option value="unmplmnt">Unemployment</option>
+            </select>
+
+            </label>
+          </div>
+        </div>
+        <p>Awaiting for user selection</p>
       </div>
     )
   } else {
     return (
       <Container>
-              <div style={{ display: 'flex', flexDirection: 'row' }}>
+          <div style={{ display: 'flex', flexDirection: 'row' }}>
           <div style={{ marginRight: '16px' }}>
             <label>
               Metric 1:
