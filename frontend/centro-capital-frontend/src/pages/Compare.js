@@ -44,7 +44,7 @@ function organizeCompare(inputData) {
 
 
 const Compare = () => {
-  const [startTime, setStartTime] = useState(Date.now());
+  //const [startTime, setStartTime] = useState(Date.now());
   const [endTime, setEndTime] = useState(Date.now());
 
 
@@ -62,6 +62,21 @@ const Compare = () => {
     return () => clearInterval(intervalId);
   }, []);
 
+   // Set the current time as the start time
+   const startTime = new Date().getTime();
+
+   // Send a custom timing event to Google Analytics when the user leaves the website or closes the browser
+   window.addEventListener('beforeunload', () => {
+     const duration = new Date().getTime() - startTime;
+ 
+     ReactGA.ga('send', 'timing', {
+       timingCategory: 'Session',
+       timingVar: 'Session Duration',
+       timingValue: duration,
+       timingLabel: 'User Session Duration',
+     });
+   });
+   
   useEffect(() => {
     const timeSpent = (endTime - startTime) / 1000;
     ReactGA.timing({
