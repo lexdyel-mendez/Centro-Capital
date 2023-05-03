@@ -11,31 +11,15 @@ import Compare from './pages/Compare';
 import Welcome from "./pages/Welcome";
 import ReactGA from 'react-ga'
 import React from 'react';
-import {useEffect} from 'react';
-import { initGA, trackPageView } from './analytics';
+import AnalyticsHandler from './AnalyticsHandler';
 
-const trackingID='UA-266511060-2'
 
 function App() {
-  const navigate = useNavigate()
-  const location = useLocation()
-  useEffect(() => {
-    initGA(trackingID);
-
-  trackPageView(window.location.pathname)
-
-  const unlisten = navigate.listen(({location}) => {
-    trackPageView(location.pathname);
-  })
-
-  return () => unlisten()
-
-  }, [navigate,location]);
-
 
   return (
     <div className="App">
       <BrowserRouter>
+      <AnalyticsHandler />
         <Routes>
           <Route path="/" element={<Layout />}>
             <Route index element={<Home />} />
