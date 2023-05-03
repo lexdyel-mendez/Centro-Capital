@@ -17,20 +17,20 @@ import { initGA, trackPageView } from './analytics';
 const trackingID='UA-266511060-2'
 
 function App() {
-  const navigate = useNavigate()
-  const location = useLocation()
-  useEffect(() => {
-    initGA(trackingID);
+  // const navigate = useNavigate()
+  // const location = useLocation()
+  // useEffect(() => {
+  //   initGA(trackingID);
 
-  trackPageView(window.location.pathname)
+  // trackPageView(window.location.pathname)
 
-  const unlisten = navigate.listen(({location}) => {
-    trackPageView(location.pathname);
-  })
+  // const unlisten = navigate.listen(({location}) => {
+  //   trackPageView(location.pathname);
+  // })
 
-  return () => unlisten()
+  // return () => unlisten()
 
-  }, [navigate,location]);
+  // }, [navigate,location]);
 
 
   return (
