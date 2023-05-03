@@ -19,7 +19,6 @@ function App() {
   return (
     <div className="App">
       <BrowserRouter>
-      <AnalyticsHandler />
         <Routes>
           <Route path="/" element={<Layout />}>
             <Route index element={<Home />} />
