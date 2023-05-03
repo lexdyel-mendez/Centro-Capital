@@ -75,8 +75,15 @@ const Compare = () => {
        timingValue: duration,
        timingLabel: 'User Session Duration',
      });
+
+     ReactGA.timing({
+      category: 'Session',
+      variable: 'Session Duration',
+      value: duration,
+    });
    });
-   
+
+
   useEffect(() => {
     const timeSpent = (endTime - startTime) / 1000;
     ReactGA.timing({
