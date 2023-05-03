@@ -4,7 +4,8 @@ import React, { useEffect, useState } from "react";
 //import Col from 'react-bootstrap/Col';
 import CustomCompareLine from '../components/CustomCompareLine'
 import { Container, Row, Col } from "react-bootstrap";
-
+import { initGA, trackPageView } from '../analytics';
+import ReactGA from 'react-ga';
 
 function organizeCompare(inputData) {
   //FIRST VALUE START
