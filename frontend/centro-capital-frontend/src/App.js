@@ -1,7 +1,7 @@
 import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import '@coreui/coreui/dist/css/coreui.min.css'
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { BrowserRouter, Routes, Route, useNavigate, useLocation } from "react-router-dom";
 import Layout from "./pages/Layout";
 import Home from "./pages/Home";
 import About from "./pages/About";
@@ -17,17 +17,25 @@ import { initGA, trackPageView } from './analytics';
 const trackingID='UA-266511060-2'
 
 function App() {
-
+  const navigate = useNavigate()
+  const location = useLocation()
   useEffect(() => {
     initGA(trackingID);
-  }, []);
+
+  trackPageView(window.location.pathname)
+
+  const unlisten = navigate.listen(({location}) => {
+    trackPageView(location.pathname);
+  })
+
+  return () => unlisten()
+
+  }, [navigate,location]);
 
 
   return (
     <div className="App">
-      <BrowserRouter onUpdate={() => {
-        trackPageView(window.location.pathname);
-      }}>
+      <BrowserRouter>
         <Routes>
           <Route path="/" element={<Layout />}>
             <Route index element={<Home />} />

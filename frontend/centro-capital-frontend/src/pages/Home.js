@@ -6,7 +6,7 @@ import CustomBar from "../components/CustomBar";
 import CustomCompareLine from '../components/CustomCompareLine'
 import CustomPie from '../components/CustomPie';
 import CustomArea from '../components/CustomArea';
-import { initGA, trackPageView } from './analytics';
+import { initGA, trackPageView } from '../analytics';
 import ReactGA from 'react-ga';
 
 function organizeData(inputData) {
