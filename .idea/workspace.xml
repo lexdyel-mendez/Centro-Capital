@@ -19,10 +19,13 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c4c7ee6a-9130-4ff6-bf71-ed96049c0b69" name="Changes" comment="Compare Selection&#10;&#10;Implemented so that the user can decide from two dropdowns the metrics they wish to compare.">
+    <list default="true" id="c4c7ee6a-9130-4ff6-bf71-ed96049c0b69" name="Changes" comment="Added Employment Total to DB &#10;&#10;Added the API calls that are regarding updating and retrieving the Employment Total data to/from the database.">
+      <change afterPath="$PROJECT_DIR$/backend/dao/laborForce.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/handlers/laborForce.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/dao/employment.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/dao/employment.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/handlers/employment.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/handlers/employment.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/dao/unemployment.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/dao/unemployment.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/handlers/Unemployment.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/handlers/Unemployment.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/handlers/comparator.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/handlers/comparator.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/backend/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/main.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/centro-capital-frontend/src/pages/Compare.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/centro-capital-frontend/src/pages/Compare.js" afterDir="false" />
     </list>
@@ -35,6 +38,7 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="JavaScript File" />
+        <option value="Python Script" />
       </list>
     </option>
   </component>
@@ -345,7 +349,14 @@
       <option name="project" value="LOCAL" />
       <updated>1683087401815</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="Added Employment Total to DB &#10;&#10;Added the API calls that are regarding updating and retrieving the Employment Total data to/from the database.">
+      <created>1683089430861</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1683089430861</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -392,7 +403,8 @@
     <MESSAGE value="Fixed Profcile&#10;&#10;Now it points to main inside of the backend folder." />
     <MESSAGE value="Merge branches" />
     <MESSAGE value="Compare Selection&#10;&#10;Implemented so that the user can decide from two dropdowns the metrics they wish to compare." />
-    <option name="LAST_COMMIT_MESSAGE" value="Compare Selection&#10;&#10;Implemented so that the user can decide from two dropdowns the metrics they wish to compare." />
+    <MESSAGE value="Added Employment Total to DB &#10;&#10;Added the API calls that are regarding updating and retrieving the Employment Total data to/from the database." />
+    <option name="LAST_COMMIT_MESSAGE" value="Added Employment Total to DB &#10;&#10;Added the API calls that are regarding updating and retrieving the Employment Total data to/from the database." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

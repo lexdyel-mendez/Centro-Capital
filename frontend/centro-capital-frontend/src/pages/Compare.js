@@ -86,8 +86,9 @@ const Compare = () => {
                 Select metric 1
               </option>
               <option value="civpop">Civilian Population</option>
-              <option value="emplmnt">Employment</option>
-              <option value="unmplmnt">Unemployment</option>
+              <option value="emplmnt">Employment Rate</option>
+              <option value="unmplmnt">Unemployment Rate</option>
+              <option value="emplmntTot">Employment Total</option>
             </select>
 
             </label>
@@ -100,8 +101,9 @@ const Compare = () => {
                 Select metric 1
               </option>
               <option value="civpop">Civilian Population</option>
-              <option value="emplmnt">Employment</option>
-              <option value="unmplmnt">Unemployment</option>
+              <option value="emplmnt">Employment Rate</option>
+              <option value="unmplmnt">Unemployment Rate</option>
+              <option value="emplmntTot">Employment Total</option>
             </select>
 
             </label>
@@ -119,8 +121,9 @@ const Compare = () => {
               Metric 1:
               <select value={metric1} onChange={handleMetric1Change}>
                 <option value="civpop">Civilian Population</option>
-                <option value="emplmnt">Employment</option>
-                <option value="unmplmnt">Unemployment</option>
+              <option value="emplmnt">Employment Rate</option>
+              <option value="unmplmnt">Unemployment Rate</option>
+              <option value="emplmntTot">Employment Total</option>
               </select>
             </label>
           </div>
@@ -129,8 +132,9 @@ const Compare = () => {
               Metric 2:
               <select value={metric2} onChange={handleMetric2Change}>
                 <option value="civpop">Civilian Population</option>
-                <option value="emplmnt">Employment</option>
-                <option value="unmplmnt">Unemployment</option>
+              <option value="emplmnt">Employment Rate</option>
+              <option value="unmplmnt">Unemployment Rate</option>
+              <option value="emplmntTot">Employment Total</option>
               </select>
             </label>
           </div>

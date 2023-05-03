@@ -6,6 +6,7 @@ from flask.helpers import send_from_directory
 from backend.handlers.gdp import GDP_Handler
 from backend.handlers.Unemployment import Unemployment_Handler
 from backend.handlers.employment import Employment_Handler
+from backend.handlers.laborForce import LaborForce_Handler
 from backend.handlers.comparator import Comparator as CompareHandler
 from backend.mongoflask import MongoJSONEncoder, ObjectIdConverter
 from whitenoise import WhiteNoise
@@ -183,7 +184,6 @@ def getPopulationStats(stat):
             return CivPop_Handler().getCivPopSpecStats(stat)
 
 # Employment Total
-
 @app.route(home +'/updateEmploymentTotal', methods=['POST'])
 def updateEmploymentTotal(data = bdeData(xlsReq(),'Employment, Total')):
     if request.method == 'POST' and len(data) != 0:
@@ -201,6 +201,47 @@ def getEmploymentTotalYearly():
     if request.method == 'GET':
         return Employment_Handler().getAllEmploymentTotalYearly()
 
+
+# Employment Total
+@app.route(home +'/updateUnemploymentTotal', methods=['POST'])
+def updateUnmploymentTotal(data = bdeData(xlsReq(),'Unemployed, Total')):
+    if request.method == 'POST' and len(data) != 0:
+        if 'Error' not in data.keys():
+            # return {"Error": "Under Implementation"}
+            return Unemployment_Handler().updateUnemploymentTotal(data)
+        else:
+            return {"Error scrapping data":data}
+
+@app.route(home + '/unemploymentTotalYearly', methods = ['GET'])
+def getUnemploymentTotalYearly():
+    """
+    This function returns a list of all the unemployment rates for each year in the database
+    :return: A list of all the unemployment data for the year.
+    """
+    if request.method == 'GET':
+        # return {"Error": "Under Implementations"}
+        return Unemployment_Handler().getAllUnemploymentTotalYearly()
+
+
+# Labor Force
+@app.route(home +'/updateLaborForce', methods=['POST'])
+def updateLaborForce(data = bdeData(xlsReq(),'Labor Force')):
+    if request.method == 'POST' and len(data) != 0:
+        if 'Error' not in data.keys():
+            # return {"Error": "Under Implementation"}
+            return LaborForce_Handler().updateLaborForce(data)
+        else:
+            return {"Error scrapping data":data}
+
+@app.route(home + '/laborforceYearly', methods = ['GET'])
+def getLaborForceYearly():
+    """
+    This function returns a list of all the unemployment rates for each year in the database
+    :return: A list of all the unemployment data for the year.
+    """
+    if request.method == 'GET':
+        # return {"Error": "Under Implementations"}
+        return LaborForce_Handler().getLaborForceYearly()
 
 
 #Comparetor

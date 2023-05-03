@@ -64,3 +64,16 @@ class Unemployment_Handler:
 
         return jsonify(Unemployment_Specific_Stat=stat)
 
+# Unemployment Total
+
+    def updateUnemploymentTotal(self, json):
+        dao = Unemployment_DAO()
+        new_id, timestamp = dao.updateUnemploymentTotal(json)
+        return jsonify(new_id=new_id, insertion_time=timestamp, docs_added=len(json))
+
+    def getAllUnemploymentTotalYearly(self):
+        dao = Unemployment_DAO()
+        docs = dao.getAllUnemploymentTotalYearly()
+        return jsonify(docs)
+
+

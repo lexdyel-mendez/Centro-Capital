@@ -14,6 +14,8 @@ class Unemployment_DAO:
             mongo_config['dbname']]
         self.unemployment_db = mongo.unemployment_rate
         self.unemployment_meta = mongo.unemployment_rate_metadata
+        self.unemploymentTotal_db = mongo.unemployment_total
+        self.unemploymentTotal_meta = mongo.unemployment_total_metadata
 
     def getAllUnemploymentYearly(self):
         """
@@ -141,5 +143,50 @@ class Unemployment_DAO:
         ret_stat = lates_doc[str(stat_map[stat])]
         # print(f'{stat} = {ret_stat}')
         return {stat:ret_stat}
+
+# Unemployment Total
+
+    def updateUnemploymentTotal(self, json):
+        insert_time = datetime.now()
+        data = {'unemployment_total_per_year': json, 'last_updated': insert_time}
+        new_id = self.unemploymentTotal_db.insert(data)
+        self.TotalfillMetadata(data, new_id)
+
+        return new_id, insert_time
+
+    def TotalfillMetadata(self, data, new_id):
+        yearly_rate = data['unemployment_total_per_year']
+        yearly_mean = {}
+        yearly_std = {}
+        yearly_min = {}
+        yearly_max = {}
+
+        for year, months in yearly_rate.items():
+            if year.isnumeric():
+                arr = np.array(list(months.values()))
+                # dictList = list({yearly_rate[year]:yearly_rate[year].values()})
+                min_month = min(months, key=lambda k: months[k])
+                max_month = max(months, key=lambda k: months[k])
+                yearly_min[year] = {min_month: yearly_rate[year][min_month]}
+                yearly_max[year] = {max_month: yearly_rate[year][max_month]}
+                mean = np.mean(arr)
+                std = np.std(arr)
+                yearly_mean[year] = mean
+                yearly_std[year] = std
+        # print((yearly_min))
+
+        doc = {'yearly_mean': yearly_mean,
+               'yearly_std': yearly_std,
+               'yearly_min': yearly_min,
+               'yearly_max': yearly_max,
+               '_id': new_id}
+
+        self.unemploymentTotal_meta.insert(doc)
+
+    def getAllUnemploymentTotalYearly(self):
+        lates_doc = list(self.unemploymentTotal_db.find().sort("_id", -1))[0]
+        yearly = lates_doc['unemployment_total_per_year']
+        # print (f"In unemployment dao{yearly=}")
+        return yearly
 
 
