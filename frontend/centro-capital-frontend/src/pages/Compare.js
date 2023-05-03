@@ -45,14 +45,14 @@ function organizeCompare(inputData) {
 const Compare = () => {
 
   const [data, setData] = useState();
-  const [metric1, setMetric1] = useState("");
-  const [metric2, setMetric2] = useState("");
+  const [metric1, setMetric1] = useState("civpop");
+  const [metric2, setMetric2] = useState("emplmnt");
 
   useEffect(() => {
     async function fetchData(metric1, metric2) {
       if (metric1 && metric2) { // check if both metrics have been selected
         try {
-          console.log('The metrics are', metric1, metric2)
+//          console.log('The metrics are', metric1, metric2)
           const response = await fetch(`/centro-capital/compare/stats/${metric1}/${metric2}`, { method: "GET" });
           if (response.status === 200) {
             const doc = await response.json();
@@ -66,14 +66,15 @@ const Compare = () => {
     fetchData(metric1, metric2)
   }, [metric1, metric2]);
 
+    const handleMetric1Change = (event) => {
+    setMetric1(event.target.value);
+  };
 
-  if (!metric1 || !metric2) { // check if both metrics have been selected
-    return (
-      <div>
-        <p>Please select two metrics</p>
-      </div>
-    )
-  } else if (!data) {
+  const handleMetric2Change = (event) => {
+    setMetric2(event.target.value);
+  };
+
+  if (!data) {
     return (
       <div>
         <p>Loading data...</p>
@@ -82,34 +83,29 @@ const Compare = () => {
   } else {
     return (
       <Container>
-        <Row className="m-4">
-          <Col>
-            <Dropdown>
-              <Dropdown.Toggle variant="primary" id="dropdown-metric1">
-                {metric1 ? metric1 : "Select Metric 1"}
-              </Dropdown.Toggle>
-              <Dropdown.Menu>
-                <Dropdown.Item onSelect={() => setMetric1("metric1")}>Metric 1</Dropdown.Item>
-                <Dropdown.Item onSelect={() => setMetric1("metric2")}>Metric 2</Dropdown.Item>
-                <Dropdown.Item onSelect={() => setMetric1("metric3")}>Metric 3</Dropdown.Item>
-                {/* Add additional options for more metrics */}
-              </Dropdown.Menu>
-            </Dropdown>
-          </Col>
-          <Col>
-            <Dropdown>
-              <Dropdown.Toggle variant="primary" id="dropdown-metric2">
-                {metric2 ? metric2 : "Select Metric 2"}
-              </Dropdown.Toggle>
-              <Dropdown.Menu>
-                <Dropdown.Item onSelect={() => setMetric2("metric1")}>Metric 1</Dropdown.Item>
-                <Dropdown.Item onSelect={() => setMetric2("metric2")}>Metric 2</Dropdown.Item>
-                <Dropdown.Item onSelect={() => setMetric2("metric3")}>Metric 3</Dropdown.Item>
-                {/* Add additional options for more metrics */}
-              </Dropdown.Menu>
-            </Dropdown>
-          </Col>
-        </Row>
+              <div style={{ display: 'flex', flexDirection: 'row' }}>
+          <div style={{ marginRight: '16px' }}>
+            <label>
+              Metric 1:
+              <select value={metric1} onChange={handleMetric1Change}>
+                <option value="civpop">Civilian Population</option>
+                <option value="emplmnt">Employment</option>
+                <option value="unmplmnt">Unemployment</option>
+              </select>
+            </label>
+          </div>
+          <div>
+            <label>
+              Metric 2:
+              <select value={metric2} onChange={handleMetric2Change}>
+                <option value="civpop">Civilian Population</option>
+                <option value="emplmnt">Employment</option>
+                <option value="unmplmnt">Unemployment</option>
+              </select>
+            </label>
+          </div>
+        </div>
+
         <Row className="m-4">
           <Col>
             <CustomCompareLine
@@ -126,6 +122,10 @@ const Compare = () => {
 };
 
 export default Compare;
+
+
+
+
 
 
 //Comment below helps filter compare
