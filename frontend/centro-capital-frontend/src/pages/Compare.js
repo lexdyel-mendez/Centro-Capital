@@ -1,8 +1,9 @@
 import React, { useEffect, useState } from "react";
-import Container from 'react-bootstrap/Container';
-import Row from 'react-bootstrap/Row';
-import Col from 'react-bootstrap/Col';
+//import Container from 'react-bootstrap/Container';
+//import Row from 'react-bootstrap/Row';
+//import Col from 'react-bootstrap/Col';
 import CustomCompareLine from '../components/CustomCompareLine'
+import { Container, Row, Col, Dropdown } from "react-bootstrap";
 
 
 function organizeCompare(inputData) {
@@ -39,49 +40,93 @@ function organizeCompare(inputData) {
   }
 }
 
+
+
 const Compare = () => {
 
   const [data, setData] = useState();
+  const [metric1, setMetric1] = useState("");
+  const [metric2, setMetric2] = useState("");
 
   useEffect(() => {
-    async function fetchData() {
-      try {
-        const response = await fetch("/centro-capital/compare/stats/emplmnt/unmplmnt", { method: "GET" });
-        if (response.status === 200) {
-          const doc = await response.json();
-          setData(organizeCompare(doc));
+    async function fetchData(metric1, metric2) {
+      if (metric1 && metric2) { // check if both metrics have been selected
+        try {
+          console.log('The metrics are', metric1, metric2)
+          const response = await fetch(`/centro-capital/compare/stats/${metric1}/${metric2}`, { method: "GET" });
+          if (response.status === 200) {
+            const doc = await response.json();
+            setData(organizeCompare(doc));
+          }
+        } catch (error) {
+          console.error("Error fetching data:", error);
         }
-      } catch (error) {
-        console.error("Error fetching data:", error);
       }
     }
-    fetchData()
-  }, []);
+    fetchData(metric1, metric2)
+  }, [metric1, metric2]);
 
 
-  if (!data) {
-
+  if (!metric1 || !metric2) { // check if both metrics have been selected
     return (
       <div>
-        <p>no data so far</p>
+        <p>Please select two metrics</p>
       </div>
     )
-
+  } else if (!data) {
+    return (
+      <div>
+        <p>Loading data...</p>
+      </div>
+    )
   } else {
     return (
-        <Container>
-         <Row className="m-4">
-          {/* <Col className="bg-primary m-4 rounded"> Bar Chart<CustomBar data={dailydata}></CustomBar></Col> */}
-          {/* <Col className="bg-secondary m-4 rounded"><CustomLine data={data} year='2014' }></CustomLine></Col> */}
-          <Col><CustomCompareLine data={data} year={data[data.length-1]['year']} firstMetric={data[0]['firstMetric']} secondMetric={data[0]['secondMetric']}></CustomCompareLine></Col>
+      <Container>
+        <Row className="m-4">
+          <Col>
+            <Dropdown>
+              <Dropdown.Toggle variant="primary" id="dropdown-metric1">
+                {metric1 ? metric1 : "Select Metric 1"}
+              </Dropdown.Toggle>
+              <Dropdown.Menu>
+                <Dropdown.Item onSelect={() => setMetric1("metric1")}>Metric 1</Dropdown.Item>
+                <Dropdown.Item onSelect={() => setMetric1("metric2")}>Metric 2</Dropdown.Item>
+                <Dropdown.Item onSelect={() => setMetric1("metric3")}>Metric 3</Dropdown.Item>
+                {/* Add additional options for more metrics */}
+              </Dropdown.Menu>
+            </Dropdown>
+          </Col>
+          <Col>
+            <Dropdown>
+              <Dropdown.Toggle variant="primary" id="dropdown-metric2">
+                {metric2 ? metric2 : "Select Metric 2"}
+              </Dropdown.Toggle>
+              <Dropdown.Menu>
+                <Dropdown.Item onSelect={() => setMetric2("metric1")}>Metric 1</Dropdown.Item>
+                <Dropdown.Item onSelect={() => setMetric2("metric2")}>Metric 2</Dropdown.Item>
+                <Dropdown.Item onSelect={() => setMetric2("metric3")}>Metric 3</Dropdown.Item>
+                {/* Add additional options for more metrics */}
+              </Dropdown.Menu>
+            </Dropdown>
+          </Col>
+        </Row>
+        <Row className="m-4">
+          <Col>
+            <CustomCompareLine
+              data={data}
+              year={data[data.length-1]['year']}
+              firstMetric={metric1}
+              secondMetric={metric2}
+            />
+          </Col>
         </Row>
       </Container>
     )
   }
-
 };
 
 export default Compare;
+
 
 //Comment below helps filter compare
 

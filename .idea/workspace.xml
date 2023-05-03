@@ -22,6 +22,8 @@
     <list default="true" id="c4c7ee6a-9130-4ff6-bf71-ed96049c0b69" name="Changes" comment="Cleaned old code in comparator.py handler">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/backend/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/main.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/centro-capital-frontend/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/centro-capital-frontend/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/centro-capital-frontend/src/pages/Compare.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/centro-capital-frontend/src/pages/Compare.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -58,7 +60,7 @@
     </option>
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="CompareFrontEnd" />
+        <entry key="$PROJECT_DIR$" value="backendDev2" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />

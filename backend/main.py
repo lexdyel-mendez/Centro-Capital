@@ -189,6 +189,7 @@ def getPopulationStats(stat):
 def compareMetricStats(metric1, metric2, stat):
     if request.method == "GET":
         if stat is None:
+            print("Enters the correct main route")
             return CompareHandler().compareAllStats(metric1,metric2)
         else:
             return {"Error":"Individual Years compare not implemented"}
