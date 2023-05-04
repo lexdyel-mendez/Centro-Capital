@@ -36,6 +36,24 @@ const Layout = () => {
   //   };
   // }, []);
 
+  const [pageViews, setPageViews] = useState(0);
+
+  const handlePageView = () => {
+    setPageView((prev) => {
+      if (prev === 0) {
+        // Initialize Google Analytics and log the page view.
+        initGA('UA-266511060-2');
+        logPageView();
+      }
+
+      return prev + 1;
+    });
+  };
+
+  useEffect(() => {
+    handlePageView();
+  }, []);
+
   return (
     <>
     <CustomNavbar/>
