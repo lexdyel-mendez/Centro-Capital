@@ -9,43 +9,9 @@ import NoPage from "./pages/NoPage";
 import Insights from './pages/Insights';
 import Compare from './pages/Compare';
 import Welcome from "./pages/Welcome";
-import ReactGA from 'react-ga'
-import React, { useEffect, useState } from 'react';
-import { initGA, logPageView, logSessionDuration, logBounce, logSession } from './analytics';
-
-ReactGA.initialize('G-L6KNQ31WLF');
+import React from 'react';
 
 function App() {
-
-  const [startTime, setStartTime] = useState(Date.now());
-  const [pageViews, setPageViews] = useState(0);
-
-  const handlePageView = () => {
-    setPageViews((prev) => {
-      if (prev === 0) {
-        // Log a new session if it's the first page view.
-        logSession();
-      } else if (prev === 1) {
-        // Log a bounce if the user only viewed one page during their session.
-        logBounce();
-      }
-
-      return prev + 1;
-    });
-  };
-
-  useEffect(() => {
-    // Initialize Google Analytics and log the page view.
-    initGA('UA-266511060-2');
-    logPageView();
-    handlePageView();
-
-    return () => {
-      // Calculate session duration and log it when the component is unmounted.
-      const duration = Date.now() - startTime;
-      logSessionDuration(duration);
-    };
-  }, []);
 
   return (
     <div className="App">
