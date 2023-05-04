@@ -18,11 +18,11 @@ export const logEvent = (category, action, label, value) => {
     });
 };
 export const logBounce = () => {
-    logEvent('User', 'Bounce', 'Bounce');
+    logEvent('User', 'Bounce', 'Bounce', 1);
 };
 
 export const logSession = () => {
-    logEvent('User', 'New Session', 'New Session');
+    logEvent('User', 'New Session', 'New Session', 1);
 };
 
 
