@@ -1,7 +1,7 @@
 import CustomFooter from "../components/CustomFooter";
 import CustomNavbar from "../components/CustomNavbar";
 import React, { useState, useEffect } from 'react';
-import { initGA, trackPageView } from '../analytics';
+import { initGA, trackPageView, trackSessionDuration } from '../analytics';
 import ReactGA from 'react-ga';
 
 const Layout = () => {
@@ -17,7 +17,7 @@ const Layout = () => {
 
     return () => {
       const duration = Date.now() - startTime;
-      logSessionDuration(duration);
+      trackSessionDuration(duration);
     };
   }, []);
 
