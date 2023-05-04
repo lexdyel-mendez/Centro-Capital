@@ -19,12 +19,8 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c4c7ee6a-9130-4ff6-bf71-ed96049c0b69" name="Changes" comment="Compare Organized&#10;&#10;Fixed the selection in the compare so that it divides between rates and totals.">
+    <list default="true" id="c4c7ee6a-9130-4ff6-bf71-ed96049c0b69" name="Changes" comment="Description in render of Insight and Compare&#10;&#10;Now the HTML renders a description for both the insights page and the compare.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/centro-capital-frontend/build/asset-manifest.json" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/centro-capital-frontend/build/asset-manifest.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/centro-capital-frontend/build/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/centro-capital-frontend/build/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/centro-capital-frontend/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/centro-capital-frontend/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/centro-capital-frontend/src/pages/Compare.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/centro-capital-frontend/src/pages/Compare.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/centro-capital-frontend/src/pages/Insights.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/centro-capital-frontend/src/pages/Insights.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -392,7 +388,14 @@
       <option name="project" value="LOCAL" />
       <updated>1683137953883</updated>
     </task>
-    <option name="localTasksCounter" value="21" />
+    <task id="LOCAL-00021" summary="Description in render of Insight and Compare&#10;&#10;Now the HTML renders a description for both the insights page and the compare.">
+      <created>1683169589508</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1683169589508</updated>
+    </task>
+    <option name="localTasksCounter" value="22" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -445,7 +448,8 @@
     <MESSAGE value="Built for deployment testing &#10;&#10;Ran npm run build to create a deployable version of the page. Gonna test out heroku deployment." />
     <MESSAGE value="Built for deployment testing&#10;&#10;Ran npm run build to create a deployable version of the page. Gonna test out heroku deployment.&#10;&#10;Signed-off-by: Lexdyel Mendez Rios &lt;lexdyel.mendez@upr.edu&gt;" />
     <MESSAGE value="Compare Organized&#10;&#10;Fixed the selection in the compare so that it divides between rates and totals." />
-    <option name="LAST_COMMIT_MESSAGE" value="Compare Organized&#10;&#10;Fixed the selection in the compare so that it divides between rates and totals." />
+    <MESSAGE value="Description in render of Insight and Compare&#10;&#10;Now the HTML renders a description for both the insights page and the compare." />
+    <option name="LAST_COMMIT_MESSAGE" value="Description in render of Insight and Compare&#10;&#10;Now the HTML renders a description for both the insights page and the compare." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
