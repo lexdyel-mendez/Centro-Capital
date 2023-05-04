@@ -36,7 +36,7 @@ function App() {
 
   useEffect(() => {
     // Initialize Google Analytics and log the page view.
-    initGA('UA-XXXXXXXXX-X');
+    initGA('UA-266511060-2');
     logPageView();
     handlePageView();
 
