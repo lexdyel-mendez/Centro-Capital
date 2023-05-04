@@ -4,8 +4,8 @@ import React, { useEffect, useState } from "react";
 //import Col from 'react-bootstrap/Col';
 import CustomCompareLine from '../components/CustomCompareLine'
 import { Container, Row, Col } from "react-bootstrap";
-import { initGA, trackPageView } from '../analytics';
-import ReactGA from 'react-ga';
+// import { initGA, trackPageView } from '../analytics';
+// import ReactGA from 'react-ga';
 
 function organizeCompare(inputData) {
   //FIRST VALUE START
@@ -45,53 +45,54 @@ function organizeCompare(inputData) {
 
 const Compare = () => {
   //const [startTime, setStartTime] = useState(Date.now());
-  const [endTime, setEndTime] = useState(Date.now());
+  
+  // const [endTime, setEndTime] = useState(Date.now());
 
 
-  const trackingID='UA-266511060-2'
+  // const trackingID='UA-266511060-2'
 
-  useEffect(() => {
-    initGA(trackingID);
-  }, []);
+  // useEffect(() => {
+  //   initGA(trackingID);
+  // }, []);
 
-  useEffect(() => {
-    ReactGA.pageview(window.location.pathname);
-    const intervalId = setInterval(() => {
-      setEndTime(Date.now());
-    }, 1000);
-    return () => clearInterval(intervalId);
-  }, []);
+  // useEffect(() => {
+  //   ReactGA.pageview(window.location.pathname);
+  //   const intervalId = setInterval(() => {
+  //     setEndTime(Date.now());
+  //   }, 1000);
+  //   return () => clearInterval(intervalId);
+  // }, []);
 
-   // Set the current time as the start time
-   const startTime = new Date().getTime();
+  //  // Set the current time as the start time
+  //  const startTime = new Date().getTime();
 
-   // Send a custom timing event to Google Analytics when the user leaves the website or closes the browser
-   window.addEventListener('beforeunload', () => {
-     const duration = new Date().getTime() - startTime;
+  //  // Send a custom timing event to Google Analytics when the user leaves the website or closes the browser
+  //  window.addEventListener('beforeunload', () => {
+  //    const duration = new Date().getTime() - startTime;
  
-     ReactGA.ga('send', 'timing', {
-       timingCategory: 'Session',
-       timingVar: 'Session Duration',
-       timingValue: duration,
-       timingLabel: 'User Session Duration',
-     });
+  //    ReactGA.ga('send', 'timing', {
+  //      timingCategory: 'Session',
+  //      timingVar: 'Session Duration',
+  //      timingValue: duration,
+  //      timingLabel: 'User Session Duration',
+  //    });
 
-     ReactGA.timing({
-      category: 'Session',
-      variable: 'Session Duration',
-      value: duration,
-    });
-   });
+  //    ReactGA.timing({
+  //     category: 'Session',
+  //     variable: 'Session Duration',
+  //     value: duration,
+  //   });
+  //  });
 
 
-  useEffect(() => {
-    const timeSpent = (endTime - startTime) / 1000;
-    ReactGA.timing({
-      category: 'Page',
-      variable: 'Time on Page',
-      value: timeSpent,
-    });
-  }, [endTime]);
+  // useEffect(() => {
+  //   const timeSpent = (endTime - startTime) / 1000;
+  //   ReactGA.timing({
+  //     category: 'Page',
+  //     variable: 'Time on Page',
+  //     value: timeSpent,
+  //   });
+  // }, [endTime]);
 
   const [data, setData] = useState();
   const [metric1, setMetric1] = useState();
