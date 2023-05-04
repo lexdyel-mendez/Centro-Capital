@@ -2,16 +2,18 @@ import React, { useEffect } from 'react';
 import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
-import { Outlet, Link, useNavigate } from "react-router-dom";
+import { Outlet, Link, useNavigate, useLocation } from "react-router-dom";
 import { initGA, logPageView } from '../analytics';
 
 const CustomNavbar = () => {
 
     const navigate = useNavigate();
+    const location = useLocation();
 
     useEffect(() => {
         // Initialize Google Analytics
         initGA('UA-266511060-2');
+        logPageView(location);
     }, []);
 
     const handleNavItemClick = (path) => {
