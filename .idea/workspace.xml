@@ -20,10 +20,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c4c7ee6a-9130-4ff6-bf71-ed96049c0b69" name="Changes" comment="Fixed Insight Rendering &#10;&#10;Now the Insights page has a description for each of the tables.">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/centro-capital-frontend/build/asset-manifest.json" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/centro-capital-frontend/build/asset-manifest.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/centro-capital-frontend/build/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/centro-capital-frontend/build/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/centro-capital-frontend/src/pages/Compare.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/centro-capital-frontend/src/pages/Compare.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_3_14_2023_3_27_PM__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_3_14_2023_3_27_PM__Changes_.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/centro-capital-frontend/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/centro-capital-frontend/package-lock.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
