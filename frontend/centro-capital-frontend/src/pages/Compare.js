@@ -78,10 +78,18 @@ const Compare = () => {
   if (!data) {
     return (
     <div>
+    <div name="Description">
+    <h1>Metric Comparison</h1>
+    <p>
+       In the following page the user can compare between any two metrics that are in the database.
+       It is recommended that the metrics being compared belong to the same category (Total or Rate).
+       The Rates are percentage values, thus they fall between 0 and 1. As for the Total, their values can
+       range any real valued number.
+    </p>
+    </div>
       <div>
         <div style={{ display: 'flex', flexDirection: 'row' }}>
           <div style={{ marginRight: '16px' }}>
-
             <label>
               Metric 1:
               <select value={metric1} onChange={handleMetric1Change}>
@@ -131,14 +139,20 @@ const Compare = () => {
   } else {
     return (
       <Container>
+        <div name="Description">
+    <h1>Metric Comparison</h1>
+    <p>
+       In the following page the user can compare between any two metrics that are in the database.
+       It is recommended that the metrics being compared belong to the same category (Total or Rate).
+       The Rates are percentage values, thus they fall between 0 and 100. As for the Total, their values can
+       range any real valued number.
+    </p>
+    </div>
           <div style={{ display: 'flex', flexDirection: 'row' }}>
           <div style={{ marginRight: '16px' }}>
             <label>
               Metric 1:
               <select value={metric1} onChange={handleMetric1Change}>
-            <option value="" disabled selected>
-              Select metric 1
-            </option>
             <optgroup label="Rates">
               <option value="emplmnt">Employment Rate</option>
               <option value="unmplmnt">Unemployment Rate</option>
@@ -156,9 +170,7 @@ const Compare = () => {
             <label>
               Metric 2:
               <select value={metric2} onChange={handleMetric2Change}>
-            <option value="" disabled selected>
-              Select metric 2
-            </option>
+
             <optgroup label="Rates">
               <option value="emplmnt">Employment Rate</option>
               <option value="unmplmnt">Unemployment Rate</option>

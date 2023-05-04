@@ -30,6 +30,16 @@ const Insights = () => {
 
   if (!data) {
     return (
+    <div>
+    <div name="Description">
+    <h1>Metric Insights</h1>
+    <p>
+       In the following the user can analyse some calculated insights for
+       a desired metric. Among these metrics are mean, standard deviation,
+       max value and min value.
+    </p>
+    </div>
+
       <label>
       Metric 1:
       <select value={metric} onChange={handleMetric1Change}>
@@ -44,6 +54,7 @@ const Insights = () => {
         <option value="employmentTotal">Employment Total</option>
       </select>
     </label>
+    </div>
     );
   } else {
   console.log(Object.keys(data)[0])
@@ -89,14 +100,14 @@ const Insights = () => {
 
    return (
   <div>
-        <div name="Description">
-          <h1>Statistical values by Metric</h1>
-          <p>
-            In the following page, you can pick any metric from the dropdown
-            menu. Some statistical value from this metric is then fetched and
-            presented for the researcher to interpret.
-          </p>
-        </div>
+         <div name="Description">
+    <h1>Metric Insights</h1>
+    <p>
+       In the following the user can analyse some calculated insights for
+       a desired metric. Among these metrics are mean, standard deviation,
+       max value and min value.
+    </p>
+    </div>
     <label>
       Metric 1:
       <select value={metric} onChange={handleMetric1Change}>

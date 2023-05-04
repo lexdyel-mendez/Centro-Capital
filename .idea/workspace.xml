@@ -19,16 +19,10 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c4c7ee6a-9130-4ff6-bf71-ed96049c0b69" name="Changes" comment="Built for deployment testing&#10;&#10;Ran npm run build to create a deployable version of the page. Gonna test out heroku deployment.&#10;&#10;Signed-off-by: Lexdyel Mendez Rios &lt;lexdyel.mendez@upr.edu&gt;">
-      <change afterPath="$PROJECT_DIR$/frontend/centro-capital-frontend/src/components/DoubleDropdown.js" afterDir="false" />
+    <list default="true" id="c4c7ee6a-9130-4ff6-bf71-ed96049c0b69" name="Changes" comment="Compare Organized&#10;&#10;Fixed the selection in the compare so that it divides between rates and totals.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/dao/laborForce.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/dao/laborForce.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/dao/unemployment.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/dao/unemployment.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/handlers/civpop.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/handlers/civpop.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/handlers/employment.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/handlers/employment.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/handlers/laborForce.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/handlers/laborForce.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/main.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/centro-capital-frontend/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/centro-capital-frontend/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/centro-capital-frontend/build/asset-manifest.json" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/centro-capital-frontend/build/asset-manifest.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/centro-capital-frontend/build/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/centro-capital-frontend/build/index.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/centro-capital-frontend/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/centro-capital-frontend/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/centro-capital-frontend/src/pages/Compare.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/centro-capital-frontend/src/pages/Compare.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/centro-capital-frontend/src/pages/Insights.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/centro-capital-frontend/src/pages/Insights.js" afterDir="false" />
@@ -391,7 +385,14 @@
       <option name="project" value="LOCAL" />
       <updated>1683099880754</updated>
     </task>
-    <option name="localTasksCounter" value="20" />
+    <task id="LOCAL-00020" summary="Compare Organized&#10;&#10;Fixed the selection in the compare so that it divides between rates and totals.">
+      <created>1683137953883</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1683137953883</updated>
+    </task>
+    <option name="localTasksCounter" value="21" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -443,7 +444,8 @@
     <MESSAGE value="Insight Functional &#10;&#10;Now the page of insight returns the calculate mean, std, min and max values for a desired metric that the user wants to inspect. The values are rendered as tables which are grided in a 2x2." />
     <MESSAGE value="Built for deployment testing &#10;&#10;Ran npm run build to create a deployable version of the page. Gonna test out heroku deployment." />
     <MESSAGE value="Built for deployment testing&#10;&#10;Ran npm run build to create a deployable version of the page. Gonna test out heroku deployment.&#10;&#10;Signed-off-by: Lexdyel Mendez Rios &lt;lexdyel.mendez@upr.edu&gt;" />
-    <option name="LAST_COMMIT_MESSAGE" value="Built for deployment testing&#10;&#10;Ran npm run build to create a deployable version of the page. Gonna test out heroku deployment.&#10;&#10;Signed-off-by: Lexdyel Mendez Rios &lt;lexdyel.mendez@upr.edu&gt;" />
+    <MESSAGE value="Compare Organized&#10;&#10;Fixed the selection in the compare so that it divides between rates and totals." />
+    <option name="LAST_COMMIT_MESSAGE" value="Compare Organized&#10;&#10;Fixed the selection in the compare so that it divides between rates and totals." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
