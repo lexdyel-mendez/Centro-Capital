@@ -26,7 +26,7 @@ export const logPageView = () => {
 // };
 
 
-export const logSessionDuration = (duration) => {
-    logEvent('User', 'Session Duration', 'Session Duration', duration);
-};
+// export const logSessionDuration = (duration) => {
+//     logEvent('User', 'Session Duration', 'Session Duration', duration);
+// };
 

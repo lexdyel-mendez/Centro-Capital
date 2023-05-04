@@ -36,7 +36,7 @@ const Layout = () => {
   //   };
   // }, []);
 
-  const [pageViews, setPageViews] = useState(0);
+  const [pageViews, setPageView] = useState(0);
 
   const handlePageView = () => {
     setPageView((prev) => {
