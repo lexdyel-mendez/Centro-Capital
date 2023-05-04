@@ -6,7 +6,7 @@ class CustomFooter extends Component {
         return (
             <div className="fixed-bottom">
             <div>
-                <CFooter>
+                <CFooter className='sticky-footer'>
                     
                     <div>
                         <CLink href="https://centrocapitalpr.wordpress.com">Centro Capital</CLink>
