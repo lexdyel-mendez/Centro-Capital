@@ -1,7 +1,4 @@
 import React, { useEffect, useState } from "react";
-//import Container from 'react-bootstrap/Container';
-//import Row from 'react-bootstrap/Row';
-//import Col from 'react-bootstrap/Col';
 import CustomCompareLine from '../components/CustomCompareLine'
 import { Container, Row, Col } from "react-bootstrap";
 // import { initGA, trackPageView } from '../analytics';
@@ -44,24 +41,7 @@ function organizeCompare(inputData) {
 
 
 const Compare = () => {
-  //const [startTime, setStartTime] = useState(Date.now());
-  
-  // const [endTime, setEndTime] = useState(Date.now());
 
-
-  // const trackingID='UA-266511060-2'
-
-  // useEffect(() => {
-  //   initGA(trackingID);
-  // }, []);
-
-  // useEffect(() => {
-  //   ReactGA.pageview(window.location.pathname);
-  //   const intervalId = setInterval(() => {
-  //     setEndTime(Date.now());
-  //   }, 1000);
-  //   return () => clearInterval(intervalId);
-  // }, []);
 
   //  // Set the current time as the start time
   //  const startTime = new Date().getTime();
@@ -83,16 +63,6 @@ const Compare = () => {
   //     value: duration,
   //   });
   //  });
-
-
-  // useEffect(() => {
-  //   const timeSpent = (endTime - startTime) / 1000;
-  //   ReactGA.timing({
-  //     category: 'Page',
-  //     variable: 'Time on Page',
-  //     value: timeSpent,
-  //   });
-  // }, [endTime]);
 
   const [data, setData] = useState();
   const [metric1, setMetric1] = useState();
