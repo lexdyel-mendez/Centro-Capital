@@ -2,36 +2,39 @@ import React, { Component } from 'react';
 import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
-import { Outlet, Link } from "react-router-dom";
-// import NavDropdown from 'react-bootstrap/NavDropdown';
+import { Outlet, Link, useNavigate } from "react-router-dom";
 
 class CustomNavbar extends Component {
+
+    const navigate = useNavigate();
+
+    useEffect(() => {
+        // Initialize Google Analytics
+        initGA('UA-266511060-2');
+    }, []);
+
+    const handleNavItemClick = (path) => {
+       navigate(path);
+        logPageView(path);
+    };
+
+
+
     render() {
         return (
             <div className='sticky-bottom'>
                 <Navbar bg="light" expand="lg">
                 <img src="favicon.ico" className="img-responsive rounded float-left" width="5%" alt="Logo"></img>
                     <Container>
-                        <Navbar.Brand href="#home">Centro Capital</Navbar.Brand>
+                        <Navbar.Brand onClick={() => handleNavItemClick('/')}>Centro Capital</Navbar.Brand>
                         <Navbar.Toggle aria-controls="basic-navbar-nav" />
                         <Navbar.Collapse id="basic-navbar-nav">
                             <Nav className="me-auto">
-                                <Nav.Link as={ Link } to="/">Home</Nav.Link>
-                                <Nav.Link as={ Link } to="/insights">Insights</Nav.Link>
-                                <Nav.Link as={ Link } to="/compare">Compare</Nav.Link>
-                                <Nav.Link as={ Link } to="/about">About</Nav.Link>
-                                <Nav.Link as={ Link } to="/feedback">Feedback</Nav.Link>
-                                {/* <NavDropdown title="Dropdown" id="basic-nav-dropdown">
-                                    <NavDropdown.Item href="#action/3.1">Action</NavDropdown.Item>
-                                    <NavDropdown.Item href="#action/3.2">
-                                        Another action
-                                    </NavDropdown.Item>
-                                    <NavDropdown.Item href="#action/3.3">Something</NavDropdown.Item>
-                                    <NavDropdown.Divider />
-                                    <NavDropdown.Item href="#action/3.4">
-                                        Separated link
-                                    </NavDropdown.Item>
-                                </NavDropdown> */}
+                                <Nav.Link onClick={() => handleNavItemClick('/')}>Home</Nav.Link>
+                                <Nav.Link onClick={() => handleNavItemClick('/insights')}>Insights</Nav.Link>
+                                <Nav.Link onClick={() => handleNavItemClick('/compare')}>Compare</Nav.Link>
+                                <Nav.Link onClick={() => handleNavItemClick('/about')}>About</Nav.Link>
+                                <Nav.Link onClick={() => handleNavItemClick('/feedback')}>Feedback</Nav.Link>
                             </Nav>
                         </Navbar.Collapse>
                     </Container>
