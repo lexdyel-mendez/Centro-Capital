@@ -12,4 +12,9 @@ class LaborForce_Handler:
     def getLaborForceYearly(self):
         dao = LaborForce_DAO()
         docs = dao.getLaborForceYearly()
-        return jsonify(docs)
+        return jsonify(LaborForce_Yearly=docs)
+
+    def getLaborForceStats(self):
+        dao = LaborForce_DAO()
+        stats = list(dao.getLaborForceStats())[0]
+        return jsonify(LaborForce_Stadistics=stats)

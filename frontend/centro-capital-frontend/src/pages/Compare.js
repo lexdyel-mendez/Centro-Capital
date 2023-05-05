@@ -4,7 +4,7 @@ import React, { useEffect, useState } from "react";
 //import Col from 'react-bootstrap/Col';
 import CustomCompareLine from '../components/CustomCompareLine'
 import { Container, Row, Col } from "react-bootstrap";
-
+import DoubleDropdown from "../components/DoubleDropdown";
 
 function organizeCompare(inputData) {
   //FIRST VALUE START
@@ -40,8 +40,6 @@ function organizeCompare(inputData) {
   }
 }
 
-
-
 const Compare = () => {
 
   const [data, setData] = useState();
@@ -68,6 +66,7 @@ const Compare = () => {
 
     const handleMetric1Change = (event) => {
     setMetric1(event.target.value);
+    console.log(metric1)
   };
 
   const handleMetric2Change = (event) => {
@@ -76,22 +75,36 @@ const Compare = () => {
 
   if (!data) {
     return (
+    <div>
+    <div name="Description">
+    <h1>Metric Comparison</h1>
+    <p>
+       In the following page the user can compare between any two metrics that are in the database.
+       It is recommended that the metrics being compared belong to the same category (Total or Rate).
+       The Rates are percentage values, thus they fall between 0 and 1. As for the Total, their values can
+       range any real valued number.
+    </p>
+    </div>
       <div>
         <div style={{ display: 'flex', flexDirection: 'row' }}>
           <div style={{ marginRight: '16px' }}>
             <label>
               Metric 1:
               <select value={metric1} onChange={handleMetric1Change}>
-              <option value="" disabled selected>
-                Select metric 1
-              </option>
-              <option value="civpop">Civilian Population</option>
+            <option value="" disabled selected>
+              Select metric 1
+            </option>
+            <optgroup label="Rates">
               <option value="emplmnt">Employment Rate</option>
               <option value="unmplmnt">Unemployment Rate</option>
+            </optgroup>
+            <optgroup label="Totals">
+              <option value="civpop">Civilian Population Total</option>
               <option value="emplmntTot">Employment Total</option>
-              <option value="laborForce">Labor Force</option>
+              <option value="laborForce">Labor Force Total</option>
               <option value="unempldTotal">Unemployment Total</option>
-            </select>
+            </optgroup>
+          </select>
 
             </label>
           </div>
@@ -99,51 +112,74 @@ const Compare = () => {
             <label>
               Metric 2:
               <select value={metric2} onChange={handleMetric2Change}>
-              <option value="" disabled selected>
-                Select metric 2
-              </option>
-              <option value="civpop">Civilian Population</option>
+            <option value="" disabled selected>
+              Select metric 2
+            </option>
+            <optgroup label="Rates">
               <option value="emplmnt">Employment Rate</option>
               <option value="unmplmnt">Unemployment Rate</option>
+            </optgroup>
+            <optgroup label="Totals">
+              <option value="civpop">Civilian Population Total</option>
               <option value="emplmntTot">Employment Total</option>
-              <option value="laborForce">Labor Force</option>
+              <option value="laborForce">Labor Force Total</option>
               <option value="unempldTotal">Unemployment Total</option>
-            </select>
+            </optgroup>
+          </select>
 
             </label>
           </div>
         </div>
         <p>Awaiting for user selection</p>
       </div>
+      </div>
     )
   } else {
     return (
       <Container>
+        <div name="Description">
+    <h1>Metric Comparison</h1>
+    <p>
+       In the following page the user can compare between any two metrics that are in the database.
+       It is recommended that the metrics being compared belong to the same category (Total or Rate).
+       The Rates are percentage values, thus they fall between 0 and 100. As for the Total, their values can
+       range any real valued number.
+    </p>
+    </div>
           <div style={{ display: 'flex', flexDirection: 'row' }}>
           <div style={{ marginRight: '16px' }}>
             <label>
               Metric 1:
               <select value={metric1} onChange={handleMetric1Change}>
-                <option value="civpop">Civilian Population</option>
+            <optgroup label="Rates">
               <option value="emplmnt">Employment Rate</option>
               <option value="unmplmnt">Unemployment Rate</option>
+            </optgroup>
+            <optgroup label="Totals">
+              <option value="civpop">Civilian Population Total</option>
               <option value="emplmntTot">Employment Total</option>
-              <option value="laborForce">Labor Force</option>
+              <option value="laborForce">Labor Force Total</option>
               <option value="unempldTotal">Unemployment Total</option>
-              </select>
+            </optgroup>
+          </select>
             </label>
           </div>
           <div>
             <label>
               Metric 2:
               <select value={metric2} onChange={handleMetric2Change}>
-                <option value="civpop">Civilian Population</option>
+
+            <optgroup label="Rates">
               <option value="emplmnt">Employment Rate</option>
               <option value="unmplmnt">Unemployment Rate</option>
+            </optgroup>
+            <optgroup label="Totals">
+              <option value="civpop">Civilian Population Total</option>
               <option value="emplmntTot">Employment Total</option>
-              <option value="laborForce">Labor Force</option>
+              <option value="laborForce">Labor Force Total</option>
               <option value="unempldTotal">Unemployment Total</option>
-              </select>
+            </optgroup>
+          </select>
             </label>
           </div>
         </div>
@@ -164,48 +200,3 @@ const Compare = () => {
 };
 
 export default Compare;
-
-
-
-
-
-
-//Comment below helps filter compare
-
-// function filterData(period) {
-//   return allData.filter((data) => data.period === period);
-// }
-
-// const Home = () => {
-
-//   const [data, setData] = useState(filterData('daily'));
-
-//   return (
-//     <div>
-//       <h1>Time Period Bar Chart using Recharts</h1>
-//       <div>
-//         <button onClick={() => setData(filterData('daily'))}>Daily</button>
-//         <button onClick={() => setData(filterData('weekly'))}>Weekly</button>
-//         <button onClick={() => setData(filterData('monthly'))}>Monthly</button>
-//         <button onClick={() => setData(filterData('quarterly'))}>Quarterly</button>
-//         <button onClick={() => setData(filterData('yearly'))}>Yearly</button>
-//       </div>
-//       <BarChart
-//         width={500}
-//         height={300}
-//         data={data}
-//         margin={{ top: 5, right: 30, left: 20, bottom: 5 }}
-//       >
-//         <CartesianGrid strokeDasharray="3 3" />
-//         <XAxis dataKey="name" />
-//         <YAxis />
-//         <Tooltip />
-//         <Legend />
-//         <Bar dataKey="pv" fill="#8884d8" />
-//         <Bar dataKey="uv" fill="#82ca9d" />
-//         {/* <Line dataKey="pv" fill="#8884d8" />
-//         <Line dataKey="uv" fill="#82ca9d" /> */}
-//       </BarChart>
-//     </div>
-//   );
-// };
