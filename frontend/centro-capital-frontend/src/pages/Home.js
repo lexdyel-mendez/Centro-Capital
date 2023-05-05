@@ -154,7 +154,7 @@ const Home = () => {
         {/* SECOND ROW */}
         <CRow id="secondRow" className="mb-5 mt-4">
           <CCol xs="12" sm="6" md="6" lg="6">
-            <CCard>
+            <CCard className="bg-light">
               <CCardBody>
                 <CCardTitle>{laborForceYearly[0]['metric']} (000s) for the year {laborForceYearly[laborForceYearly.length - 1]['year']}</CCardTitle>
                 <CustomArea data={laborForceYearly} data2={unemploymentTotal} year={laborForceYearly[laborForceYearly.length - 1]['year']} firstMetric={laborForceYearly[0]['metric']} secondMetric={unemploymentTotal['metric']}></CustomArea>
@@ -165,7 +165,7 @@ const Home = () => {
             </CCard>
           </CCol>
           <CCol xs="12" sm="6" md="6" lg="6">
-            <CCard>
+            <CCard className="bg-light">
               <CCardBody>
                 <CCardTitle>{civpopYearly['metric']} in the (000s)</CCardTitle>
                 <CustomBar data={civpopYearly} year={"2022"}></CustomBar>
