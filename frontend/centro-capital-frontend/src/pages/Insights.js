@@ -6,6 +6,7 @@ const Insights = () => {
   const [metric, setMetric] = useState("");
 
   useEffect(() => {
+  if (metric) {
     async function fetchData(metric) {
       try {
         const response = await fetch(`/centro-capital/${metric}/stats/`, {
@@ -20,7 +21,8 @@ const Insights = () => {
       }
     }
     fetchData(metric);
-  }, [metric]);
+  }
+}, [metric]);
 
   const handleMetric1Change = (event) => {
     setMetric(event.target.value);
@@ -28,20 +30,34 @@ const Insights = () => {
 
   if (!data) {
     return (
-        <label>
-              Metric 1:
-              <select value={metric} onChange={handleMetric1Change}>
-              <option value="" disabled selected>
-                Select metric 1
-              </option>
-               <option value="unemployment">Unemployment Rate</option>
-               <option value="employment">Employment Rate</option>
-              <option value="unemploymentTotal">Unemployment Total</option>
+    <div>
+    <div name="Description">
+    <h1>Metric Insights</h1>
+    <p>
+       In the following the user can analyse some calculated insights for
+       a desired metric. Among these metrics are mean, standard deviation,
+       max value and min value.
+    </p>
+    </div>
 
-            </select>
-            </label>
+      <label>
+      Metric 1:
+      <select value={metric} onChange={handleMetric1Change}>
+        <option value="" disabled selected>
+          Select metric 1
+        </option>
+        <option value="unemployment">Unemployment Rate</option>
+        <option value="employment">Employment Rate</option>
+        <option value="unemploymentTotal">Unemployment Total</option>
+        <option value="laborforce">Labor Force</option>
+        <option value="civpop">Civilian Population</option>
+        <option value="employmentTotal">Employment Total</option>
+      </select>
+    </label>
+    </div>
     );
   } else {
+  console.log(Object.keys(data)[0])
     const key = Object.keys(data)[0];
     const stats = data[key];
     const { yearly_mean, yearly_std, yearly_max, yearly_min } = stats;
@@ -84,6 +100,15 @@ const Insights = () => {
 
    return (
   <div>
+    <div name="Description">
+      <h1>Metric Insights</h1>
+      <p>
+        In the following the user can analyse some calculated insights for
+        a desired metric. Among these metrics are mean, standard deviation,
+        max value and min value.
+      </p>
+    </div>
+
     <label>
       Metric 1:
       <select value={metric} onChange={handleMetric1Change}>
@@ -93,12 +118,18 @@ const Insights = () => {
         <option value="unemployment">Unemployment Rate</option>
         <option value="employment">Employment Rate</option>
         <option value="unemploymentTotal">Unemployment Total</option>
+        <option value="laborforce">Labor Force</option>
+        <option value="civpop">Civilian Population</option>
+        <option value="employmentTotal">Employment Total</option>
       </select>
     </label>
 
     <div className="row">
-      <div className="col">
-        <h1>Yearly Mean {metric}</h1>
+      <div className="col-md-6">
+        <div className="table-description">
+          <h2>Yearly Mean {metric}</h2>
+          <p>This table shows the yearly mean of {metric} values.</p>
+        </div>
         <Table striped bordered hover>
           <thead>
             <tr>
@@ -110,8 +141,11 @@ const Insights = () => {
         </Table>
       </div>
 
-      <div className="col">
-        <h1>Yearly Standard Deviation {metric}</h1>
+      <div className="col-md-6">
+        <div className="table-description">
+          <h2>Yearly Standard Deviation {metric}</h2>
+          <p>This table shows the yearly standard deviation of {metric} values.</p>
+        </div>
         <Table striped bordered hover>
           <thead>
             <tr>
@@ -125,8 +159,11 @@ const Insights = () => {
     </div>
 
     <div className="row">
-      <div className="col">
-        <h1>Yearly Maximum {metric}</h1>
+      <div className="col-md-6">
+        <div className="table-description">
+          <h2>Yearly Maximum {metric}</h2>
+          <p>This table shows the yearly maximum {metric} values.</p>
+        </div>
         <Table striped bordered hover>
           <thead>
             <tr>
@@ -139,8 +176,11 @@ const Insights = () => {
         </Table>
       </div>
 
-      <div className="col">
-        <h1>Yearly Minimum {metric}</h1>
+      <div className="col-md-6">
+        <div className="table-description">
+          <h2>Yearly Minimum {metric}</h2>
+          <p>This table shows the yearly minimum {metric} values.</p>
+        </div>
         <Table striped bordered hover>
           <thead>
             <tr>
@@ -156,7 +196,7 @@ const Insights = () => {
   </div>
 );
 
-  }
+}
 };
 
 export default Insights;

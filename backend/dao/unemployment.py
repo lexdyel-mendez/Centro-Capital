@@ -126,7 +126,7 @@ class Unemployment_DAO:
 
     def getYearUnemploymentStats(self):
 
-        return self.getUnemploymentStats()
+        return {"Error": "DAO not implemented"}
 
     def getUnemploymentSpecStats(self, stat):
         stat_map = {
