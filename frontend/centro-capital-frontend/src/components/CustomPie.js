@@ -16,8 +16,6 @@ function CustomPie(inputData){
     };
 
 
-    console.log(inputData['data'])
-
   return (
     <ResponsiveContainer height={300}>
     <PieChart>
