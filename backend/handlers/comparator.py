@@ -1,6 +1,7 @@
 from backend.dao.unemployment import Unemployment_DAO
 from backend.dao.employment import Employment_DAO
 from backend.dao.civilianpopulation import CivPop_DAO
+from backend.dao.laborForce import LaborForce_DAO
 from flask import jsonify
 
 
@@ -9,46 +10,42 @@ class Comparator:
 
     def compareAllStats(self, metric1, metric2):
 
-        # yearly_monthly = {year: list(daoyearly[year].values())[:-3] for year in daoyearly}
-        # print({year : Unemployment_DAO().getAllUnemploymentYearly()[year] for year in Unemployment_DAO().getAllUnemploymentYearly().keys()})
-        # exit(1)
-
-        # metric_map = {
-        #     'unmplmnt': {year : Unemployment_DAO().getAllUnemploymentYearly()[year] for year in list(Unemployment_DAO().getAllUnemploymentYearly().keys())[:-3]},
-        #     'emplmnt':{year : Employment_DAO().getAllEmploymentYearly()[year] for year in list(Employment_DAO().getAllEmploymentYearly().keys())[:-3]},
-        #     'civpop':{year : CivPop_DAO().getAllPopulationYearly()[year] for year in list(CivPop_DAO().getAllPopulationYearly().keys())[:-3]}
-        # }
-
         match metric1:
             case 'unmplmnt':
-                # metric1_stats = {year : Unemployment_DAO().getAllUnemploymentYearly()[year] for year in list(Unemployment_DAO().getAllUnemploymentYearly().keys())[:-3]}
                 metric1_stats = list(Unemployment_DAO().getAllUnemploymentYearly().items())[:-3]
             case 'emplmnt':
-                # metric1_stats = {year : Employment_DAO().getAllEmploymentYearly()[year] for year in list(Employment_DAO().getAllEmploymentYearly().keys())[:-3]}
                 metric1_stats = list(Employment_DAO().getAllEmploymentYearly().items())[:-3]
             case 'civpop':
-                # metric1_stats = {year : CivPop_DAO().getAllPopulationYearly()[year] for year in list(CivPop_DAO().getAllPopulationYearly().keys())[:-3]}
                 metric1_stats = list(CivPop_DAO().getAllPopulationYearly().items())[:-3]
+            case 'emplmntTot':
+                metric1_stats = list(Employment_DAO().getAllEmploymentTotalYearly().items())[:-3]
+            case 'laborForce':
+                metric1_stats = list(LaborForce_DAO().getLaborForceYearly().items())[:-3]
+            case 'unempldTotal':
+                metric1_stats = list(Unemployment_DAO().getAllUnemploymentTotalYearly().items())[:-3]
             case _:
                 return {"Error": "Metric one not present in database"}
 
         match metric2:
             case 'unmplmnt':
-                # metric2_stats = {year : Unemployment_DAO().getAllUnemploymentYearly()[year] for year in list(Unemployment_DAO().getAllUnemploymentYearly().keys())[:-3]}
                 metric2_stats = list(Unemployment_DAO().getAllUnemploymentYearly().items())[:-3]
             case 'emplmnt':
-                # metric2_stats = {year : Employment_DAO().getAllEmploymentYearly()[year] for year in list(Employment_DAO().getAllEmploymentYearly().keys())[:-3]}
                 metric2_stats = list(Employment_DAO().getAllEmploymentYearly().items())[:-3]
             case 'civpop':
-                # metric2_stats = {year : CivPop_DAO().getAllPopulationYearly()[year] for year in list(CivPop_DAO().getAllPopulationYearly().keys())[:-3]}
                 metric2_stats = list(CivPop_DAO().getAllPopulationYearly().items())[:-3]
+            case 'emplmntTot':
+                metric2_stats = list(Employment_DAO().getAllEmploymentTotalYearly().items())[:-3]
+            case 'laborForce':
+                metric2_stats = list(LaborForce_DAO().getLaborForceYearly().items())[:-3]
+            case 'unempldTotal':
+                metric2_stats = list(Unemployment_DAO().getAllUnemploymentTotalYearly().items())[:-3]
             case _:
                 return {"Error": "Metric two not present in database"}
 
 
 
-        print(f'{metric1_stats=}')
-        print(f'{metric2_stats=}')
+        # print(f'{metric1_stats=}')
+        # print(f'{metric2_stats=}')
 
         return jsonify(Metric_1={str(metric1):metric1_stats},Metric2={str(metric2):metric2_stats})
 
@@ -70,7 +67,15 @@ class Comparator:
         except:
             return {"Error": f"Metric {metric2} not in database try {metric_map.keys()}"}
 
-        # print(f'{metric1} stats: {metric1_stats}')
-        # print(f'{metric2} stats: {metric2_stats}')
-
         return jsonify(Compare_Specific={metric1:metric1_stats,metric2:metric2_stats}, Metric=stat)
+
+        #
+        # metric1_stats = metric_map[metric1]
+        # metric2_stats = metric_map[metric2]
+        #
+        # print(f'{list(metric1_stats)=}')
+        # print(f'{list(metric2_stats)=}')
+        #
+        # return jsonify(Metric_1={str(metric1): metric1_stats}, Metric2={str(metric2): metric2_stats})
+        #
+        #

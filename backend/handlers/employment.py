@@ -49,7 +49,7 @@ class Employment_Handler:
 
     def getEmploymentStats(self):
         dao = Employment_DAO()
-        stats = dao.getEmploymentStats()
+        stats = list(dao.getEmploymentStats())[0]
         return jsonify(Employment_Stadistics=stats)
 
     def getEmploymentSpecStats(self, stat):
@@ -58,3 +58,23 @@ class Employment_Handler:
         stat = dao.getEmploymentSpecStats(stat)
 
         return jsonify(Employment_Specific_Stat=stat)
+
+# Employment Total
+
+    def updateEmploymentTotal(self, json):
+
+        dao = Employment_DAO()
+        new_id, timestamp = dao.updateEmploymentTotal(json)
+        return jsonify(new_id=new_id, insertion_time=timestamp, docs_added=len(json))
+
+    def getAllEmploymentTotalYearly(self):
+        dao = Employment_DAO()
+        docs = dao.getAllEmploymentTotalYearly()
+        return jsonify(docs)
+
+    def getEmploymentTotalStats(self):
+        dao = Employment_DAO()
+        stats = list(dao.getEmploymentTotalStats())[0]
+        print(f"{stats=}")
+        # exit()
+        return jsonify(EmploymentTotal_Stadistics=stats)

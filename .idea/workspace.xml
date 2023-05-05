@@ -19,17 +19,9 @@
     <select />
   </component>
   <component name="ChangeListManager">
-<<<<<<< HEAD
-    <list default="true" id="c4c7ee6a-9130-4ff6-bf71-ed96049c0b69" name="Changes" comment="Implement locust load testing and modify how flask serves static files">
+    <list default="true" id="c4c7ee6a-9130-4ff6-bf71-ed96049c0b69" name="Changes" comment="Built for deployment testing &#10;&#10;Ran npm run build to create a deployable version of the page. Gonna test out heroku deployment.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-=======
-    <list default="true" id="c4c7ee6a-9130-4ff6-bf71-ed96049c0b69" name="Changes" comment="Metadata contains Statistic and Started Statistical Comparator&#10;&#10;The update functions for Employment and Unemployment now also add the following statistical values:&#10;* mean&#10;* standard deviation&#10;* Max&#10;* Mean&#10;&#10;Started to implement an API in the backend to start comparing the statistical values for each metric.">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/dao/employment.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/dao/employment.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/dao/unemployment.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/dao/unemployment.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/handlers/comparator.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/handlers/comparator.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/main.py" afterDir="false" />
->>>>>>> backendDev2
+      <change beforePath="$PROJECT_DIR$/frontend/centro-capital-frontend/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/centro-capital-frontend/package.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -56,7 +48,7 @@
     </option>
   </component>
   <component name="Git.Merge.Settings">
-    <option name="BRANCH" value="origin/data_management" />
+    <option name="BRANCH" value="React-setup" />
   </component>
   <component name="Git.Settings">
     <option name="PREVIOUS_COMMIT_AUTHORS">
@@ -66,11 +58,7 @@
     </option>
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-<<<<<<< HEAD
-        <entry key="$PROJECT_DIR$" value="aecf_main" />
-=======
-        <entry key="$PROJECT_DIR$" value="main" />
->>>>>>> backendDev2
+        <entry key="$PROJECT_DIR$" value="CompareFrontEnd" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -84,6 +72,13 @@
       <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
     </file-type-list>
   </component>
+  <component name="GithubProjectSettings">
+    <option name="branchProtectionPatterns">
+      <list>
+        <option value="main" />
+      </list>
+    </option>
+  </component>
   <component name="JupyterTrust" id="80830e09-c88f-4550-9990-150abafdb69a" />
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -96,29 +91,14 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-<<<<<<< HEAD
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "WebServerToolWindowFactoryState": "false",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "settings.editor.selected.configurable": "com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable",
-    "vue.rearranger.settings.migration": "true"
-  }
-}]]></component>
-=======
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_package_manager_path" value="npm" />
-    <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
+    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
   </component>
->>>>>>> backendDev2
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/frontend/centro-capital-frontend/src/pages" />
@@ -128,7 +108,7 @@
       <recent name="C:\Users\User\PycharmProjects\Centro-Capital\env" />
     </key>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Python.main">
     <configuration name="__init__" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="Centro-Capital" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -193,23 +173,64 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
+    <configuration name="run (1)" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="Centro-Capital" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/run.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="run" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="Centro-Capital" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="C:\Users\User\PycharmProjects\Centro-Capital\run.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <list>
       <item itemvalue="Python.__init__" />
-      <item itemvalue="Python.main" />
       <item itemvalue="Python.bde_main" />
+      <item itemvalue="Python.main" />
+      <item itemvalue="Python.run (1)" />
+      <item itemvalue="Python.run" />
     </list>
     <recent_temporary>
       <list>
         <item itemvalue="Python.main" />
-<<<<<<< HEAD
-        <item itemvalue="Python.run (1)" />
-        <item itemvalue="Python.run" />
-        <item itemvalue="Python.__init__" />
-        <item itemvalue="Python.main" />
-=======
         <item itemvalue="Python.bde_main" />
         <item itemvalue="Python.__init__" />
->>>>>>> backendDev2
+        <item itemvalue="Python.run (1)" />
+        <item itemvalue="Python.run" />
       </list>
     </recent_temporary>
   </component>
@@ -223,8 +244,6 @@
       <updated>1676939301207</updated>
       <workItem from="1679425687582" duration="6396000" />
       <workItem from="1680111805530" duration="1510000" />
-      <workItem from="1682377378096" duration="6394000" />
-      <workItem from="1682522311085" duration="4801000" />
     </task>
     <task id="LOCAL-00001" summary="Dummy Flask &#10;&#10;Flask is now running, however its still not connected to mongodb.">
       <created>1677606094403</created>
@@ -317,88 +336,42 @@
       <option name="project" value="LOCAL" />
       <updated>1679954228958</updated>
     </task>
-<<<<<<< HEAD
-    <task id="LOCAL-00014" summary="Attempting to modify json script to update MongoDB">
-      <created>1681848391266</created>
+    <task id="LOCAL-00014" summary="Compare Selection&#10;&#10;Implemented so that the user can decide from two dropdowns the metrics they wish to compare.">
+      <created>1683087401815</created>
       <option name="number" value="00014" />
       <option name="presentableId" value="LOCAL-00014" />
       <option name="project" value="LOCAL" />
-      <updated>1681848391266</updated>
+      <updated>1683087401815</updated>
     </task>
-    <task id="LOCAL-00015" summary="Moving info to config and env vars">
-      <created>1682378328657</created>
+    <task id="LOCAL-00015" summary="Added Employment Total to DB &#10;&#10;Added the API calls that are regarding updating and retrieving the Employment Total data to/from the database.">
+      <created>1683089430861</created>
       <option name="number" value="00015" />
       <option name="presentableId" value="LOCAL-00015" />
       <option name="project" value="LOCAL" />
-      <updated>1682378328657</updated>
+      <updated>1683089430861</updated>
     </task>
-    <task id="LOCAL-00016" summary="Modify unemployment routes">
-      <created>1682524958197</created>
+    <task id="LOCAL-00016" summary="Added More Metrics to DB&#10;&#10;Added the Labor Force, Employment Total and Unemployed Total metrics to the DB. Also added the metrics to updating and getting the front data for home each matric.">
+      <created>1683092004214</created>
       <option name="number" value="00016" />
       <option name="presentableId" value="LOCAL-00016" />
       <option name="project" value="LOCAL" />
-      <updated>1682524958197</updated>
+      <updated>1683092004214</updated>
     </task>
-    <task id="LOCAL-00017" summary="Modify git ignore to include pre-generated environment files">
-      <created>1682875314650</created>
+    <task id="LOCAL-00017" summary="Insight Functional &#10;&#10;Now the page of insight returns the calculate mean, std, min and max values for a desired metric that the user wants to inspect. The values are rendered as tables which are grided in a 2x2.">
+      <created>1683099610827</created>
       <option name="number" value="00017" />
       <option name="presentableId" value="LOCAL-00017" />
       <option name="project" value="LOCAL" />
-      <updated>1682875314650</updated>
+      <updated>1683099610827</updated>
     </task>
-    <task id="LOCAL-00018" summary="Pre-Generated environment files">
-      <created>1682875419661</created>
+    <task id="LOCAL-00018" summary="Built for deployment testing &#10;&#10;Ran npm run build to create a deployable version of the page. Gonna test out heroku deployment.">
+      <created>1683099785263</created>
       <option name="number" value="00018" />
       <option name="presentableId" value="LOCAL-00018" />
       <option name="project" value="LOCAL" />
-      <updated>1682875419661</updated>
-    </task>
-    <task id="LOCAL-00019" summary="Implement locust load testing and modify how flask serves static files">
-      <created>1682881588380</created>
-      <option name="number" value="00019" />
-      <option name="presentableId" value="LOCAL-00019" />
-      <option name="project" value="LOCAL" />
-      <updated>1682881588380</updated>
-    </task>
-    <option name="localTasksCounter" value="20" />
-=======
-    <task id="LOCAL-00014" summary="Scrapper now returns the JSON instead of jsut saving it locally.">
-      <created>1681956291839</created>
-      <option name="number" value="00014" />
-      <option name="presentableId" value="LOCAL-00014" />
-      <option name="project" value="LOCAL" />
-      <updated>1681956291839</updated>
-    </task>
-    <task id="LOCAL-00015" summary="Can update MongoDB with Scrapper&#10;&#10;Now the API uses the  scrapper whenever updating the dataset.">
-      <created>1681959065178</created>
-      <option name="number" value="00015" />
-      <option name="presentableId" value="LOCAL-00015" />
-      <option name="project" value="LOCAL" />
-      <updated>1681959065178</updated>
-    </task>
-    <task id="LOCAL-00016" summary="Can update MongoDB with Scrapper&#10;&#10;Now the API uses the  scrapper whenever updating the dataset.&#10;&#10;Signed-off-by: Lexdyel Mendez Rios &lt;lexdyel.mendez@upr.edu&gt;">
-      <created>1681959083957</created>
-      <option name="number" value="00016" />
-      <option name="presentableId" value="LOCAL-00016" />
-      <option name="project" value="LOCAL" />
-      <updated>1681959083957</updated>
-    </task>
-    <task id="LOCAL-00017" summary="Unemployment Update &#10;&#10;The updateUnemployment flask call now uses the scrapper correctly extracting from the BDE dataset. &#10;&#10;Signed-off-by: Lexdyel Mendez Rios &lt;lexdyel.mendez@upr.edu&gt;">
-      <created>1681959281715</created>
-      <option name="number" value="00017" />
-      <option name="presentableId" value="LOCAL-00017" />
-      <option name="project" value="LOCAL" />
-      <updated>1681959281715</updated>
-    </task>
-    <task id="LOCAL-00018" summary="Metadata contains Statistic and Started Statistical Comparator&#10;&#10;The update functions for Employment and Unemployment now also add the following statistical values:&#10;* mean&#10;* standard deviation&#10;* Max&#10;* Mean&#10;&#10;Started to implement an API in the backend to start comparing the statistical values for each metric.">
-      <created>1682377529113</created>
-      <option name="number" value="00018" />
-      <option name="presentableId" value="LOCAL-00018" />
-      <option name="project" value="LOCAL" />
-      <updated>1682377529113</updated>
+      <updated>1683099785263</updated>
     </task>
     <option name="localTasksCounter" value="19" />
->>>>>>> backendDev2
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -419,7 +392,7 @@
                   <entry key="branch">
                     <value>
                       <list>
-                        <option value="HEAD" />
+                        <option value="CompareFrontEnd" />
                       </list>
                     </value>
                   </entry>
@@ -430,25 +403,7 @@
         </entry>
       </map>
     </option>
-<<<<<<< HEAD
-    <option name="RECENT_FILTERS">
-      <map>
-        <entry key="Branch">
-          <value>
-            <list>
-              <RecentGroup>
-                <option name="FILTER_VALUES">
-                  <option value="HEAD" />
-                </option>
-              </RecentGroup>
-            </list>
-          </value>
-        </entry>
-      </map>
-    </option>
-=======
     <option name="oldMeFiltersMigrated" value="true" />
->>>>>>> backendDev2
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Dummy Flask &#10;&#10;Flask is now running, however its still not connected to mongodb." />
@@ -462,53 +417,22 @@
     <MESSAGE value="Fixed File Locations" />
     <MESSAGE value="Fixed Profcile&#10;&#10;Now it points to main inside of the backend folder." />
     <MESSAGE value="Merge branches" />
-<<<<<<< HEAD
-    <MESSAGE value="Attempting to modify json script to update MongoDB" />
-    <MESSAGE value="Moving info to config and env vars" />
-    <MESSAGE value="Modify unemployment routes" />
-    <MESSAGE value="Modify git ignore to include pre-generated environment files" />
-    <MESSAGE value="Pre-Generated environment files" />
-    <MESSAGE value="Implement locust load testing and modify how flask serves static files" />
-    <option name="LAST_COMMIT_MESSAGE" value="Implement locust load testing and modify how flask serves static files" />
-  </component>
-  <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/Centro_Capital$adeanHelpPlease.coverage" NAME="adeanHelpPlease Coverage Results" MODIFIED="1680209909563" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/backend/json_scripts" />
-    <SUITE FILE_PATH="coverage/Centro_Capital$bde_main.coverage" NAME="bde_main Coverage Results" MODIFIED="1681847407090" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/backend/dataSources/bde" />
-    <SUITE FILE_PATH="coverage/Centro_Capital$Unemployment.coverage" NAME="Unemployment Coverage Results" MODIFIED="1682522747894" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/backend/handlers" />
-    <SUITE FILE_PATH="coverage/Centro_Capital$mongo_config.coverage" NAME="mongo_config Coverage Results" MODIFIED="1682477058272" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/backend/config" />
-    <SUITE FILE_PATH="coverage/Centro_Capital$main.coverage" NAME="main Coverage Results" MODIFIED="1682541231434" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/backend" />
-    <SUITE FILE_PATH="coverage/Centro_Capital$gdp.coverage" NAME="gdp Coverage Results" MODIFIED="1680561124774" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/backend/handlers" />
-    <SUITE FILE_PATH="coverage/Centro_Capital$unemployment.coverage" NAME="unemployment Coverage Results" MODIFIED="1682523987061" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/backend/dao" />
-    <SUITE FILE_PATH="coverage/CCPR$main__1_.coverage" NAME="main (1) Coverage Results" MODIFIED="1679951056063" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/backend" />
-    <SUITE FILE_PATH="coverage/Centro_Capital$exc2JSON.coverage" NAME="exc2JSON Coverage Results" MODIFIED="1681847163987" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/backend/dataSources/bde/functions" />
-=======
-    <MESSAGE value="Scrapper now returns the JSON instead of jsut saving it locally." />
-    <MESSAGE value="Can update MongoDB with Scrapper&#10;&#10;Now the API uses the  scrapper whenever updating the dataset." />
-    <MESSAGE value="Can update MongoDB with Scrapper&#10;&#10;Now the API uses the  scrapper whenever updating the dataset.&#10;&#10;Signed-off-by: Lexdyel Mendez Rios &lt;lexdyel.mendez@upr.edu&gt;" />
-    <MESSAGE value="Unemployment Update &#10;&#10;The updateUnemployment flask call now uses the scrapper correctly extracting from the BDE dataset. &#10;&#10;Signed-off-by: Lexdyel Mendez Rios &lt;lexdyel.mendez@upr.edu&gt;" />
-    <MESSAGE value="Metadata contains Statistic and Started Statistical Comparator&#10;&#10;The update functions for Employment and Unemployment now also add the following statistical values:&#10;* mean&#10;* standard deviation&#10;* Max&#10;* Mean&#10;&#10;Started to implement an API in the backend to start comparing the statistical values for each metric." />
-    <option name="LAST_COMMIT_MESSAGE" value="Metadata contains Statistic and Started Statistical Comparator&#10;&#10;The update functions for Employment and Unemployment now also add the following statistical values:&#10;* mean&#10;* standard deviation&#10;* Max&#10;* Mean&#10;&#10;Started to implement an API in the backend to start comparing the statistical values for each metric." />
+    <MESSAGE value="Compare Selection&#10;&#10;Implemented so that the user can decide from two dropdowns the metrics they wish to compare." />
+    <MESSAGE value="Added Employment Total to DB &#10;&#10;Added the API calls that are regarding updating and retrieving the Employment Total data to/from the database." />
+    <MESSAGE value="Added More Metrics to DB&#10;&#10;Added the Labor Force, Employment Total and Unemployed Total metrics to the DB. Also added the metrics to updating and getting the front data for home each matric." />
+    <MESSAGE value="Insight Functional &#10;&#10;Now the page of insight returns the calculate mean, std, min and max values for a desired metric that the user wants to inspect. The values are rendered as tables which are grided in a 2x2." />
+    <MESSAGE value="Built for deployment testing &#10;&#10;Ran npm run build to create a deployable version of the page. Gonna test out heroku deployment." />
+    <option name="LAST_COMMIT_MESSAGE" value="Built for deployment testing &#10;&#10;Ran npm run build to create a deployable version of the page. Gonna test out heroku deployment." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/backend/dao/unemployment.py</url>
-          <line>128</line>
-          <option name="timeStamp" value="7" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/backend/dao/employment.py</url>
-          <line>102</line>
-          <option name="timeStamp" value="8" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/backend/handlers/comparator.py</url>
-          <line>25</line>
-          <option name="timeStamp" value="9" />
+          <url>file://$PROJECT_DIR$/backend/dao/civilianpopulation.py</url>
+          <line>17</line>
+          <option name="timeStamp" value="12" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
->>>>>>> backendDev2
   </component>
 </project>
