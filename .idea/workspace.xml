@@ -19,9 +19,9 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c4c7ee6a-9130-4ff6-bf71-ed96049c0b69" name="Changes" comment="Fixed Insight Rendering &#10;&#10;Now the Insights page has a description for each of the tables.">
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_3_14_2023_3_27_PM__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_3_14_2023_3_27_PM__Changes_.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/centro-capital-frontend/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/centro-capital-frontend/package-lock.json" afterDir="false" />
+    <list default="true" id="c4c7ee6a-9130-4ff6-bf71-ed96049c0b69" name="Changes" comment="Added react-select &#10;&#10;Installed the react-select to the package.json for it to be used in the front end. This package is used to render a dropdown selection that are used throughut the page.">
+      <change afterPath="$PROJECT_DIR$/testing/requests_testing.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -33,6 +33,7 @@
       <list>
         <option value="JavaScript File" />
         <option value="Python Script" />
+        <option value="Python Unit Test" />
       </list>
     </option>
   </component>
@@ -58,7 +59,7 @@
     </option>
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="CompareFrontEnd" />
+        <entry key="$PROJECT_DIR$" value="CompareFrontendSelect" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -198,26 +199,18 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="run" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+    <configuration name="Python tests in requests_testing.py" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
       <module name="Centro-Capital" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/testing" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="C:\Users\User\PycharmProjects\Centro-Capital\run.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
+      <option name="_new_additionalArguments" value="&quot;&quot;" />
+      <option name="_new_target" value="&quot;$PROJECT_DIR$/testing/requests_testing.py&quot;" />
+      <option name="_new_targetType" value="&quot;PATH&quot;" />
       <method v="2" />
     </configuration>
     <list>
@@ -225,15 +218,15 @@
       <item itemvalue="Python.bde_main" />
       <item itemvalue="Python.main" />
       <item itemvalue="Python.run (1)" />
-      <item itemvalue="Python.run" />
+      <item itemvalue="Python tests.Python tests in requests_testing.py" />
     </list>
     <recent_temporary>
       <list>
         <item itemvalue="Python.main" />
+        <item itemvalue="Python tests.Python tests in requests_testing.py" />
         <item itemvalue="Python.bde_main" />
         <item itemvalue="Python.__init__" />
         <item itemvalue="Python.run (1)" />
-        <item itemvalue="Python.run" />
       </list>
     </recent_temporary>
   </component>
@@ -402,7 +395,14 @@
       <option name="project" value="LOCAL" />
       <updated>1683170449247</updated>
     </task>
-    <option name="localTasksCounter" value="23" />
+    <task id="LOCAL-00023" summary="Added react-select &#10;&#10;Installed the react-select to the package.json for it to be used in the front end. This package is used to render a dropdown selection that are used throughut the page.">
+      <created>1683230338464</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1683230338464</updated>
+    </task>
+    <option name="localTasksCounter" value="24" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -457,7 +457,8 @@
     <MESSAGE value="Compare Organized&#10;&#10;Fixed the selection in the compare so that it divides between rates and totals." />
     <MESSAGE value="Description in render of Insight and Compare&#10;&#10;Now the HTML renders a description for both the insights page and the compare." />
     <MESSAGE value="Fixed Insight Rendering &#10;&#10;Now the Insights page has a description for each of the tables." />
-    <option name="LAST_COMMIT_MESSAGE" value="Fixed Insight Rendering &#10;&#10;Now the Insights page has a description for each of the tables." />
+    <MESSAGE value="Added react-select &#10;&#10;Installed the react-select to the package.json for it to be used in the front end. This package is used to render a dropdown selection that are used throughut the page." />
+    <option name="LAST_COMMIT_MESSAGE" value="Added react-select &#10;&#10;Installed the react-select to the package.json for it to be used in the front end. This package is used to render a dropdown selection that are used throughut the page." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

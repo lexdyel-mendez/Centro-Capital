@@ -153,14 +153,13 @@ def updateCivPopulation(data = bdeData(xlsReq(),'Civilian Population')):
         return {"Message Error":"Can't insert empty data"}
 
 
-@app.route(home + '/populationYearly', methods = ['GET'])
+@app.route(home + '/civpopYearly', methods = ['GET'])
 def getPopulationYearly():
     if request.method == 'GET':
-        if len(request.json) == 0:
-            return CivPop_Handler().getAllPopulationYearly()
-        else:
-            # return {"Error":"Population by year not implemented"}
-            return CivPop_Handler().getPopulationYear(request.json)
+        return CivPop_Handler().getAllPopulationYearly()
+    else:
+        return {"Error":"Population by year not implemented"}
+        # return CivPop_Handler().getPopulationYear(request.json)
 
 
 @app.route(home +'/civpop/stats/',defaults={'stat':None}, methods=['GET'])
