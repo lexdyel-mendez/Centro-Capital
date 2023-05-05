@@ -95,6 +95,9 @@ const Home = () => {
       } catch (error) {
         console.error("Error fetching data:", error);
       }
+
+
+      
     }
     fetchData()
   }, []);
@@ -104,7 +107,7 @@ const Home = () => {
       <CSpinner color="secondary" className="justify-center">Fetching data...</CSpinner>
     );
   } else {
-    const pie = organizePieData(unemploymentTotal, employmentTotal)
+    const pie1 = organizePieData(unemploymentTotal, employmentTotal)
 
       return (
         <Container>
@@ -123,8 +126,8 @@ const Home = () => {
             <CCol xs="12" sm="6" md="6" lg="6">
               <CCard className="bg-light">
                 <CCardBody>
-                  <CCardTitle>{pie[0]['month'].charAt(0) + pie[0]['month'].slice(1).toLowerCase()} {pie[0]['year']}</CCardTitle>
-                  <CustomPie data={pie}></CustomPie>
+                  <CCardTitle>{pie1[0]['month'].charAt(0) + pie1[0]['month'].slice(1).toLowerCase()} {pie1[0]['year']} Employment (000s) </CCardTitle>
+                  <CustomPie data={pie1}></CustomPie>
                 </CCardBody>
                 <CCardFooter style={{ textAlign: 'right' }}>
                 <CCardLink href="/insights" className='text-info'>Additional insights {'>'}</CCardLink>
