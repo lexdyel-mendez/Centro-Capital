@@ -13,37 +13,58 @@ import {
 // Dummy data
 const inputData = [
   // Daily data
-  { name: 'june', uv: 4000, pv: 2400, period: '2014' },
-  { name: 'july', uv: 3000, pv: 1398, period: '2014' },
+  { "name": 'june', uv: 4000, pv: 2400, period: '2014' },
+  { "name": 'july', uv: 3000, pv: 1398, period: '2014' },
   // Weekly data
-  { name: 'Week 1', uv: 8000, pv: 4800,  period: '2015' },
-  { name: 'Week 2', uv: 6000, pv: 2796, period: '2015' },
+  { "name": 'Week 1', uv: 8000, pv: 4800,  period: '2015' },
+  { "name": 'Week 2', uv: 6000, pv: 2796, period: '2015' },
   // Monthly data
-  { name: 'Jan', uv: 24000, pv: 14400,  period: '2016' },
-  { name: 'Feb', uv: 18000, pv: 8396, period: '2016' },
+  {"name": 'Jan', uv: 24000, pv: 14400,  period: '2016' },
+  { "name": 'Feb', uv: 18000, pv: 8396, period: '2016' },
   // Quarterly data
-  { name: 'Q1', uv: 72000, pv: 43200,  period: '2017' },
+  { "name": 'Q1', uv: 72000, pv: 43200,  period: '2017' },
   // Yearly data
-  { name: '2022', uv: 288000, pv: 172800, period: '2018' },
+  { "name": '2022', uv: 288000, pv: 172800, period: '2018' },
 ];
-
+let barData=[]
 function filterData(period) {
   return inputData.filter((data) => data.period === period);
 }
 
-function CustomCompareBar(){
+function CustomCompareBar({data, year}){
+  // console.log(data)
+  let barData=[]
+  const monthArr = ["JULY", "AUGUST", "SEPTEMBER", "OCTOBER", "NOVEMBER", "DECEMBER", "JANUARY", "FEBRUARY", "MARCH", "APRIL", "MAY", "JUNE"]
 
-  const [inputData, setData] = useState(filterData('2014'));
+  for(const key of Object.keys(data)){
+    if(!isNaN(parseInt(key))){
+      for(const month of monthArr){
+        let runDict={}
+        runDict['period'] = key
+        runDict['month'] = month
+        runDict['metric1'] = data['metric']
+        runDict[data['metric']] = data[key][month]
+        barData.push(runDict)
+      }
+    }
+
+  }
+  console.log(barData)
+
+  const [inputData, setData] = useState(filterData(year));
 
   return (
     <div>
-      <h1>Time Period Bar Chart using Recharts</h1>
-      <div>
-        <button onClick={() => setData(filterData('2014'))}>2014</button>
-        <button onClick={() => setData(filterData('2015'))}>2015</button>
-        <button onClick={() => setData(filterData('2016'))}>2016</button>
-        <button onClick={() => setData(filterData('2017'))}>2017</button>
-        <button onClick={() => setData(filterData('2018'))}>2018</button>
+      <div className="m-2">
+        <button className="rounded" onClick={() => setData(filterData('2022'))}>2022</button>
+        <button className="rounded" onClick={() => setData(filterData('2021'))}>2021</button>
+        <button className="rounded" onClick={() => setData(filterData('2020'))}>2020</button>
+        <button className="rounded" onClick={() => setData(filterData('2019'))}>2019</button>
+        <button className="rounded" onClick={() => setData(filterData('2018'))}>2018</button>
+        <button className="rounded" onClick={() => setData(filterData('2017'))}>2017</button>
+        <button className="rounded" onClick={() => setData(filterData('2016'))}>2016</button>
+        <button className="rounded" onClick={() => setData(filterData('2015'))}>2015</button>
+        <button className="rounded" onClick={() => setData(filterData('2014'))}>2014</button>
       </div>
       <ResponsiveContainer height={300}>
       <BarChart
@@ -57,8 +78,7 @@ function CustomCompareBar(){
         <YAxis />
         <Tooltip />
         <Legend />
-        <Bar dataKey="pv" fill="#8884d8" />
-        <Bar dataKey="uv" fill="#82ca9d" />
+        <Bar dataKey="uv" fill="#8884d8" />
       </BarChart>
       </ResponsiveContainer>
     </div>

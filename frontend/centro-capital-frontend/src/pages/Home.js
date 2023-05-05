@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import Container from 'react-bootstrap/Container';
 import { CSpinner, CCard, CCardTitle, CCardLink, CRow, CCol, CCardBody, CCardFooter } from '@coreui/react';
 import CustomCompareBar from "../components/CustomCompareBar";
+import CustomBar from "../components/CustomBar";
 import CustomCompareLine from '../components/CustomCompareLine'
 import CustomPie from '../components/CustomPie';
 import CustomArea from '../components/CustomArea';
@@ -64,7 +65,7 @@ const Home = () => {
   const [unemploymentTotal, setUnemploymentTotal] = useState();
   const [employmentTotal, setEmploymentTotal] = useState();
   const [laborForceYearly, setLaborForceYearly] = useState();
-  const [populationYearly, setPopulationYearly] = useState();
+  const [civpopYearly, setcivpopYearly] = useState();
 
   useEffect(() => {
     async function fetchData() {
@@ -105,14 +106,25 @@ const Home = () => {
       } catch (error) {
         console.error("Error fetching data:", error);
       }
+      //Civilian Population
+      try {
+        const response = await fetch("/centro-capital/civpopYearly", { method: "GET" });
+        if (response.status === 200) {
+          const doc = await response.json();
+          setcivpopYearly(doc);
+        }
+      } catch (error) {
+        console.error("Error fetching data:", error);
+      }
 
     }
     fetchData()
 
   }, []);
   
-  if (unemploymentRate && unemploymentTotal && employmentTotal && laborForceYearly) {
+  if (unemploymentRate && unemploymentTotal && employmentTotal && laborForceYearly && civpopYearly) {
     const pie1 = organizePieData(unemploymentTotal, employmentTotal)
+    console.log(civpopYearly)
     return (
       <Container>
         <CRow id="firstRow"className="mb-4 mt-4">
@@ -145,7 +157,7 @@ const Home = () => {
             <CCard>
               <CCardBody>
                 <CCardTitle>{laborForceYearly[0]['metric']} (000s) for the year {laborForceYearly[laborForceYearly.length - 1]['year']}</CCardTitle>
-                <CustomArea data={laborForceYearly} year={laborForceYearly[laborForceYearly.length - 1]['year']} firstMetric={laborForceYearly[0]['metric']}></CustomArea>
+                <CustomArea data={laborForceYearly} data2={unemploymentTotal} year={laborForceYearly[laborForceYearly.length - 1]['year']} firstMetric={laborForceYearly[0]['metric']} secondMetric={unemploymentTotal['metric']}></CustomArea>
               </CCardBody>
               <CCardFooter style={{ textAlign: 'right' }}>
               <CCardLink href="/insights" className='text-info'>Additional insights {'>'}</CCardLink>
@@ -155,8 +167,8 @@ const Home = () => {
           <CCol xs="12" sm="6" md="6" lg="6">
             <CCard>
               <CCardBody>
-                <CCardTitle>Card 4</CCardTitle>
-                <CustomCompareBar></CustomCompareBar>
+                <CCardTitle>{civpopYearly['metric']} in the (000s)</CCardTitle>
+                <CustomBar data={civpopYearly} year={"2022"}></CustomBar>
               </CCardBody>
               <CCardFooter style={{ textAlign: 'right' }}>
               <CCardLink href="/insights" className='text-info'>Additional insights {'>'}</CCardLink>

@@ -1,8 +1,24 @@
 import React, { Component } from 'react';
 import { AreaChart, Area, ResponsiveContainer, XAxis, YAxis, CartesianGrid, Tooltip} from 'recharts';
   
+function getMinMaxCivilianPopulation(data) {
+  let min = Number.MAX_VALUE;
+  let max = Number.MIN_VALUE;
+  
+  for (let i = 0; i < data.length; i++) {
+    const value = Number(data[i]["Civilian Population"]);
+    
+    if (!isNaN(value)) {
+      min = Math.min(min, value);
+      max = Math.max(max, value);
+    }
+  }
+  
+  return { min, max };
+}
 
-function CustomArea({data, data02, year, firstMetric, secondMetric, thirdMetric}){
+function CustomArea({data, data2, year, firstMetric, secondMetric}){
+  let runArr2=[]
   let workingData=data
   let lineData=[]
   for(const pos of workingData){
@@ -10,6 +26,14 @@ function CustomArea({data, data02, year, firstMetric, secondMetric, thirdMetric}
       lineData.push(pos)
     }
   }
+  if(data2){
+    let workingData2=data2[year]
+    for(const i=0;i<workingData2.length-1;i++){
+      lineData[i][secondMetric] = workingData2
+    }
+  }
+
+let minMax = getMinMaxCivilianPopulation(lineData)
     return(
         <ResponsiveContainer height={300}>
         <AreaChart width={730} height={250} data={lineData}
@@ -25,7 +49,7 @@ function CustomArea({data, data02, year, firstMetric, secondMetric, thirdMetric}
         </linearGradient>
         </defs>
         <XAxis dataKey="month" />
-        <YAxis />
+        <YAxis domain={[minMax['min'],minMax['max']]}/>
         <CartesianGrid strokeDasharray="3 3" />
         <Tooltip />
         <Area type="monotone" dataKey={firstMetric} stroke="#8884d8" fillOpacity={1} fill="url(#colorUv)" />
