@@ -1,8 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import Container from 'react-bootstrap/Container';
 import { CSpinner, CCard, CCardTitle, CCardLink, CRow, CCol, CCardBody, CCardFooter } from '@coreui/react';
-import Row from 'react-bootstrap/Row';
-import Col from 'react-bootstrap/Col';
+import CustomCompareBar from "../components/CustomCompareBar";
 import CustomBar from "../components/CustomBar";
 import CustomCompareLine from '../components/CustomCompareLine'
 import CustomPie from '../components/CustomPie';
@@ -65,6 +64,8 @@ const Home = () => {
   const [unemploymentRate, setUnemploymentRate] = useState();
   const [unemploymentTotal, setUnemploymentTotal] = useState();
   const [employmentTotal, setEmploymentTotal] = useState();
+  const [laborForceYearly, setLaborForceYearly] = useState();
+  const [civpopYearly, setcivpopYearly] = useState();
 
   useEffect(() => {
     async function fetchData() {
@@ -95,74 +96,95 @@ const Home = () => {
       } catch (error) {
         console.error("Error fetching data:", error);
       }
+      //Labor Force
+      try {
+        const response = await fetch("/centro-capital/laborforceYearly", { method: "GET" });
+        if (response.status === 200) {
+          const doc = await response.json();
+          setLaborForceYearly(organizeLineData(doc['LaborForce_Yearly']));
+        }
+      } catch (error) {
+        console.error("Error fetching data:", error);
+      }
+      //Civilian Population
+      try {
+        const response = await fetch("/centro-capital/civpopYearly", { method: "GET" });
+        if (response.status === 200) {
+          const doc = await response.json();
+          setcivpopYearly(doc);
+        }
+      } catch (error) {
+        console.error("Error fetching data:", error);
+      }
 
-
-      
     }
     fetchData()
-  }, []);
 
-  if (!unemploymentRate || !unemploymentTotal || !employmentTotal) {
+  }, []);
+  
+  if (unemploymentRate && unemploymentTotal && employmentTotal && laborForceYearly && civpopYearly) {
+    const pie1 = organizePieData(unemploymentTotal, employmentTotal)
+    console.log(civpopYearly)
+    return (
+      <Container>
+        <CRow id="firstRow"className="mb-4 mt-4">
+          <CCol xs="12" sm="6" md="6" lg="6">
+            <CCard className="bg-light">
+              <CCardBody>
+                <CCardTitle>{unemploymentRate[0]['metric']} for the year {unemploymentRate[unemploymentRate.length - 1]['year']}</CCardTitle>
+                <CustomCompareLine data={unemploymentRate} year={unemploymentRate[unemploymentRate.length - 1]['year']} firstMetric={unemploymentRate[0]['metric']}></CustomCompareLine>
+              </CCardBody>
+              <CCardFooter style={{ textAlign: 'right' }}>
+              <CCardLink href="/insights" className='text-info'>Additional insights {'>'}</CCardLink>
+              </CCardFooter>
+            </CCard>
+          </CCol>
+          <CCol xs="12" sm="6" md="6" lg="6">
+            <CCard className="bg-light">
+              <CCardBody>
+                <CCardTitle>{pie1[0]['month'].charAt(0) + pie1[0]['month'].slice(1).toLowerCase()} {pie1[0]['year']} Employment (000s) </CCardTitle>
+                <CustomPie data={pie1}></CustomPie>
+              </CCardBody>
+              <CCardFooter style={{ textAlign: 'right' }}>
+              <CCardLink href="/insights" className='text-info'>Additional insights {'>'}</CCardLink>
+              </CCardFooter>
+            </CCard>
+          </CCol>
+        </CRow>
+        {/* SECOND ROW */}
+        <CRow id="secondRow" className="mb-5 mt-4">
+          <CCol xs="12" sm="6" md="6" lg="6">
+            <CCard>
+              <CCardBody>
+                <CCardTitle>{laborForceYearly[0]['metric']} (000s) for the year {laborForceYearly[laborForceYearly.length - 1]['year']}</CCardTitle>
+                <CustomArea data={laborForceYearly} data2={unemploymentTotal} year={laborForceYearly[laborForceYearly.length - 1]['year']} firstMetric={laborForceYearly[0]['metric']} secondMetric={unemploymentTotal['metric']}></CustomArea>
+              </CCardBody>
+              <CCardFooter style={{ textAlign: 'right' }}>
+              <CCardLink href="/insights" className='text-info'>Additional insights {'>'}</CCardLink>
+              </CCardFooter>
+            </CCard>
+          </CCol>
+          <CCol xs="12" sm="6" md="6" lg="6">
+            <CCard>
+              <CCardBody>
+                <CCardTitle>{civpopYearly['metric']} in the (000s)</CCardTitle>
+                <CustomBar data={civpopYearly} year={"2022"}></CustomBar>
+              </CCardBody>
+              <CCardFooter style={{ textAlign: 'right' }}>
+              <CCardLink href="/insights" className='text-info'>Additional insights {'>'}</CCardLink>
+              </CCardFooter>
+            </CCard>
+          </CCol>
+        </CRow>
+
+
+      </Container>
+    );
+  } else {
     return (
       <CSpinner color="secondary" className="justify-center">Fetching data...</CSpinner>
     );
-  } else {
-    const pie1 = organizePieData(unemploymentTotal, employmentTotal)
-
-      return (
-        <Container>
-          <CRow id="firstRow"className="mb-4 mt-4">
-            <CCol xs="12" sm="6" md="6" lg="6">
-              <CCard className="bg-light">
-                <CCardBody>
-                  <CCardTitle>{unemploymentRate[0]['metric']} for the year {unemploymentRate[unemploymentRate.length - 1]['year']}</CCardTitle>
-                  <CustomCompareLine data={unemploymentRate} year={unemploymentRate[unemploymentRate.length - 1]['year']} firstMetric={unemploymentRate[0]['metric']}></CustomCompareLine>
-                </CCardBody>
-                <CCardFooter style={{ textAlign: 'right' }}>
-                <CCardLink href="/insights" className='text-info'>Additional insights {'>'}</CCardLink>
-                </CCardFooter>
-              </CCard>
-            </CCol>
-            <CCol xs="12" sm="6" md="6" lg="6">
-              <CCard className="bg-light">
-                <CCardBody>
-                  <CCardTitle>{pie1[0]['month'].charAt(0) + pie1[0]['month'].slice(1).toLowerCase()} {pie1[0]['year']} Employment (000s) </CCardTitle>
-                  <CustomPie data={pie1}></CustomPie>
-                </CCardBody>
-                <CCardFooter style={{ textAlign: 'right' }}>
-                <CCardLink href="/insights" className='text-info'>Additional insights {'>'}</CCardLink>
-                </CCardFooter>
-              </CCard>
-            </CCol>
-          </CRow>
-
-          <CRow id="secondRow" className="mb-5 mt-4">
-            <CCol xs="12" sm="6" md="6" lg="6">
-              <CCard>
-                <CCardBody>
-                  <CCardTitle>Card 3</CCardTitle>
-                  <CustomArea></CustomArea>
-                </CCardBody>
-                <CCardFooter style={{ textAlign: 'right' }}>
-                <CCardLink href="/insights" className='text-info'>Additional insights {'>'}</CCardLink>
-                </CCardFooter>
-              </CCard>
-            </CCol>
-            <CCol xs="12" sm="6" md="6" lg="6">
-              <CCard>
-                <CCardBody>
-                  <CCardTitle>Card 4</CCardTitle>
-                </CCardBody>
-                <CCardFooter style={{ textAlign: 'right' }}>
-                <CCardLink href="/insights" className='text-info'>Additional insights {'>'}</CCardLink>
-                </CCardFooter>
-              </CCard>
-            </CCol>
-          </CRow>
-
-
-        </Container>
-      );
+    
   }
 
 
