@@ -168,8 +168,8 @@ const Insights = () => {
           <thead>
             <tr>
               <th>Year</th>
-              <th>Maximum {metric}</th>
               <th>Month</th>
+              <th>Maximum {metric}</th>
             </tr>
           </thead>
           <tbody>{maxRows}</tbody>
@@ -185,8 +185,8 @@ const Insights = () => {
           <thead>
             <tr>
               <th>Year</th>
-              <th>Minimum {metric}</th>
               <th>Month</th>
+              <th>Minimum {metric}</th>
             </tr>
           </thead>
           <tbody>{minRows}</tbody>
