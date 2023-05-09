@@ -114,7 +114,7 @@ const Home = () => {
         const response = await fetch("/centro-capital/civpopYearly", { method: "GET" });
         if (response.status === 200) {
           const doc = await response.json();
-          setcivpopYearly(doc);
+          setcivpopYearly(organizeLineData(doc));
         }
       } catch (error) {
         console.error("Error fetching data:", error);
@@ -127,6 +127,7 @@ const Home = () => {
   
   if (unemploymentRate && unemploymentTotal && employmentTotal && laborForceYearly && civpopYearly) {
     const pie1 = organizePieData(unemploymentTotal, employmentTotal)
+    console.log(civpopYearly)
     //style={{ background: 'linear-gradient(to bottom, #f8f9fa, #85a78c)' }}
     return (
       <div >
@@ -195,8 +196,8 @@ const Home = () => {
           <CCol xs="12" sm="6" md="6" lg="6">
           <CCard style={{height: '100%'}} className="bg-light">
               <CCardBody>
-                <CCardTitle>{civpopYearly['metric']} in the (000s)</CCardTitle>
-                <CustomBar data={civpopYearly} year={"2022"}></CustomBar>
+                <CCardTitle>{civpopYearly[0]['metric']} throughout the years</CCardTitle>
+                <CustomBar data={civpopYearly} metric={civpopYearly[0]['metric']}></CustomBar>
               </CCardBody>
               <CCardFooter>
                 <CRow>
