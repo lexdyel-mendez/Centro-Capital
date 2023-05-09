@@ -39,7 +39,23 @@ function organizePieData(data01, data02) {
 
     const dic01 = new Object()
     const dic02 = new Object()
+    const dicTest = new Object()
+    const dicTest2 = new Object()
+    const finalTest =[]
+    for(const [month, value] of Object.entries(data01Latest)){
+      dicTest['metric'] = data01['metric']
+      dicTest['value'] = data01Latest[month]
+      dicTest['month'] = month
+      dicTest['year'] = '2022'
+      dicTest['source'] = data01['source'].substring(data01['source'].indexOf(': ') + 1);
 
+      dicTest2['metric'] = data02['metric']
+      dicTest2['value'] = data02Latest[month]
+      dicTest2['month'] = month
+      dicTest2['year'] = '2022'
+      dicTest2['source'] = data02['source'].substring(data01['source'].indexOf(': ') + 1);
+      finalTest.push(dicTest, dicTest2)
+    }
     dic01['metric'] = data01['metric']
     dic02['metric'] = data02['metric']
 
@@ -56,6 +72,7 @@ function organizePieData(data01, data02) {
     dic02['source'] = data02['source'].substring(data02['source'].indexOf(': ') + 1);
 
     finalData.push(dic01, dic02)
+    console.log(finalTest)
     return finalData
   } else {
     return
@@ -127,12 +144,11 @@ const Home = () => {
   
   if (unemploymentRate && unemploymentTotal && employmentTotal && laborForceYearly && civpopYearly) {
     const pie1 = organizePieData(unemploymentTotal, employmentTotal)
-    console.log(civpopYearly)
     //style={{ background: 'linear-gradient(to bottom, #f8f9fa, #85a78c)' }}
     return (
-      <div >
+      <div style={{ background: 'linear-gradient(to bottom, #f8f9fa, #85a78c)' }}>
       <Container id="home" >
-        <CRow id="firstRow" className="mb-4 mt-4">
+        <CRow id="firstRow" className="mb-4">
           <CCol xs="12" sm="6" md="6" lg="6">
             <CCard  style={{height: '100%'}} className="bg-light">
               <CCardBody>

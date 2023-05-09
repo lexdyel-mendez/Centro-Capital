@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 import { PieChart, Pie, Cell, Legend, Tooltip, ResponsiveContainer } from 'recharts';
 
 const data = [
@@ -9,6 +9,20 @@ const data = [
 
 
 function CustomPie(inputData){
+
+  const [monthFilter, setMonthFilter] = useState(null);
+
+  const handleClick = (month) => {
+    setMonthFilter(month);
+  }
+
+  let filteredData = data;
+  if (monthFilter !== null) {
+    filteredData = data.filter((item) => item.month === monthFilter);
+  }else{
+    setMonthFilter("DECEMBER")
+  }
+
     const COLORS = ['#006400', '#3CB371', '#90EE90'];
 
     const renderLabel = ({ metric, value }) => {
@@ -17,6 +31,19 @@ function CustomPie(inputData){
 
 
   return (
+    <div>
+    <div className="m-2">
+    {/* <button className="rounded" onClick={() => handleClick("JANUARY")}>January</button>
+    <button className="rounded" onClick={() => handleClick("FEBRUARY")}>February</button>
+    <button className="rounded" onClick={() => handleClick("MARCH")}>March</button>
+    <button className="rounded" onClick={() => handleClick("APRIL")}>April</button>
+    <button className="rounded" onClick={() => handleClick("MAY")}>May</button>
+    <button className="rounded" onClick={() => handleClick("JUNE")}>June</button>
+    <button className="rounded" onClick={() => handleClick("JULY")}>July</button>
+    <button className="rounded" onClick={() => handleClick("AUGUST")}>August</button>
+    <button className="rounded" onClick={() => handleClick("OCTOBER")}>OCTOBER</button> */}
+
+    </div>
     <ResponsiveContainer height={300}>
     <PieChart>
       <Pie
@@ -37,6 +64,7 @@ function CustomPie(inputData){
       <Legend />
     </PieChart>
     </ResponsiveContainer>
+    </div>
   );
 };
 
