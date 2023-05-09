@@ -15,6 +15,7 @@
     "react-dom": "^18.2.0",
     "react-ga": "^3.3.1",
     "react-ga4": "^2.1.0",
+    "react-icons": "^4.8.0",
     "react-scripts": "5.0.1",
     "react-select": "^5.7.3",
     "recharts": "^2.5.0",

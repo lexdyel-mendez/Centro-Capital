@@ -11,52 +11,50 @@ import {
   ResponsiveContainer,
 } from 'recharts';
 
-function getMinMaxCivilianPopulation(data) {
-  let min = Number.MAX_VALUE;
-  let max = Number.MIN_VALUE;
-  
-  for (let i = 0; i < data.length; i++) {
-    const value = Number(data[i]["Civilian Population"]);
-    
-    if (!isNaN(value)) {
-      min = Math.min(min, value);
-      max = Math.max(max, value);
-    }
-  }
-  
-  return { min, max };
-}
 
 
-function CustomBar({data, year}){
-  let barData= []
-  barData.push(data[year])
-  const monthArr = ["JULY", "AUGUST", "SEPTEMBER", "OCTOBER", "NOVEMBER", "DECEMBER", "JANUARY", "FEBRUARY", "MARCH", "APRIL", "MAY", "JUNE"]
-  for(const month of monthArr){
-    let runDict = {}
-    runDict['month'] = month
-    runDict[data['metric']] = barData[0][month]
-    barData.push(runDict)
+function CustomBar({data, metric}){
+  const [yearFilter, setYearFilter] = useState(null);
+
+  const handleClick = (year) => {
+    setYearFilter(year);
   }
-  let minMax = getMinMaxCivilianPopulation(barData)
+
+  let filteredData = data;
+  if (yearFilter !== null) {
+    filteredData = data.filter((item) => item.year === yearFilter);
+  }else{
+    setYearFilter("2022")
+  }
+
   return(
-     <div>
       <div>
+      <div className="m-2">
+      <button className="rounded" onClick={() => handleClick("2014")}>2014</button>
+      <button className="rounded" onClick={() => handleClick("2015")}>2015</button>
+      <button className="rounded" onClick={() => handleClick("2016")}>2016</button>
+      <button className="rounded" onClick={() => handleClick("2017")}>2017</button>
+      <button className="rounded" onClick={() => handleClick("2018")}>2018</button>
+      <button className="rounded" onClick={() => handleClick("2019")}>2019</button>
+      <button className="rounded" onClick={() => handleClick("2020")}>2020</button>
+      <button className="rounded" onClick={() => handleClick("2021")}>2021</button>
+      <button className="rounded" onClick={() => handleClick("2022")}>2022</button>
+
       </div>
       <ResponsiveContainer height={300}>
       <BarChart
         width={500}
         height={300}
-        data={barData}
+        data={filteredData}
         margin={{ top: 5, right: 30, left: 20, bottom: 5 }}
       >
 
         <CartesianGrid strokeDasharray="3 3" />
         <XAxis dataKey="month" />
-        <YAxis domain={[minMax['min']-15,minMax['max']+15]}/>
+        <YAxis tickCount={10} domain={['auto', 'dataMax']}/>
         <Tooltip />
         <Legend />
-        <Bar dataKey="Civilian Population" fill="#8884d8" />
+        <Bar dataKey={metric} fill="#8884d8" />
         {/* <Line dataKey="pv" fill="#8884d8" />
         <Line dataKey="uv" fill="#82ca9d" /> */}
       </BarChart>

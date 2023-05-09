@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import Table from "react-bootstrap/Table";
-
+import { CRow } from '@coreui/react';
 const Insights = () => {
   const [data, setData] = useState();
   const [metric, setMetric] = useState("");
@@ -65,14 +65,14 @@ const Insights = () => {
     const meanRows = Object.entries(yearly_mean).map(([year, mean]) => (
       <tr key={year}>
         <td>{year}</td>
-        <td>{mean}</td>
+        <td>{mean.toFixed(2)}</td>
       </tr>
     ));
 
     const stdRows = Object.entries(yearly_std).map(([year, std]) => (
       <tr key={year}>
         <td>{year}</td>
-        <td>{std}</td>
+        <td>{std.toFixed(2)}</td>
       </tr>
     ));
 
@@ -82,7 +82,7 @@ const Insights = () => {
         <tr key={year}>
           <td>{year}</td>
           <td>{month}</td>
-          <td>{max[month]}</td>
+          <td>{max[month].toFixed(2)}</td>
         </tr>
       );
     });
@@ -93,14 +93,14 @@ const Insights = () => {
         <tr key={year}>
           <td>{year}</td>
           <td>{month}</td>
-          <td>{min[month]}</td>
+          <td>{min[month].toFixed(2)}</td>
         </tr>
       );
     });
 
    return (
-  <div>
-    <div name="Description">
+  <div style={{background: 'linear-gradient(to bottom, #f8f9fa, #85a78c)' }} >
+    <div name="Description"  >
       <h1>Metric Insights</h1>
       <p>
         In the following the user can analyse some calculated insights for
@@ -193,6 +193,8 @@ const Insights = () => {
         </Table>
       </div>
     </div>
+    <CRow className='m-4'></CRow>
+    <CRow className='m-4'></CRow>
   </div>
 );
 

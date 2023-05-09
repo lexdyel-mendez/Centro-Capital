@@ -1,10 +1,9 @@
 import React, { useEffect, useState } from "react";
-//import Container from 'react-bootstrap/Container';
-//import Row from 'react-bootstrap/Row';
-//import Col from 'react-bootstrap/Col';
+import { CSpinner, CCard, CCardTitle, CCardLink, CRow, CCol, CCardBody, CCardFooter } from '@coreui/react';
 import CustomCompareLine from '../components/CustomCompareLine'
 import { Container, Row, Col } from "react-bootstrap";
 import DoubleDropdown from "../components/DoubleDropdown";
+import CustomArea from '../components/CustomArea';
 
 function organizeCompare(inputData) {
   //FIRST VALUE START
@@ -66,7 +65,7 @@ const Compare = () => {
 
     const handleMetric1Change = (event) => {
     setMetric1(event.target.value);
-    console.log(metric1)
+    // console.log(metric1)
   };
 
   const handleMetric2Change = (event) => {
@@ -78,6 +77,7 @@ const Compare = () => {
     <div>
     <div name="Description">
     <h1>Metric Comparison</h1>
+    <Container></Container>
     <p>
        In the following page the user can compare between any two metrics that are in the database.
        It is recommended that the metrics being compared belong to the same category (Total or Rate).
@@ -135,9 +135,12 @@ const Compare = () => {
       </div>
     )
   } else {
+    // console.log(data)
     return (
-      <Container>
-        <div name="Description">
+
+      <div >
+      <Container >
+        <div name="Description" >
     <h1>Metric Comparison</h1>
     <p>
        In the following page the user can compare between any two metrics that are in the database.
@@ -183,18 +186,21 @@ const Compare = () => {
             </label>
           </div>
         </div>
-
-        <Row className="m-4">
-          <Col>
-            <CustomCompareLine
-              data={data}
-              year={data[data.length-1]['year']}
-              firstMetric={metric1}
-              secondMetric={metric2}
-            />
-          </Col>
-        </Row>
+        <CCard style={{height: '100%'}}>
+        <CustomArea data={data} data2={data} year={data[0]['year']} firstMetric={metric1} secondMetric={metric2}></CustomArea>
+            <CCardFooter>
+                <CRow>
+                    <CCol xs="6">
+                    <p className="text-left text-secondary">Source: Banco de Desarrollo Económico de Puerto RIco</p>
+                    </CCol>
+                    <CCol xs="6">
+                    <CCardLink className="text-right text-info" href="/insights">Additional insights {'>'}</CCardLink>
+                    </CCol>
+                </CRow>
+                </CCardFooter>
+        </CCard>
       </Container>
+      </div>
     )
   }
 };

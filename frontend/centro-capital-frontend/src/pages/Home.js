@@ -19,6 +19,7 @@ function organizeLineData(inputData) {
         runningVals['month'] = month
         runningVals[inputData['metric']] = inputData[key][month]
         runningVals['metric'] = inputData['metric']
+        runningVals['source'] = inputData['source'].substring(inputData['source'].indexOf(': ') + 1);
         finalValArr.push(runningVals)
       }
     }
@@ -38,7 +39,23 @@ function organizePieData(data01, data02) {
 
     const dic01 = new Object()
     const dic02 = new Object()
+    const dicTest = new Object()
+    const dicTest2 = new Object()
+    const finalTest =[]
+    for(const [month, value] of Object.entries(data01Latest)){
+      dicTest['metric'] = data01['metric']
+      dicTest['value'] = data01Latest[month]
+      dicTest['month'] = month
+      dicTest['year'] = '2022'
+      dicTest['source'] = data01['source'].substring(data01['source'].indexOf(': ') + 1);
 
+      dicTest2['metric'] = data02['metric']
+      dicTest2['value'] = data02Latest[month]
+      dicTest2['month'] = month
+      dicTest2['year'] = '2022'
+      dicTest2['source'] = data02['source'].substring(data01['source'].indexOf(': ') + 1);
+      finalTest.push(dicTest, dicTest2)
+    }
     dic01['metric'] = data01['metric']
     dic02['metric'] = data02['metric']
 
@@ -51,8 +68,11 @@ function organizePieData(data01, data02) {
     dic01['month'] = "DECEMBER"
     dic02['month'] = "DECEMBER"
 
-    finalData.push(dic01, dic02)
+    dic01['source'] = data01['source'].substring(data01['source'].indexOf(': ') + 1);
+    dic02['source'] = data02['source'].substring(data02['source'].indexOf(': ') + 1);
 
+    finalData.push(dic01, dic02)
+    console.log(finalTest)
     return finalData
   } else {
     return
@@ -111,7 +131,7 @@ const Home = () => {
         const response = await fetch("/centro-capital/civpopYearly", { method: "GET" });
         if (response.status === 200) {
           const doc = await response.json();
-          setcivpopYearly(doc);
+          setcivpopYearly(organizeLineData(doc));
         }
       } catch (error) {
         console.error("Error fetching data:", error);
@@ -124,29 +144,46 @@ const Home = () => {
   
   if (unemploymentRate && unemploymentTotal && employmentTotal && laborForceYearly && civpopYearly) {
     const pie1 = organizePieData(unemploymentTotal, employmentTotal)
-    console.log(civpopYearly)
+    //style={{ background: 'linear-gradient(to bottom, #f8f9fa, #85a78c)' }}
     return (
-      <Container>
-        <CRow id="firstRow"className="mb-4 mt-4">
+      <div style={{ background: 'linear-gradient(to bottom, #f8f9fa, #85a78c)' }}>
+      <Container id="home" >
+        <CRow id="firstRow" className="mb-4">
           <CCol xs="12" sm="6" md="6" lg="6">
-            <CCard className="bg-light">
+            <CCard  style={{height: '100%'}} className="bg-light">
               <CCardBody>
-                <CCardTitle>{unemploymentRate[0]['metric']} for the year {unemploymentRate[unemploymentRate.length - 1]['year']}</CCardTitle>
+                <CCardTitle>{unemploymentRate[0]['metric']} throughout the years</CCardTitle>
                 <CustomCompareLine data={unemploymentRate} year={unemploymentRate[unemploymentRate.length - 1]['year']} firstMetric={unemploymentRate[0]['metric']}></CustomCompareLine>
               </CCardBody>
-              <CCardFooter style={{ textAlign: 'right' }}>
-              <CCardLink href="/insights" className='text-info'>Additional insights {'>'}</CCardLink>
+              <CCardFooter>
+                <CRow>
+                    <CCol xs="6">
+                    <p className="text-left text-secondary">Source: {unemploymentRate[0]['source']}</p>
+                    </CCol>
+                    <CCol xs="6">
+                    <CCardLink className="text-right text-info" href="/insights">Additional insights {'>'}</CCardLink>
+                    </CCol>
+                </CRow>
+              
               </CCardFooter>
             </CCard>
           </CCol>
           <CCol xs="12" sm="6" md="6" lg="6">
-            <CCard className="bg-light">
+            <CCard style={{height: '100%'}} className="bg-light">
               <CCardBody>
                 <CCardTitle>{pie1[0]['month'].charAt(0) + pie1[0]['month'].slice(1).toLowerCase()} {pie1[0]['year']} Employment (000s) </CCardTitle>
                 <CustomPie data={pie1}></CustomPie>
               </CCardBody>
-              <CCardFooter style={{ textAlign: 'right' }}>
-              <CCardLink href="/insights" className='text-info'>Additional insights {'>'}</CCardLink>
+              <CCardFooter>
+                <CRow>
+                    <CCol xs="6">
+                    <p className="text-left text-secondary">Source: {pie1[0]['source']}</p>
+                    </CCol>
+                    <CCol xs="6">
+                    <CCardLink className="text-right text-info" href="/insights">Additional insights {'>'}</CCardLink>
+                    </CCol>
+                </CRow>
+              
               </CCardFooter>
             </CCard>
           </CCol>
@@ -154,31 +191,48 @@ const Home = () => {
         {/* SECOND ROW */}
         <CRow id="secondRow" className="mb-5 mt-4">
           <CCol xs="12" sm="6" md="6" lg="6">
-            <CCard className="bg-light">
+          <CCard style={{height: '100%'}} className="bg-light">
               <CCardBody>
-                <CCardTitle>{laborForceYearly[0]['metric']} (000s) for the year {laborForceYearly[laborForceYearly.length - 1]['year']}</CCardTitle>
+                <CCardTitle>{laborForceYearly[0]['metric']}  for the year {laborForceYearly[laborForceYearly.length - 1]['year']}</CCardTitle>
                 <CustomArea data={laborForceYearly} data2={unemploymentTotal} year={laborForceYearly[laborForceYearly.length - 1]['year']} firstMetric={laborForceYearly[0]['metric']} secondMetric={unemploymentTotal['metric']}></CustomArea>
               </CCardBody>
-              <CCardFooter style={{ textAlign: 'right' }}>
-              <CCardLink href="/insights" className='text-info'>Additional insights {'>'}</CCardLink>
+              <CCardFooter>
+                <CRow>
+                    <CCol xs="6">
+                    <p className="text-left text-secondary">Source: {laborForceYearly[0]['source']}</p>
+                    </CCol>
+                    <CCol xs="6">
+                    <CCardLink className="text-right text-info" href="/insights">Additional insights {'>'}</CCardLink>
+                    </CCol>
+                </CRow>
+              
               </CCardFooter>
             </CCard>
           </CCol>
           <CCol xs="12" sm="6" md="6" lg="6">
-            <CCard className="bg-light">
+          <CCard style={{height: '100%'}} className="bg-light">
               <CCardBody>
-                <CCardTitle>{civpopYearly['metric']} in the (000s)</CCardTitle>
-                <CustomBar data={civpopYearly} year={"2022"}></CustomBar>
+                <CCardTitle>{civpopYearly[0]['metric']} throughout the years</CCardTitle>
+                <CustomBar data={civpopYearly} metric={civpopYearly[0]['metric']}></CustomBar>
               </CCardBody>
-              <CCardFooter style={{ textAlign: 'right' }}>
-              <CCardLink href="/insights" className='text-info'>Additional insights {'>'}</CCardLink>
+              <CCardFooter>
+                <CRow>
+                    <CCol xs="6">
+                    <p className="text-left text-secondary">Source: {pie1[0]['source']}</p>
+                    </CCol>
+                    <CCol xs="6">
+                    <CCardLink className="text-right text-info" href="/insights">Additional insights {'>'}</CCardLink>
+                    </CCol>
+                </CRow>
+              
               </CCardFooter>
             </CCard>
           </CCol>
         </CRow>
-
-
+        <CRow className='m-4'></CRow>
+          <CRow className='m-4'></CRow>
       </Container>
+      </div>
     );
   } else {
     return (

@@ -14,8 +14,8 @@ import React from 'react';
 function App() {
 
   return (
-    <div className="App">
-      <BrowserRouter>
+    <div id="App" className="App"  >
+      <BrowserRouter >
         <Routes>
           <Route path="/" element={<Layout />}>
             <Route index element={<Home />} />
