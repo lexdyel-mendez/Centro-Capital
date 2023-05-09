@@ -3,6 +3,7 @@ import { CSpinner, CCard, CCardTitle, CCardLink, CRow, CCol, CCardBody, CCardFoo
 import CustomCompareLine from '../components/CustomCompareLine'
 import { Container, Row, Col } from "react-bootstrap";
 import DoubleDropdown from "../components/DoubleDropdown";
+import CustomArea from '../components/CustomArea';
 
 function organizeCompare(inputData) {
   //FIRST VALUE START
@@ -64,7 +65,7 @@ const Compare = () => {
 
     const handleMetric1Change = (event) => {
     setMetric1(event.target.value);
-    console.log(metric1)
+    // console.log(metric1)
   };
 
   const handleMetric2Change = (event) => {
@@ -133,7 +134,9 @@ const Compare = () => {
       </div>
     )
   } else {
+    // console.log(data)
     return (
+
       <div >
       <Container >
         <div name="Description" >
@@ -183,16 +186,11 @@ const Compare = () => {
           </div>
         </div>
         <CCard style={{height: '100%'}}>
-        <CustomCompareLine
-              data={data}
-              year={data[data.length-1]['year']}
-              firstMetric={metric1}
-              secondMetric={metric2}
-            />
+        <CustomArea data={data} data2={data} year={data[0]['year']} firstMetric={metric1} secondMetric={metric2}></CustomArea>
             <CCardFooter>
                 <CRow>
                     <CCol xs="6">
-                    <p className="text-left text-secondary">Source: {data[0]['source']}</p>
+                    <p className="text-left text-secondary">Source: Banco de Desarrollo Económico de Puerto RIco</p>
                     </CCol>
                     <CCol xs="6">
                     <CCardLink className="text-right text-info" href="/insights">Additional insights {'>'}</CCardLink>

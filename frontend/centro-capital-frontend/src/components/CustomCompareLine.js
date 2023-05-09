@@ -32,13 +32,6 @@ function CustomCompareLine({data, inputYear, firstMetric,secondMetric}){
       <button className="rounded" onClick={() => handleClick("2021")}>2021</button>
       <button className="rounded" onClick={() => handleClick("2022")}>2022</button>
 
-
-
-
-
-
-
-
       </div>
       <ResponsiveContainer height={300}>
         <LineChart

@@ -1,6 +1,30 @@
+import { CSpinner, CCard, CCardTitle, CCardLink, CRow, CCol, CCardBody, CCardFooter } from '@coreui/react';
+
 const About = () => {
     return (
       <div className="about" >
+        {/* <div>
+          <CRow>
+            <CCol>
+              <CCard style={{height: '100%'}}>
+                <CCardTitle> <h1>About Us:</h1> </CCardTitle>
+              </CCard>
+            </CCol>
+            <CCol>
+              <CCard>
+                <CCardBody>  Welcome to Centro Capital, a capstone project designed 
+        to be the main destination for exploring
+        and analyzing key economic indicators regarding Puerto Rico's
+        well-being. Our mission is to provide a comprehensive, accessible, and
+        user-friendly platform for researchers, policymakers, students, and
+        anyone interested in understanding the economic landscape of Puerto
+        Rico. </CCardBody>
+              </CCard>
+            </CCol>
+          </CRow>
+
+
+        </div> */}
       <h1>About Us</h1>
       <p>
         Welcome to Centro Capital, a capstone project designed 
