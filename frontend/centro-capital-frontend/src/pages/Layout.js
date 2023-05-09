@@ -8,8 +8,8 @@ const Layout = () => {
 
   return (
     <>
-    <CustomNavbar/>
-    <CustomFooter/>
+    <CustomNavbar id="navbar"/>
+    <CustomFooter id="footer"/>
     </>
   )
 };

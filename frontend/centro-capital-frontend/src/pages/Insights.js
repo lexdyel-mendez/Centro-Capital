@@ -99,8 +99,8 @@ const Insights = () => {
     });
 
    return (
-  <div>
-    <div name="Description">
+  <div style={{background: 'linear-gradient(to bottom, #f8f9fa, #85a78c)' }} >
+    <div name="Description"  >
       <h1>Metric Insights</h1>
       <p>
         In the following the user can analyse some calculated insights for

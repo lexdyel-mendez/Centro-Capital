@@ -5,9 +5,9 @@ import Col from 'react-bootstrap/Col';
 function Welcome() {
 
     return (
-        <div>
+        <div style={{background: 'linear-gradient(to bottom, #f8f9fa, #85a78c)' }}>
         <Container>
-            <Row className="m-4 d-flex align-items-center justify-content-center">
+            <Row className=" d-flex align-items-center justify-content-center">
                 <Col className=" d-flex align-items-center justify-content-center"><h2>Centro Capital is a student project that intends to promote the knowledge of well-being in Puerto Rico</h2></Col>
                 <Col className=" d-flex align-items-center justify-content-center"><h4>Feedback is a quintessential part of growing so please let us know your thoughts</h4></Col>
                 </Row>

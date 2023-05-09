@@ -4,9 +4,9 @@ import { CFooter, CLink } from '@coreui/react'
 class CustomFooter extends Component {
     render() {
         return (
-            <div className="fixed-bottom">
-            <div>
-                <CFooter className='sticky-footer'>
+            <div className="fixed-bottom mt-auto">
+            <div style={{ marginTop: '50px' }}>
+                <CFooter className="mt-auto">
                     
                     <div>
                         <CLink href="https://centrocapitalpr.wordpress.com">Centro Capital</CLink>

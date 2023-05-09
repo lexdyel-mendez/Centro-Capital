@@ -1,7 +1,5 @@
 import React, { useEffect, useState } from "react";
-//import Container from 'react-bootstrap/Container';
-//import Row from 'react-bootstrap/Row';
-//import Col from 'react-bootstrap/Col';
+import { CSpinner, CCard, CCardTitle, CCardLink, CRow, CCol, CCardBody, CCardFooter } from '@coreui/react';
 import CustomCompareLine from '../components/CustomCompareLine'
 import { Container, Row, Col } from "react-bootstrap";
 import DoubleDropdown from "../components/DoubleDropdown";
@@ -136,8 +134,9 @@ const Compare = () => {
     )
   } else {
     return (
-      <Container>
-        <div name="Description">
+      <div >
+      <Container >
+        <div name="Description" >
     <h1>Metric Comparison</h1>
     <p>
        In the following page the user can compare between any two metrics that are in the database.
@@ -183,18 +182,26 @@ const Compare = () => {
             </label>
           </div>
         </div>
-
-        <Row className="m-4">
-          <Col>
-            <CustomCompareLine
+        <CCard style={{height: '100%'}}>
+        <CustomCompareLine
               data={data}
               year={data[data.length-1]['year']}
               firstMetric={metric1}
               secondMetric={metric2}
             />
-          </Col>
-        </Row>
+            <CCardFooter>
+                <CRow>
+                    <CCol xs="6">
+                    <p className="text-left text-secondary">Source: {data[0]['source']}</p>
+                    </CCol>
+                    <CCol xs="6">
+                    <CCardLink className="text-right text-info" href="/insights">Additional insights {'>'}</CCardLink>
+                    </CCol>
+                </CRow>
+                </CCardFooter>
+        </CCard>
       </Container>
+      </div>
     )
   }
 };

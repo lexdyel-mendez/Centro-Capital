@@ -49,7 +49,7 @@ let minMax = getMinMaxCivilianPopulation(lineData)
         </linearGradient>
         </defs>
         <XAxis dataKey="month" />
-        <YAxis domain={[minMax['min'],minMax['max']]}/>
+        <YAxis tickCount={5} domain={['auto', 'dataMax']}/>
         <CartesianGrid strokeDasharray="3 3" />
         <Tooltip />
         <Area type="monotone" dataKey={firstMetric} stroke="#8884d8" fillOpacity={1} fill="url(#colorUv)" />
