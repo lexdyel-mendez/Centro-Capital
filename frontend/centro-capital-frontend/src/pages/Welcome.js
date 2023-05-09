@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
+import { CRow } from '@coreui/react';
 function Welcome() {
 
     return (
@@ -14,6 +15,8 @@ function Welcome() {
                <h6>Feel free to contact us at: juan.diaz28@upr, adean.colon@upr.edu, or lexdyel.mendez@upr.edu</h6>
         
         <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSdreUsik8fmSbtcpQJNR74Xyxj_KGa6kD4TJ_94gQHemmo92Q/viewform?embedded=true" width="640" height="1940" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
+        <CRow className='m-4'></CRow>
+          <CRow className='m-4'></CRow>
         </Container>
         </div>
     )

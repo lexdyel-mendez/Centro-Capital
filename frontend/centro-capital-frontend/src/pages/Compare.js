@@ -77,6 +77,7 @@ const Compare = () => {
     <div>
     <div name="Description">
     <h1>Metric Comparison</h1>
+    <Container></Container>
     <p>
        In the following page the user can compare between any two metrics that are in the database.
        It is recommended that the metrics being compared belong to the same category (Total or Rate).

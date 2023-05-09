@@ -193,7 +193,7 @@ const Home = () => {
           <CCol xs="12" sm="6" md="6" lg="6">
           <CCard style={{height: '100%'}} className="bg-light">
               <CCardBody>
-                <CCardTitle>{laborForceYearly[0]['metric']} (000s) for the year {laborForceYearly[laborForceYearly.length - 1]['year']}</CCardTitle>
+                <CCardTitle>{laborForceYearly[0]['metric']}  for the year {laborForceYearly[laborForceYearly.length - 1]['year']}</CCardTitle>
                 <CustomArea data={laborForceYearly} data2={unemploymentTotal} year={laborForceYearly[laborForceYearly.length - 1]['year']} firstMetric={laborForceYearly[0]['metric']} secondMetric={unemploymentTotal['metric']}></CustomArea>
               </CCardBody>
               <CCardFooter>
@@ -229,7 +229,8 @@ const Home = () => {
             </CCard>
           </CCol>
         </CRow>
-
+        <CRow className='m-4'></CRow>
+          <CRow className='m-4'></CRow>
       </Container>
       </div>
     );
